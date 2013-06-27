@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="site" method="upgrade">
+    <name>Virtuemart - carriage search </name>
+    <author>Akchurin V.A.</author>
+    <version>1.0b</version>
+    <description>Модуль вывода поиска колясок</description>
+    <files>
+        <filename>mod_carriage_search.xml</filename>
+        <filename module="mod_carriage_search">mod_carriage_search.php</filename>
+        <filename>index.html</filename>
+    </files>
+    <config>
+    </config>
+</extension> 

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7.0" client="site" method="upgrade">
+	<name>Sj Minicart Pro</name>
+	<creationDate>July 2012</creationDate>
+	<author>You Tech Company</author>
+	<authorUrl>http://www.smartaddons.com</authorUrl>
+	<copyright>Copyright (C) 2011 http://www.smartaddons.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+	<version>2.5</version>
+	<description>SJ_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_sj_minicart_pro">mod_sj_minicart_pro.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>core</folder>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages />
+	<config>
+		<fields name="params"  addfieldpath="/modules/mod_sj_minicart_pro/core/fields" >
+			<fieldset name="basic">
+				<field name="moduleclass_sfx" type="text" default="" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cart_detail_width" type="text" default="492" label="CART_DETAIL_WIDTH_LABEL" description="CART_DETAIL_WIDTH_DESC" />
+			</fieldset>
+			<fieldset name="layout_options" label="LAYOUT_LABEL">
+				<field type="sjheading" label="Product List Options" />
+				<field name="product_list_display" type="radio" default="1" label="PRODUCT_LIST_LABEL" description="PRODUCT_LIST_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="product_max_height" type="text" default="270" label="PRODUCT_MAX_HEIGHT_LABEL" description="PRODUCT_MAX_HEIGHT_DESC" />
+				<field name="product_label_display" type="radio" default="1" label="PRODUCT_LABEL_LABEL" description="PRODUCT_LABEL_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="product_attribute_display" type="radio" default="1" label="PRODUCT_ATTRIBUTE_LABEL" description="PRODUCT_ATTRIBUTE_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field type="sjheading" label="Coupon Form Options" />
+				<field name="coupon_form_display" type="radio" default="1" label="COUPON_DISPLAY_LABEL" description="COUPON_DISPLAY_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="coupon_label_display" type="radio" default="1" label="COUPON_LABEL_LABEL" description="COUPON_LABEL_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field type="sjheading" label="Footer Cart Options" />
+				<field name="goto_cart_display" type="radio" default="1" label="GOTO_CART_DISPLAY_LABEL" description="GOTO_CART_DISPLAY_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="checkout_display" type="radio" default="1" label="CHECKOUT_DISPLAY_LABEL" description="CHECKOUT_DISPLAY_LABEL">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="total_price_display" type="radio" default="1" label="TOTAL_PRICE_LABEL" description="TOTAL_PRICE_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field type="sjheading" label="Images Options" />
+				<field name="item_image_width" type="text" default="100" label="IMAGE_WIDTH_LABEL" description="IMAGE_WIDTH_DESC" />
+				<field name="item_image_height" type="text" default="100" label="IMAGE_HEIGHT_LABEL" description="IMAGE_HEIGHT_DESC" />
+				<field name="item_image_background" type="text" default="#FFFFFF" label="IMAGE_BACKGROUND_LABEL" description="IMAGE_BACKGROUND_DESC" />
+				<field name="item_image_function" type="sjthumbnailmode" default="none" label="IMAGE_FUNCTION_LABEL" description="IMAGE_FUNCTION_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

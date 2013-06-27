@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="sef_ext">
+	<name>Remository</name>
+	<author>ARTIO s.r.o.</author>
+	<creationDate>7. March 2012</creationDate>
+	<copyright>ARTIO s.r.o.</copyright>
+	<license>Copyrighted - http://www.artio.net/joomsef/licence-ext</license>
+	<authorEmail>info@artio.net</authorEmail>
+	<authorUrl>www.artio.net</authorUrl>
+	<version>3.0.0</version>
+	<description>ARTIO JoomSEF extension for Remository component.</description>
+	<files>
+		<filename sef_ext="remository">com_remository.php</filename>
+	</files>
+    <form>
+    	<fieldset name="Extension">
+            <field type="spacer" label="File settings&lt;hr/&gt;" class="text" />
+            
+            <field name="filename1" type="list" default="none" label="File name 1st part" description="First part of file name in the URL. Custom text may be set in the individual field.">
+              <option value="none">---</option>
+              <option value="id">ID</option>
+              <option value="title">Title</option>
+              <option value="alias">Subtitle</option>
+              <option value="text">Custom text</option>
+            </field>
+            <field name="filename2" type="list" default="title" label="File name 2nd part" description="Second part of file name in the URL. Custom text may be set in the individual field.">
+              <option value="none">---</option>
+              <option value="id">ID</option>
+              <option value="title">Title</option>
+              <option value="alias">Subtitle</option>
+              <option value="text">Custom text</option>
+            </field>
+            <field name="filename3" type="list" default="none" label="File name 3rd part" description="Third part of file name in the URL. Custom text may be set in the individual field.">
+              <option value="none">---</option>
+              <option value="id">ID</option>
+              <option value="title">Title</option>
+              <option value="alias">Subtitle</option>
+              <option value="text">Custom text</option>
+            </field>
+            <field name="filenametext" type="text" default="File" label="File custom text" description="The custom text part for the file name." />
+            
+            <field type="spacer" />
+            <field type="spacer" label="Container settings&lt;hr/&gt;" class="text" />
+            
+    		<field name="container_inc" type="list" default="2" label="Add container to URL" description="Controls the way containers are added to URL.">
+     			<option value="0">No</option>
+     			<option value="1">Only last one</option>
+     			<option value="2">All containers</option>
+     		</field>
+            <field name="catname1" type="list" default="none" label="Container name 1st part" description="First part of container name in the URL. Custom text may be set in the individual field.">
+              <option value="none">---</option>
+              <option value="id">ID</option>
+              <option value="title">Title</option>
+              <option value="alias">Alias</option>
+              <option value="text">Custom text</option>
+            </field>
+            <field name="catname2" type="list" default="title" label="Container name 2nd part" description="Second part of container name in the URL. Custom text may be set in the individual field.">
+              <option value="none">---</option>
+              <option value="id">ID</option>
+              <option value="title">Title</option>
+              <option value="alias">Alias</option>
+              <option value="text">Custom text</option>
+            </field>
+            <field name="catname3" type="list" default="none" label="Container name 3rd part" description="Third part of container name in the URL. Custom text may be set in the individual field.">
+              <option value="none">---</option>
+              <option value="id">ID</option>
+              <option value="title">Title</option>
+              <option value="alias">Alias</option>
+              <option value="text">Custom text</option>
+            </field>
+            <field name="catnametext" type="text" default="Container" label="Container custom text" description="The custom text part for the container name." />
+     		
+            <field type="spacer" />
+            
+     		<field name="nonsef_id" type="radio" default="0" label="Make ID non-SEF in Submit file links" description="If set to Yes, the id variable will be considered as non-SEF in Submit file links.">
+     			<option value="0">No</option>
+     			<option value="1">Yes</option>
+     		</field>
+            <field name="always_english" type="radio" default="0" label="Always use English texts for links" description="If set to Yes, the links like Submit file, Search repository etc. will always be in English.">
+     			<option value="0">No</option>
+     			<option value="1">Yes</option>
+     		</field>
+     	</fieldset>
+    </form>
+</extension>

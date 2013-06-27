@@ -1,0 +1,23 @@
+<div class="day_product_<?= $classSfx ?>">
+Мегоакция
+<div id="produci1-img">
+<?php 
+echo $product1->images[0]->displayMediaFull();
+?>
+</div>
+<div id="title">
+<?php 
+echo $product1->product_name;
+?>
+</div>
+<div id="oldPrice">
+<?php 
+echo $product1->prices['priceWithoutTax'];
+?>
+</div>
+<div id="newPrice">
+<?php 
+echo $product1->prices['salesPrice'];
+?>
+</div>
+</div>

@@ -1,0 +1,158 @@
+.jspVerticalBar {
+	background-color:#CCC;
+	width:14px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	border:0;
+}
+
+.jspTrack{
+	background: #ffffff;
+	margin:-1px 1px;
+	
+	
+}
+
+.jspDrag{
+    background: none repeat scroll 0 0 #e8e8e8;
+    border-radius: 0 0 0 0;
+    margin: 0 1px;
+}
+
+.jspDrag.jspHover{
+    background: none repeat scroll 0 0 #cecece;
+    border-radius: 0 0 0 0;
+    margin: 0 1px;
+}
+
+.jspDrag.jspActive{
+	background: none repeat scroll 0 0 #aaaaaa;
+    border-radius: 0 0 0 0;
+     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); 
+    margin: 0 1px;
+}
+
+
+.jspVerticalBar  .jspArrow{
+	border-radius:0;
+	display:block;
+	position:relative;
+	background-color:#FFF;
+	margin:1px;
+	
+	
+}
+
+.jspVerticalBar .jspArrowUp{
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	margin-bottom:0;
+}
+
+.jspVerticalBar .jspArrowUp:hover:after{
+	width: 0; 
+	height: 0; 
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-bottom: 4px solid #cecece;
+	border-radius:none;
+	position:absolute;
+	left:3px;
+	top:6px;
+	content:'';
+	display:block;
+}
+
+.jspVerticalBar .jspArrowUp.jspActive:hover:after{
+	width: 0; 
+	height: 0; 
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-bottom: 4px solid #aaaaaa;
+	border-radius:none;
+	position:absolute;
+	left:3px;
+	top:6px;
+	content:'';
+	display:block;
+}
+
+.jspVerticalBar>.jspArrowUp.jspDisabled:hover:after,
+.jspVerticalBar>.jspArrowUp.jspDisabled:after,
+.jspVerticalBar .jspArrowUp:after{
+	width: 0; 
+	height: 0; 
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-bottom: 4px solid #e8e8e8;
+	border-radius:none;
+	position:absolute;
+	left:3px;
+	top:6px;
+	content:'';
+	display:block;
+} 
+ 
+.jspVerticalBar .jspArrowDown{
+	margin-top:0;
+	-webkit-border-bottom-right-radius: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-moz-border-radius-bottomright: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+
+
+.jspVerticalBar .jspArrowDown:hover:after{
+	width: 0; 
+	height: 0; 
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-top: 4px solid #cecece;
+	border-radius:none;
+	position:absolute;
+	left:3px;
+	bottom:6px;
+	content:'';
+	display:block;
+} 
+
+.jspVerticalBar .jspArrowDown.jspActive:hover:after{
+	width: 0; 
+	height: 0; 
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-top: 4px solid #aaaaaa;
+	border-radius:none;
+	position:absolute;
+	left:3px;
+	bottom:6px;
+	content:'';
+	display:block;
+}
+
+.jspVerticalBar>.jspArrowDown.jspDisabled:hover:after,
+.jspVerticalBar>.jspArrowDown.jspDisabled:after,
+.jspVerticalBar .jspArrowDown:after{
+	width: 0; 
+	height: 0; 
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-top: 4px solid #e8e8e8;
+	border-radius:none;
+	position:absolute;
+	left:3px;
+	bottom:6px;
+	content:'';
+	display:block;
+}
+
+
+
+

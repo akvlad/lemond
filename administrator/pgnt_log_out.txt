@@ -1,0 +1,105 @@
+index.php?start=0&limit=1000\r\nAHAHAHA=Array
+(
+    [path] => index.php
+    [query] => start=0&limit=1000
+)
+JURI Object
+(
+    [_uri:protected] => index.php?start=0&limit=1000
+    [_scheme:protected] => 
+    [_host:protected] => 
+    [_port:protected] => 
+    [_user:protected] => 
+    [_pass:protected] => 
+    [_path:protected] => /administrator/index.php
+    [_query:protected] => start=0&limit=1000
+    [_fragment:protected] => 
+    [_vars:protected] => Array
+        (
+            [start] => 0
+            [limit] => 1000
+        )
+
+    [_errors:protected] => Array
+        (
+        )
+
+)
+index.php?limitstart=20\r\nAHAHAHA=Array
+(
+    [path] => index.php
+    [query] => limitstart=20
+)
+JURI Object
+(
+    [_uri:protected] => index.php?limitstart=20
+    [_scheme:protected] => 
+    [_host:protected] => 
+    [_port:protected] => 
+    [_user:protected] => 
+    [_pass:protected] => 
+    [_path:protected] => /administrator/index.php
+    [_query:protected] => limitstart=20
+    [_fragment:protected] => 
+    [_vars:protected] => Array
+        (
+            [limitstart] => 20
+        )
+
+    [_errors:protected] => Array
+        (
+        )
+
+)
+index.php?limitstart=20\r\nAHAHAHA=Array
+(
+    [path] => index.php
+    [query] => limitstart=20
+)
+JURI Object
+(
+    [_uri:protected] => index.php?limitstart=20
+    [_scheme:protected] => 
+    [_host:protected] => 
+    [_port:protected] => 
+    [_user:protected] => 
+    [_pass:protected] => 
+    [_path:protected] => /administrator/index.php
+    [_query:protected] => limitstart=20
+    [_fragment:protected] => 
+    [_vars:protected] => Array
+        (
+            [limitstart] => 20
+        )
+
+    [_errors:protected] => Array
+        (
+        )
+
+)
+index.php?limitstart=20\r\nAHAHAHA=Array
+(
+    [path] => index.php
+    [query] => limitstart=20
+)
+JURI Object
+(
+    [_uri:protected] => index.php?limitstart=20
+    [_scheme:protected] => 
+    [_host:protected] => 
+    [_port:protected] => 
+    [_user:protected] => 
+    [_pass:protected] => 
+    [_path:protected] => /administrator/index.php
+    [_query:protected] => limitstart=20
+    [_fragment:protected] => 
+    [_vars:protected] => Array
+        (
+            [limitstart] => 20
+        )
+
+    [_errors:protected] => Array
+        (
+        )
+
+)

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="plugin" group="vmcustom" >
+    <name>VMCustom - carriage colors</name>
+    <creationDate>June 04 2013</creationDate>
+    <author>Akchurin V.A.</author>
+    <authorUrl>n/a</authorUrl>
+    <copyright>Copyright (C) 2013-2020 Akchurin V.A. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <version>1.0b</version>
+    <description>Show colors in carriage details</description>
+    <files>
+        <filename plugin="carcolors">carcolors.php</filename>
+    </files>
+
+    <params></params>
+</install>

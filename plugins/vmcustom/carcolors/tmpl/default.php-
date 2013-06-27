@@ -1,0 +1,5 @@
+<div class='colors'>
+   <?php foreach($this->params->items as $color) { ?>
+    <span> <?= $color->color_name ?> </span>
+   <?php } ?>
+</div>

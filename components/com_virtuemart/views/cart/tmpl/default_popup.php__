@@ -1,0 +1,41 @@
+<div id="vm_popup_wrapper">
+	<div id="div-h2-popup-cart">	
+		<h2>Товар добавлен в корзину</h2>
+	</div>
+    <div id="products_wrapper">
+		
+			<?php
+				$this->productModel->addImages($this->cart->products);
+				foreach($this->cart->products as $key=>$product)
+				{?>
+					<div class="prod-item">
+						<a class="delete-product" href="#" > <img src="../templates/lemond/images/cart-out.png"></a>
+						<div class="div-prod-image">
+							<div style="display:table-row;">
+							<?php 
+								echo $product->images[0]->displayMediaThumb('class="prod-image"',false); //выводим картинку с классом
+							?>
+							</div>
+						</div>
+						<div class="div-prod-name">
+							<?php echo $product->product_name;    //имя товара?>
+						</div>
+						<div class="div-prod-count">
+							<span><?php echo $product->quantity;    //количество?></span>
+							<span class="sht">шт.</span>
+						</div>
+						<div class="div-prod-price">
+							<?php echo $this->currencyDisplay->createPriceDiv ('salesPrice', '', $this->cart->pricesUnformatted[$key], FALSE, FALSE, $product->quantity); //цена
+							//var_dump($product);?>
+						</div>
+					</div>
+				<?php
+				}
+			?>
+		
+    </div>
+	<div id="div-buttons-popup-cart">
+		<div class="lets-go"><a  href="#">Продолжить покупки</a></div>
+		<div class="buy-it"> <a  href="<?= JRoute::_("index.php?option=com_virtuemart&view=cart") ?>">Оформить заказ</a></div>
+	</div>
+</div>

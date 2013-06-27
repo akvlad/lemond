@@ -1,0 +1,19 @@
+<div id="vm_popup_wrapper">
+    <h2>Продукт добавлен в корзину</h2>
+    <div id="products_wrapper">
+<?php
+    $this->productModel->addImages($this->cart->products);
+    foreach($this->cart->products as $key=>$product){?>
+        <a class="delete-product" href="#"></a>
+        <?php echo $product->images[0]->displayMediaThumb('class="prod-image"',false); //выводим картинку с классом
+        echo $product->product_name;    //имя товара
+        echo '('.$product->quantity.' шт.)';    //количество
+        echo $this->currencyDisplay->createPriceDiv ('salesPrice', '', $this->cart->pricesUnformatted[$key], FALSE, FALSE, $product->quantity); //цена
+        //var_dump($product);
+        
+    }
+?>
+    </div>
+    <a href="#">Продолжить покупки</a>
+    <a href="<?= JRoute::_("index.php?option=com_virtuemart&view=cart") ?>">Оформить заказ</a>
+</div>

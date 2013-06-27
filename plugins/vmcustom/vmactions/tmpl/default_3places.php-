@@ -1,0 +1,69 @@
+<div class="three-places-action">
+    <div class="place-1">
+        <?php //print('<xmp>'); var_dump($this->params->places[1]->product); die('</xmp>'); ?>
+        <div class="img-wrapper">
+        <?= $this->params->places[1]->product->images[0]->displayMediaThumb('class="img-place1"',false); ?>
+        </div>
+        <a href="<?= $this->params->places[1]->product->link ?>"><?= $this->params->places[1]->product->product_name ?> </a>
+        <div class="price-wrapper">
+        <?php if($this->params->places[1]->discount!=0) {?>
+            <div class="newPrice"> 
+                 <canvas id="complCanvasp1" width="80" height="20">
+                 </canvas>
+                 <script type="text/javascript">
+                    var cnv=document.getElementById('complCanvasp1');
+                    var ctx=cnv.getContext("2d");
+                    var gradient=ctx.createLinearGradient(0,0,0,15);
+                    gradient.addColorStop(0.0, '#ff0000');
+                    gradient.addColorStop(0.9, '#9A0027');
+                    ctx.fillStyle = gradient;
+                    ctx.font = "bold 15px Microsoft YaHei";
+                    ctx.fillText("<?= $this->getNewPrice(round($this->params->places[1]->product->prices['salesPrice'],2), 1) ?> грн.", 0, 15);
+                </script>
+                
+            </div>
+            <div class="oldPrice"> 
+                <?= $this->currency->createPriceDiv('salesPrice', 'COM_VIRTUEMART_PRODUCT_SALESPRICE', $this->params->places[1]->product->prices);?> 
+            </div>
+
+         <?php } else {?>
+            <div class="singlePrice"> 
+                <?= $this->currency->createPriceDiv('salesPrice', 'COM_VIRTUEMART_PRODUCT_SALESPRICE', $this->params->places[1]->product->prices);?> 
+            </div>
+         <?php } ?>
+            <div class="cl"></div>
+        </div>
+    </div>
+    <div class="place-2">
+        <div class="img-wrapper">
+        <?= $this->params->places[2]->product->images[0]->displayMediaThumb('class="img-place1"',false); ?>
+        </div>
+        <a href="<?= $this->params->places[2]->product->link ?>"><?= $this->params->places[2]->product->product_name ?> </a>
+        <?php if($this->params->places[2]->discount!=0) {?>
+        <div class="price-wrapper">    
+            <div class="newPrice"> 
+                 <canvas id="complCanvasp2" width="80" height="20">
+                 </canvas>
+                 <script type="text/javascript">
+                    var cnv=document.getElementById('complCanvasp2');
+                    var ctx=cnv.getContext("2d");
+                    var gradient=ctx.createLinearGradient(0,0,0,15);
+                    gradient.addColorStop(0.0, '#ff0000');
+                    gradient.addColorStop(0.9, '#9A0027');
+                    ctx.fillStyle = gradient;
+                    ctx.font = "bold 15px Microsoft YaHei";
+                    ctx.fillText("<?= $this->getNewPrice(round($this->params->places[2]->product->prices['salesPrice'],2), 1) ?> грн.", 0, 15);
+                </script>
+            </div>
+            <div class="oldPrice"> 
+                <?= $this->currency->createPriceDiv('salesPrice', 'COM_VIRTUEMART_PRODUCT_SALESPRICE', $this->params->places[2]->product->prices);?> 
+            </div>
+        </div>
+           
+         <?php } else {?>
+            <div class="singlePrice"> 
+                <?= $this->currency->createPriceDiv('salesPrice', 'COM_VIRTUEMART_PRODUCT_SALESPRICE', $this->params->places[2]->product->prices);?> 
+            </div>
+         <?php } ?>
+    </div>
+</div>

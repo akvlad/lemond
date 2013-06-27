@@ -1,0 +1,422 @@
+@font-face 
+{
+	font-family: Microsoft YaHei;
+	src: local("Microsoft YaHei"), url("../fonts/Microsoft_YaHei.eot") /* EOT file for IE */
+}
+@font-face 
+{
+	font-family: Microsoft YaHei;
+	src: local("Microsoft YaHei"), url("../fonts/Microsoft_YaHei.ttf") /* TTF file for CSS3 browsers */
+}
+
+@font-face 
+{
+	font-family: Microsoft YaHei Bold;
+	src: local("Microsoft YaHei"), url("../fonts/Microsoft_YaHei_Bold.eot") /* EOT file for IE */
+}
+@font-face 
+{
+	font-family: Microsoft YaHei Bold;
+	src: local("Microsoft YaHei"), url("../fonts/Microsoft_YaHei_Bold.ttf") /* TTF file for CSS3 browsers */
+}
+body
+{
+  margin: 0 auto;
+  padding: 0;
+  background-color: #ffffff;
+  font-family:'Microsoft YaHei', Verdana, Arial, Tahoma;
+  font-size:14px;
+  color:#000000;
+  
+}
+
+
+
+
+#middle
+{
+	width:1025px;
+	padding:0px;
+	margin:0 auto;
+    background: url(../images/fon-content.png) top center repeat;
+	border:0;
+	height:100%;
+	overflow: auto;
+	z-index:1;
+	min-height:600px;
+}
+
+
+
+
+/*---------HEADER------------------------*/
+#middle #top-line
+{
+	height:20px;
+	width:100%;
+	background: #6699ff; /* Для старых браузров */
+    background: -moz-linear-gradient(left, #6699ff, #eaa5b6); /* Firefox 3.6+ */
+    /* Chrome 1-9, Safari 4-5 */
+    background: -webkit-gradient(linear, left top, left bottom, 
+                color-stop(0%,#6699ff), color-stop(100%,#eaa5b6));
+    /* Chrome 10+, Safari 5.1+ */
+    background: -webkit-linear-gradient(top, #6699ff, #eaa5b6);
+    background: -o-linear-gradient(top, #6699ff, #eaa5b6); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #6699ff, #eaa5b6); /* IE10 */
+    background: linear-gradient(top, #6699ff, #eaa5b6); /* CSS3 */ 
+}
+#top-line #top-head
+{
+	height:60px;
+	width:1000px;
+	margin:0 auto;
+	padding:0;
+	position:relative;
+}
+#top-line #top-head #top-head-1,
+#top-line #top-head #top-head-2,
+#top-line #top-head #top-head-3
+{
+	float:left;
+	position:relative;
+	height:55px;
+	color:#ffffff;
+}
+#top-line #top-head #top-head-2
+{
+	width:360px;
+	text-align:center;
+	font-size:20px;
+	font-weight:bold;
+}
+#top-line #top-head #top-head-2 p
+{
+	margin:0;
+}
+#headimg
+{
+	float:left;
+	padding:5px 0;
+	
+}
+
+
+/*---------MAIN MENU------------------------*/
+.image-title
+{
+	padding:0;
+	margin:0;
+}
+
+#middle #menu_main
+{
+	height:130px;	position:static;	width:950px;
+	margin:0 auto 20px auto;	padding:0;
+	font-family: 'Open Sans Regular';
+}
+
+#middle #menu_main img
+{
+	padding:5px 0 0 0;
+}
+#middle #menu_main span
+{
+	display:block;
+}
+
+#middle #menu_main  ul {
+	list-style: none;	/*margin:0px 170px;*/	padding:0px;
+}
+
+#middle #menu_main  ul li {
+	list-style: none;	margin:0 27px 0 0;
+	float: left;	width:130px;
+	height:130px;
+}
+
+#middle #menu_main  ul li a, #middle #menu_main  ul li a:link, #middle #menu_main  ul li a:visited, #middle #menu_main  ul li a:active 
+{	display: block;	background: transparent;
+	width:130px;	height: 130px;	text-align: center;	color: #e3000f;   /*красный*/	font-size: 16px;	text-decoration: none;	border:none;
+	font-family:'Open Sans Light';
+
+}
+#middle #menu_main  ul li a:hover 
+{	background: #01669c;/*синий*/
+	display: block;	width:130px;
+	height: 130px;	text-align: center;	color: #ffffff;	font-size: 16px;	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+	border-radius: 20px 20px 20px 20px;
+	font-family:'Open Sans Light';
+}
+
+#middle #menu_main  ul .active a,#middle #menu_main  ul .active a:link,#middle #menu_main  ul .active a:visited,#middle #menu_main  ul .active a:active, #middle #menu_main  ul .active a:hover 
+{
+	background: #01669c;/*синий*/
+	display: block;	width:130px;	height: 130px;	text-align: center;	color: #ffffff;
+	font-family:'Open Sans Light';	font-size: 16px;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+	border-radius: 20px 20px 20px 20px;
+}
+/*------------*/
+#middle #menu_main  ul li a.big, 
+#middle #menu_main  ul li a.big:link, 
+#middle #menu_main  ul li a.big:visited, 
+#middle #menu_main  ul li a.big:active 
+{
+	font-size: 13px;
+	  font-family:'Open Sans Light';
+}
+#middle #menu_main  ul li a.big:hover 
+{
+	font-size: 13px;
+	  font-family:'Open Sans Light';
+}
+
+#middle #menu_main  ul .active a.big,
+#middle #menu_main  ul .active a.big:link,
+#middle #menu_main  ul .active a.big:visited,
+#middle #menu_main  ul .active a.big:active, 
+#middle #menu_main  ul .active a.big:hover 
+{
+	font-size: 13px;
+	  font-family:'Open Sans Light';
+
+}
+
+/**************************************************/#middle #breadcrambs{	width:100%;	height:30px;	line-height: 30px;
+	margin:0 auto 20px auto;
+	background: url(../images/home.png) top left no-repeat;}
+#middle  #breadcrambs ul
+{
+	list-style: none;
+	margin: 0 0 0 50px;
+	padding:0px;
+}
+#middle #breadcrambs ul li
+{
+	float:left;
+	color:#000000;
+}#middle  #top-content
+{
+	width:100%;
+	position:relative;
+	margin:0 auto 20px auto;
+	
+}
+#middle  #top-content img
+{
+	-moz-box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Параметры тени */
+}
+#middle  #top-content .moduletablebooking,
+#middle  #top-content .moduletabletourism
+{
+	width:450px;
+	float:left;
+}
+#middle  #top-content .moduletablebooking
+{
+	margin-right:50px;
+}
+#middle #content
+{
+	margin: 0 0 20px 0;
+	padding:0;
+	height:auto;
+	position:relative;
+	overflow: hidden;
+}
+#middle #content .newsflash-title
+{
+	margin-bottom:0;
+}
+#middle #content .blog .items-leading  .page-header
+{
+	padding-top:15px;
+	margin-top:5px;
+	border-top:1px solid #e1d4d1;
+}
+#middle #content .news-item
+{
+	padding-bottom:5px;
+	margin-bottom:15px;
+	border-bottom:1px solid #e1d4d1;
+}
+
+#middle  #right
+{
+	width:250px;
+	padding:0;
+	margin: 0 0 0 25px;
+	height:100%;
+	float:right;
+}
+#middle  #right .moduletable_news_right 
+{
+  margin-bottom:20px;
+}
+#middle  #right .moduletable_news_right .latestnews_news_right
+{
+	list-style:none;
+	padding:0 10px;
+}
+#middle  #right .moduletable_news_right .latestnews_news_right li
+{
+	margin:0 0 10px 0;
+}
+#cl
+{
+	clear:both;
+}
+
+
+/*-----------FOOTER----------------------------*/
+
+#footer
+{	width:100%;	height:160px;	margin:0;	position:relative;
+	background:#01669c;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+	border-radius: 30px 30px 0 0;
+}#footer #footer-center{	width:950px;
+	padding:15px;
+	margin:0 auto;
+	position:relative;}
+#footer #footer-text-1,
+#footer #footer-text-2,
+#footer #footer-text-3,
+#footer #footer-text-4{	float:left;
+	margin-right:25px;
+	position:relative;
+	height:160px;}
+#footer #footer-text-4
+{
+	width:200px;
+	margin-right:0;
+}
+#footer #footer-text-4 .moduletablecopyright
+{
+	margin: 95px 0 15px 0;
+	color:#ffffff;
+	font-size:12px;
+}
+/*---------FOOTER MENUS------------------------*/
+#footer #footer-center
+{
+
+	position:static;
+	width:950px;
+	padding:0;
+	font-family: 'Open Sans Regular';
+}
+
+#footer #footer-center  ul 
+{
+	list-style: none;
+	padding:0px;
+}
+
+#footer #footer-center  ul li 
+{
+	list-style: none;
+	margin:0;
+	width:225px;
+	height:23px;
+}
+
+#footer #footer-center  ul li a, 
+#footer #footer-center ul li a:link, 
+#footer #footer-center  ul li a:visited, 
+#footer #footer-center  ul li a:active 
+{
+	display: block;
+	text-align: left;
+	color: #ffffff;   /*красный*/
+	font-size: 15px;
+	text-decoration: none;
+	border:none;
+	font-family:'Open Sans Light';
+	
+
+}
+#footer #footer-center ul li a:hover 
+{
+	display: block;
+	text-align: left;
+	text-decoration: underline;
+	color: #ffffff;
+	font-size: 15px;
+	font-family:'Open Sans Light';
+}
+
+#footer #footer-center  ul .active a,
+#footer #footer-center  ul .active a:link,
+#footer #footer-center  ul .active a:visited,
+#footer #footer-center  ul .active a:active, 
+#footer #footer-center  ul .active a:hover 
+{
+	display: block;
+	text-align: left;
+	color: #ffffff;
+	text-decoration: underline;
+	font-family:'Open Sans Light';
+	font-size: 15px;
+}
+/**************************************************/
+
+#footer p
+{
+	margin:0;
+}
+
+/*****CATEGORIES BLOG******/
+.items-row 
+{
+    margin-bottom: 10px !important;
+    overflow: hidden;
+}
+ 
+.column-1, .column-2, .column-3 
+{
+    padding: 10px 5px;
+}
+ 
+.cols-2 .column-1 
+{
+    float: left;
+    width: 46%;
+}
+ 
+.cols-2 .column-2 
+{
+    float: right;
+    margin: 0;
+    width: 46%;
+}
+ 
+.cols-3 .column-1 
+{
+    float: left;
+    margin-right: 4%;
+    padding: 0 5px;
+    width: 29%;
+}
+.cols-3 .column-2
+{
+    float: left;
+    margin-left: 0;
+    padding: 0 5px;
+    width: 29%;
+}
+ 
+.cols-3 .column-3 
+{
+    float: right;
+    padding: 0 5px;
+    width: 29%;
+}

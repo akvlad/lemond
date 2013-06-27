@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="site" method="upgrade">
+    <name>Virtuemart - category description </name>
+    <author>Akchurin V.A.</author>
+    <version>1.0b</version>
+    <description>Модуль вывода описания категории</description>
+    <files>
+        <filename>mod_category_desc.xml</filename>
+        <filename module="mod_category_desc">mod_category_desc.php</filename>
+        <filename>index.html</filename>
+    </files>
+    <config>
+      <fields name="params">
+	<fieldset name="basic">
+	  <field
+		name="moduleclass_sfx"
+		type="text"
+		label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+		description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+	</fieldset>
+      </fields>
+    </config>
+</extension> 

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="site" method="upgrade">
+    <name>Virtuemart - merchant of day </name>
+    <author>Akchurin V.A.</author>
+    <version>1.0b</version>
+    <description>Модуль вывода товара дня</description>
+    <files>
+        <filename>mod_say_merchant.xml</filename>
+        <filename module="mod_day_merchant">mod_day_merchant.php</filename>
+        <filename>index.html</filename>
+	<folder>tmpl</folder>
+    </files>
+    <config>
+      <fields name="params">
+	<fieldset name="basic">
+	  <field type="sql" name="product1" label="Товар 1:" 
+	    query="SELECT p.virtuemart_product_id as key, concat(c.category_name,'-',p.product_name) as value FROM #__virtuemart_products_ru_ru as p LEFT JOIN #__virtuemart_product_categories as pc ON p.virtuemart_product_id=pc.virtuemart_product_id LEFT JOIN #__virtuemart_categories_ru_ru as c ON pc.virtuemart_category_id=c.virtuemart_category_id" key_field="key" value_field="value" />
+	  <field type="checkbox" name="is_product2" default="1" label="Отображать два товара? " value="1"/>
+	  <field type="sql" name="product2" label="Товар 2:" 
+	    query="SELECT p.virtuemart_product_id as key, concat(c.category_name,'-',p.product_name) as value FROM #__virtuemart_products_ru_ru as p LEFT JOIN #__virtuemart_product_categories as pc ON p.virtuemart_product_id=pc.virtuemart_product_id LEFT JOIN #__virtuemart_categories_ru_ru as c ON pc.virtuemart_category_id=c.virtuemart_category_id" key_field="key" value_field="value" />
+	  <field type="text" name="new_price" label="Новая цена (грн)" />
+	  <field type="filelist" name="template" label="Шаблон " directory="modules/mod_day_merchant/tmpl" />
+	</fieldset>
+      </fields>
+    </config>
+</extension> 

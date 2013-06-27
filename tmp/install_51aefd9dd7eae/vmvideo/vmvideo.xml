@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="plugin" group="vmcustom" >
+    <name>VMCustom - Video show</name>
+    <creationDate>June 04 2013</creationDate>
+    <author>Akchurin V.A.</author>
+    <authorUrl>n/a</authorUrl>
+    <copyright>Copyright (C) 2013-2020 Akchurin V.A. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <version>1.0b</version>
+    <description>Show video in virtuemart</description>
+    <files>
+        <filename plugin="carriagechars">vmvideo.php</filename>
+	<filename>install.sql</filename>
+	<filename>uninstall.sql</filename>
+    </files>
+	<install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8">install.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">uninstall.sql</file>
+		</sql>
+	</uninstall>
+    <params></params>
+</install>

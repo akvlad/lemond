@@ -1,0 +1,27 @@
+<div class="day_product_<?= $classSfx ?>">
+Меготовар дня
+<div id="product1-img"> 
+<?php echo $product1->images[0]->displayMediaThumb('class="browseProductImage"', false); 
+/*--- для большой картники - displayMediaFull --*/
+?></div>
+<div id="product2-img"> 
+<?php echo $product2->images[0]->displayMediaThumb('class="browseProductImage"', false); 
+/*--- для большой картники - displayMediaFull --*/
+//var_dump($product1->prices);
+?></div>
+<div id="price1"> 
+<?php echo $product1->prices['salesPrice']; 
+?></div>
+<div id="price2"> 
+<?php echo $product2->prices['salesPrice']; 
+?></div>
+
+<div id="price-summ"> 
+<?php echo $product1->prices['salesPrice']+$product2->prices['salesPrice']; 
+?></div>
+<div id="new-price"> 
+<?php echo $newPrice; 
+?></div>
+</div>
+
+
