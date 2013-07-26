@@ -18,9 +18,11 @@ defined('_JEXEC') or die('Restricted access');
  	private $scripts=array();
         private $activecat=0;
         private $itemID=0;
-        function CatPrintHelper($params, $virtuemart_categories, $class_sfx, $parentCategories,$itemID)
+        private $subcats=true;
+        function CatPrintHelper($params, $virtuemart_categories, $class_sfx, $parentCategories,$itemID,$subcats=true)
  	{
             $this->itemID=$itemID;
+            $this->subcats=$subcats;
             $this->compileCats($params, $virtuemart_categories, $class_sfx, $parentCategories);
  	}
  	function compileCats($params, $virtuemart_categories, $class_sfx, $parentCategories)
@@ -29,9 +31,14 @@ defined('_JEXEC') or die('Restricted access');
         $i=1;
         $module_class='virtuemartcategories'.$params->get('moduleclass_sfx');
         foreach ($virtuemart_categories as $category) {
+            //var_dump($category); die();
+                if(!$category->in_menu) continue;
         		$currScript='';
                 $active_menu = '';
-                $caturl = JRoute::_('index.php?option=com_virtuemart&view=category&virtuemart_category_id='.$category->virtuemart_category_id);
+                if($category->childs)
+                    $caturl = JRoute::_('index.php?option=com_virtuemart&view=category&virtuemart_category_id='.$category->childs[0]->virtuemart_category_id);
+                else
+                    $caturl = JRoute::_('index.php?option=com_virtuemart&view=category&virtuemart_category_id='.$category->virtuemart_category_id);
                 $images = $category->images;
                 if (1 == $params->get('show_images')) {
                         $image = $images[0]->file_url_thumbnail;
@@ -53,7 +60,7 @@ defined('_JEXEC') or die('Restricted access');
 									' #cat'.$category->virtuemart_category_id.'-li").mouseover(function(){
 										jQuery(".'.$module_class.
 											' .subcat").hide();';
-                if ($category->childs) {
+                if ($category->childs && $this->subcats) {
                         $this->compileSecondLevelCats($params, $category->childs, 
                         	$class_sfx, $parentCategories,'cat'.$category->virtuemart_category_id.'-subcat');
                         
@@ -75,6 +82,7 @@ defined('_JEXEC') or die('Restricted access');
         $i=1;
         $module_class='virtuemartcategories'.$params->get('moduleclass_sfx');
         foreach ($virtuemart_categories as $category) {
+            if(!$category->in_menu) continue;
         		$currScript='';
         		$classes=array();
                 $active_menu = '';
@@ -90,9 +98,9 @@ defined('_JEXEC') or die('Restricted access');
                 $isActive=false;
                 if (is_array($parentCategories)) {// Need this check because $parentCategories will be null if we're at category 0
                         if (in_array( $category->virtuemart_category_id, $parentCategories)) {
-                                $isActive=true;
+                                if(JRequest::getVar('view')=='category') { $isActive=true; $classes[] = "active"; }
                                 $this->activecat=$subcatID;
-                                $classes[] = "active";
+                                
                         }
                 }
                 if($i==1)

@@ -8,7 +8,7 @@
 }
 
 .jcarousel-skin-milkbox .jcarousel-container-horizontal {
-    width: 500px;
+    width: 600px;
     padding: 5px 40px;
 
 }
@@ -24,8 +24,8 @@
 }
 
 .jcarousel-skin-milkbox .jcarousel-clip-horizontal {
-    width: 500px;
-    height: 300px;
+    width: 600px;
+    height: 420px;
 }
 
 .jcarousel-skin-milkbox .jcarousel-clip-vertical {
@@ -35,20 +35,20 @@
 
 .jcarousel-skin-milkbox .jcarousel-item {
     width: 75px;
-    height: 300px;
+    height: 420px;
 }
 
 .jcarousel-skin-milkbox .jcarousel-item .popup-img{
-    width: 500px;
-    height: 300px;
+    width: 660px;
+    height: 415px;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
 }
 
 .jcarousel-skin-milkbox .jcarousel-item .popup-img img{
-    max-height: 250px;
-    max-width: 500px;
+    max-height: 350px;
+    max-width: 600px;
 }
 
 #facebox .popup-imgs .popup-thumbs{

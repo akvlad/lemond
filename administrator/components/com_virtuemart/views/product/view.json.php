@@ -59,6 +59,13 @@ class VirtuemartViewProduct extends JView {
 			if ($filter) $query .= " WHERE product_name LIKE '%". $this->db->getEscaped( $filter, true ) ."%' or product_sku LIKE '%". $this->db->getEscaped( $filter, true ) ."%' limit 0,10";
 			self::setRelatedHtml($query,'R');
 		}
+                else if ($this->type=='gift'){
+			$query = "SELECT virtuemart_product_id AS id, CONCAT(product_name, '::', product_sku) AS value
+				FROM #__virtuemart_products_".VMLANG."
+				 JOIN `#__virtuemart_products` AS p using (`virtuemart_product_id`)";
+			if ($filter) $query .= " WHERE product_name LIKE '%". $this->db->getEscaped( $filter, true ) ."%' or product_sku LIKE '%". $this->db->getEscaped( $filter, true ) ."%' limit 0,10";
+			self::setRelatedGiftHtml($query,'R');                    
+                }
 		else if ($this->type=='relatedcategories')
 		{
 			$query = "SELECT virtuemart_category_id AS id, CONCAT(category_name, '::', virtuemart_category_id) AS value
@@ -192,6 +199,28 @@ class VirtuemartViewProduct extends JView {
 			$html = '<div class="vm_thumb_image">
 				<span>'.$display.'</span>
 				'.$this->model->setEditCustomHidden($customs, $this->row).'
+				<div class="vmicon vmicon-16-remove"></div></div>';
+
+			$related->label = $html;
+
+		}
+	}
+        
+	function setRelatedGiftHtml($query,$fieldType) {
+
+		$this->db->setQuery($query);
+		$this->json = $this->db->loadObjectList();
+
+		$query = 'SELECT * FROM `#__virtuemart_customs` WHERE field_type ="'.$fieldType.'" ';
+		$this->db->setQuery($query);
+		$customs = $this->db->loadObject();
+		foreach ($this->json as &$related) {
+
+			$customs->custom_value = $related->id;
+                        $customs->field_type='gft';                        
+			$display = $this->model->displayProductCustomfieldBE($customs,$related->id,$this->row);
+			$html = '<div class="vm_thumb_image">
+				<span>'.$display.'</span>
 				<div class="vmicon vmicon-16-remove"></div></div>';
 
 			$related->label = $html;

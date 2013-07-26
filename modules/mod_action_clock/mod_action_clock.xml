@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="site" method="upgrade">
+    <name>Virtuemart - action clock </name>
+    <author>Akchurin V.A.</author>
+    <version>1.0b</version>
+    <description>Модуль вывода часов акции</description>
+    <files>
+        <filename>mod_action_clock.xml</filename>
+        <filename module="mod_action_clock">mod_action_clock.php</filename>
+        <filename>index.html</filename>
+	<folder>tmpl</folder>
+	<folder>css</folder>
+	<folder>js</folder>
+    </files>
+    <config>
+      <fields name="params">
+	<fieldset name="basic">
+	  <field name="final" type="calendar" default="1-08-2013" label="Дата окончания отсчета" description="" format="%d-%m-%Y" />
+	</fieldset>
+      </fields>
+    </config>
+</extension> 

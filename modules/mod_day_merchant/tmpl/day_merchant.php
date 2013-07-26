@@ -1,3 +1,10 @@
+<?php $doc->addScriptDeclaration('
+jQuery(document).ready(function(){
+    jQuery(".moduletable'.$moduleclass_sfx.' h3").click(function(){
+        window.location="'.JRoute::_('index.php?option=com_virtuemart&view=category&virtuemart_category_id=15').'";
+    })
+})
+') ?>
 <div class="day_product_<?= $classSfx ?>">
 	
 	<?php echo "<div id='product1-img' style=\"background:url('".$product1->images[0]->getThumbUrl()."') center center no-repeat transparent; background-size:contain; \"></div>"; 
@@ -50,6 +57,7 @@
                                                                 ctx.fillText("<?php echo $newPrice;?> грн.", 0, 15);
                                                             </script>
 	</div>
+        <?= $actprodModel->getBuyForm(array($actionProd)); ?>
 </div>
 
 

@@ -85,7 +85,7 @@ $document->addStyleDeclaration ('#facebox .content {display: block !important; h
 
 
 
-	<?php echo shopFunctionsF::getLoginForm ($this->cart, FALSE);
+	<?php /*echo shopFunctionsF::getLoginForm ($this->cart, FALSE);*/
 
 	// This displays the pricelist MUST be done with tables, because it is also used for the emails
 	echo $this->loadTemplate ('pricelist');
@@ -99,7 +99,7 @@ $document->addStyleDeclaration ('#facebox .content {display: block !important; h
 
 	// added in 2.0.8
 	?>
-	<div id="checkout-advertise-box">
+	<? /* <div id="checkout-advertise-box">
 		<?php
 		if (!empty($this->checkoutAdvertise)) {
 			foreach ($this->checkoutAdvertise as $checkoutAdvertise) {
@@ -111,21 +111,31 @@ $document->addStyleDeclaration ('#facebox .content {display: block !important; h
 			}
 		}
 		?>
-	</div>
+	</div> */?>
 
 	<form method="post" id="checkoutForm" name="checkoutForm" action="<?php echo JRoute::_ ('index.php?option=com_virtuemart&view=cart' . $taskRoute, $this->useXHTML, $this->useSSL); ?>">
+               
+            <table>
+		<?php foreach ($this->userFields as $userFieldset) { foreach ($userFieldset['fields'] as $userField){ ?>
+                    <?php if(strpos($userField['type'],'plugin')===false) { ?>
+                    <tr><td><?= $userField['title']; ?> 
+                        <?php if($this->msg[$userField['name']]){?> <p><?= $this->msg[$userField['name']] ?></p> <? }?>  </td> 
+                        <td><?= $userField['formcode'] ?></td></tr>
+                    <?php } else { ?>
+                    <tr><td colspan="2"><?= $userField['formcode'] ?></td></tr>
+                    <?php } } } ?>
+                </table>
 
-		<?php // Leave A Comment Field ?>
-		<div class="customer-comment marginbottom15">
-			<span class="comment"><?php echo JText::_ ('COM_VIRTUEMART_COMMENT_CART'); ?></span><br/>
-			<textarea class="customer-comment" name="customer_comment" cols="60" rows="1"><?php echo $this->cart->customer_comment; ?></textarea>
-		</div>
-		<?php // Leave A Comment Field END ?>
 
-
-
-		<?php // Continue and Checkout Button ?>
-		<div class="checkout-button-top">
+		<?php echo $this->loadTemplate ('select_shipment'); // Continue and Checkout Button ?>
+                <?php echo $this->loadTemplate ('select_payment'); // Continue and Checkout Button ?>
+ <?php // Leave A Comment Field ?>
+        <div class="customer-comment marginbottom15">
+             <span class="comment"><?php echo JText::_ ('COM_VIRTUEMART_COMMENT_CART'); ?></span><br/>
+             <textarea class="customer-comment" name="customer_comment" cols="60" rows="1"><?php echo $this->cart->customer_comment; ?></textarea>
+         </div>
+         <?php // Leave A Comment Field END ?>
+            <div class="checkout-button-top">
 
 			<?php // Terms Of Service Checkbox
 			if (!class_exists ('VirtueMartModelUserfields')) {
@@ -164,13 +174,16 @@ $document->addStyleDeclaration ('#facebox .content {display: block !important; h
 				</label>
 				<?php
 			}
+                        
 			echo $this->checkout_link_html;
 			?>
 		</div>
 		<?php // Continue and Checkout Button END ?>
+            
 		<input type='hidden' id='STsameAsBT' name='STsameAsBT' value='<?php echo $this->cart->STsameAsBT; ?>'/>
-		<input type='hidden' name='task' value='<?php echo $this->checkout_task; ?>'/>
+		<input type='hidden' name='task' value='checkout'/>
 		<input type='hidden' name='option' value='com_virtuemart'/>
 		<input type='hidden' name='view' value='cart'/>
+                <?php echo JHTML::_( 'form.token' ); ?>
 	</form>
 </div>

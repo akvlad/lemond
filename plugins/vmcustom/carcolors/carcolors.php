@@ -24,7 +24,7 @@ if (!class_exists('vmCustomPlugin')) require(JPATH_VM_PLUGINS . DS . 'vmcustompl
 jimport( 'joomla.form.fields.media' );
 
 class plgVmCustomcarcolors extends vmCustomPlugin {
-    protected static  $deadlock;
+    private static  $deadlock;
             function __construct(& $subject, $config) {
 
 		parent::__construct($subject, $config);
@@ -61,7 +61,8 @@ class plgVmCustomcarcolors extends vmCustomPlugin {
 	
 	function my_getPluginCustomData($field, $product_id){
 		$db=& JFactory::getDBO();
-		$query='SELECT color_name, link FROM #__virtuemart_product_custom_plg_carcolors';
+		$query='SELECT color_name, link FROM #__virtuemart_product_custom_plg_carcolors WHERE 
+                    virtuemart_product_id='.$product_id;
 		$db->setQuery($query);
 		$this->params->items=$db->loadObjectList();
 		$productModel=VmModel::getModel('product');
@@ -80,6 +81,18 @@ class plgVmCustomcarcolors extends vmCustomPlugin {
 		// $this->tableFields = array ( 'id', 'virtuemart_custom_id', 'custom_specification_default1', 'custom_specification_default2' );
 		$this->getCustomParams($field);
 		$this->my_getPluginCustomData($field, $product_id);
+                $doc=&JFactory::getDocument();
+                $html='<script type="text/javascript">
+function func(e){
+        var $e=jQuery(e.target).closest(".colors-opened, .colors-closed");
+        if($e.hasClass("colors-opened")){
+            $e.removeClass("colors-opened").addClass("colors-closed");
+        }else{
+            $e.addClass("colors-opened").removeClass("colors-closed");
+        }
+    }        
+</script>';
+                $html.='<div class="colors-closed"><input type="button" class="title" onclick="func(event)" value="Цвета"/>';
 		for($i=0;$i<10;++$i){
 			$html.='<p>Цвет: ';
 			$html.='<input type="text" name="plugin_param['.$row.']['.$this->_name.'][colors]['.$i.'][color_name]" 
@@ -90,7 +103,8 @@ class plgVmCustomcarcolors extends vmCustomPlugin {
 				$text = 'text', $selected = ( isset($this->params->items[$i]) ? $this->params->items[$i]->link : '' ) );
 		}
 		$html .='<input type="hidden" value="'.$this->virtuemart_custom_id.'" name="plugin_param['.$row.']['.$this->_name.'][virtuemart_custom_id]">';
-		$retValue .= $html  ;
+		$html .='</div>';
+                $retValue .= $html  ;
 		$row++;
 		return true;
 	}
@@ -113,6 +127,8 @@ class plgVmCustomcarcolors extends vmCustomPlugin {
 		//$html =JTEXT::_($group->custom_title) ;
 
 		$group->display .=  $this->renderByLayout('default',array($this->params,&$idx,&$group ) );*/
+                
+                
                 
                 self::$deadlock = true;
                 

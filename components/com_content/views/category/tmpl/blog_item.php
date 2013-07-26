@@ -23,25 +23,34 @@ JHtml::_('behavior.framework');
 <div class="system-unpublished">
 <?php endif; ?>
 <?php if ($params->get('show_create_date')) : ?>
-		<dd class="create">
-		<?php $months=Array(1=>'января',
-                    2=>"февраля", 
-                    3=>"марта",
-                    4=>"апреля",
-                    5=>"мая",
-                    6=>"июня", 
-                    7=>"июля", 
-                    8=>"августа", 
-                    9=>"сентября", 
-                    10=>"октября", 
-                    11=>"ноября", 
-                    12=>"декабря");
-                    $creat_date=date_parse($this->item->created);
-                    echo $creat_date['day'].' '.$months[$creat_date['month']].' '.$creat_date['year'];
-                    //echo var_dump($this->item->created);
-//echo JText::sprintf('COM_CONTENT_CREATED_DATE_ON', JHtml::_('date', $this->item->created, JText::_('DATE_FORMAT_LC2'))); 
-                ?>
-		</dd>
+	
+	<div class="dd-left">
+	</div>
+	<dd class="create">
+			<?php $months=Array(1=>'января',
+				2=>"февраля", 
+				3=>"марта",
+				4=>"апреля",
+				5=>"мая",
+				6=>"июня", 
+				7=>"июля", 
+				8=>"августа", 
+				9=>"сентября", 
+				10=>"октября", 
+				11=>"ноября", 
+				12=>"декабря");
+				$creat_date=date_parse($this->item->created);
+				echo $creat_date['day'].' '.$months[$creat_date['month']].' '.$creat_date['year'];
+				//echo var_dump($this->item->created);
+				//echo JText::sprintf('COM_CONTENT_CREATED_DATE_ON', JHtml::_('date', $this->item->created, JText::_('DATE_FORMAT_LC2'))); 
+			?>
+	</dd>
+	<div class="dd-right">
+	</div>
+	<div class="border-up"></div>
+	<div class="cl"></div>
+	
+<div class="main-item">	
 <?php endif; ?>
     <?php if ($params->get('show_title')) : ?>
 	<h2>
@@ -187,6 +196,6 @@ JHtml::_('behavior.framework');
 <?php if ($this->item->state == 0) : ?>
 </div>
 <?php endif; ?>
-
+</div>
 <div class="item-separator"></div>
 <?php echo $this->item->event->afterDisplayContent; ?>

@@ -23,6 +23,8 @@ JHtml::_('behavior.framework');
 <div class="system-unpublished">
 <?php endif; ?>
 <?php if ($params->get('show_create_date')) : ?>
+		<div class="dd-left">
+		</div>
 		<dd class="create">
 		<?php $months=Array(1=>'января',
                     2=>"февраля", 
@@ -42,9 +44,12 @@ JHtml::_('behavior.framework');
 //echo JText::sprintf('COM_CONTENT_CREATED_DATE_ON', JHtml::_('date', $this->item->created, JText::_('DATE_FORMAT_LC2'))); 
                 ?>
 		</dd>
+		<div class="dd-right">
+		</div>
+		<div class="cl"></div>
 <?php endif; ?>
     <?php if ($params->get('show_title')) : ?>
-	<h2>
+	<h2 class="h2-colom-item">
 		<?php if ($params->get('link_titles') && $params->get('access-view')) : ?>
 			<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid)); ?>">
 			<?php echo $this->escape($this->item->title); ?></a>
@@ -152,11 +157,10 @@ JHtml::_('behavior.framework');
 <?php endif; ?>
        <? if($params->get('intro_as_link')==1) { 
            $link = JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid));
-       echo "<a href=\"$link\">"; } ?>                  
+       echo "<a  class=\"intro-all\" href=\"$link\">"; } ?>                  
 <?php echo $this->item->introtext; ?>
         <? if($params->get('intro_as_link')==1) { 
        echo "</a>"; } ?>  
-
 <?php if ($params->get('show_readmore') && $this->item->readmore) :
 	if ($params->get('access-view')) :
 		$link = JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid));

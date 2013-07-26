@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="plugin" group="vmshipment" >
+    <name>city centre shipment plugin</name>
+    <creationDate>July 17 2013</creationDate>
+    <author>Akchurin V.A.</author>
+    <authorUrl>n/a</authorUrl>
+    <copyright>n/a</copyright>
+    <license>n/a</license>
+    <version>1.0b</version>
+    <description>shipment to city centre</description>
+    <files>
+		<filename>index.html</filename>
+	<filename plugin="city_centre">city_centre.php</filename>
+    </files>
+	<param name="data" type="textarea"    label="Городаб точки и время" description="" />
+    </params>
+
+</install>

@@ -12,6 +12,16 @@ defined('_JEXEC') or die;
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
 
 ?>
+<? /*<div id="breadcrambs" class="newsb">
+<?php $modules = JModuleHelper::getModules('breadcrambs-action'); ?>
+<?php if (!empty($modules)) : ?>
+    <?php foreach ($modules as $module) : ?>
+        <?php JModuleHelper::renderModule($module); ?>
+        <?php echo $module->content; ?>
+    <?php endforeach; ?>
+<?php endif; ?>
+</div>*/?>
+
 <div class="blog<?php echo $this->pageclass_sfx;?>">
 <?php if ($this->params->get('show_page_heading')) : ?>
 	<h1>
@@ -20,7 +30,7 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
 	<?php endif; ?>
 
 	<?php if ($this->params->get('show_category_title', 1) or $this->params->get('page_subheading')) : ?>
-	<h2>
+	<h2 class="h2-cat-name">
 		<?php echo $this->escape($this->params->get('page_subheading')); ?>
 		<?php if ($this->params->get('show_category_title')) : ?>
 			<span class="subheading-category"><?php echo $this->category->title;?></span>
@@ -86,6 +96,7 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
 	<?php $counter++; ?>
 	<?php if (($rowcount == $this->columns) or ($counter ==$introcount)): ?>
 				<span class="row-separator"></span>
+				<div class="cl"></div>
 				</div>
 
 			<?php endif; ?>
@@ -113,7 +124,7 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
 	<?php endif; ?>
 
 <?php if (($this->params->def('show_pagination', 1) == 1  || ($this->params->get('show_pagination') == 2)) && ($this->pagination->get('pages.total') > 1)) : ?>
-		<div class="pagination">
+		<div class="pagination blog-pagination">
 						<?php  if ($this->params->def('show_pagination_results', 1)) : ?>
 						<p class="counter">
 								<?php echo $this->pagination->getPagesCounter(); ?>

@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
 require_once('printcategories.php');
 
 echo '<div class="virtuemartcategories'.$params->get('moduleclass_sfx').'">';
-$printHelper=new CatPrintHelper($params, $categories, $class_sfx, $parentCategories,$itemID);
+$printHelper=new CatPrintHelper($params, $categories, $class_sfx, $parentCategories,$itemID,$subcats);
 $printHelper->printFirstLevel();
 $printHelper->printSecondLevel();
 $printHelper->applyScripts($params->get('moduleclass_sfx'));

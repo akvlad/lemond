@@ -136,6 +136,12 @@
 				label="JGLOBAL_NUM_LEADING_ARTICLES_LABEL"
 				size="3"
 			/>
+                        
+                        <field name="template_name" type="text"
+				description="Название шаблона вывода"
+				label="Шаблон вывода"
+                                default="default"
+			/>
 
 			<field name="num_intro_articles" type="text"
 				description="JGLOBAL_NUM_INTRO_ARTICLES_DESC"

@@ -60,6 +60,23 @@ class VirtuemartViewManufacturer extends VmView {
 			$mediaModel = VmModel::getModel('media');
 			$mediaModel -> setId($manufacturer->virtuemart_media_id);
 			$image = $mediaModel->getFile('manufacturer','image');
+                        
+                        
+                        $prodModel=  VmModel::getModel('product');
+                        
+                        $accessories=  unserialize($manufacturer->accessories);
+                        //var_dump($accessories); die();
+                        foreach($accessories as &$acc){
+                            $acc['prod']=$prodModel->getProduct($acc['custom_value'],false, false, TRUE, 1,false);
+                            $prodModel->addImages($acc['prod']);
+                        }
+                        //var_dump($accessories); die();
+                        $gift = $manufacturer->gift;     
+                        
+                        if($gift){
+                            $gift=$prodModel->getProduct($gift,false, false, TRUE, 1,false);
+                            $prodModel->addImages($gift);
+                        }
 
 			$manufacturerCategories = $categoryModel->getManufacturerCategories(false,true);
 			$this->assignRef('manufacturerCategories',	$manufacturerCategories);
@@ -69,6 +86,10 @@ class VirtuemartViewManufacturer extends VmView {
 			if(!class_exists('VirtueMartModelVendor')) require(JPATH_VM_ADMINISTRATOR.DS.'models'.DS.'vendor.php');
 			$virtuemart_vendor_id = VirtueMartModelVendor::getLoggedVendor();
 			$this->assignRef('virtuemart_vendor_id', $virtuemart_vendor_id);
+                        $this->assignRef('accessories', $accessories);
+                        $this->assignRef('gift', $gift);
+                        
+                        
 
 
 		}

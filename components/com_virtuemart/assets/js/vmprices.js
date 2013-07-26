@@ -109,16 +109,42 @@ if(typeof Virtuemart === "undefined")
                                                 targetForm.find('.addtocart-button-inactive').hide();
                                                 var cart = jQuery(this);
                                                 jQuery("#facebox .update-product").click(function (e) { 
-                                                    Virtuemart.updatecart(cart,e.target);
-                                                    /*if ($minicart.data('timeout')){
-                                                            clearTimeout($minicart.data('timeout'));
-                                                        }
-                                                    var timeout = setTimeout(function(){
-                                                        productsRefresh();
-                                                    },1000);
-                                                    $minicart.data('timeout',timeout);*/
+                                                    Virtuemart.delfromcart(jQuery(e.target).closest('form'),e.target);
+
                                                     return false;
                                                 });
+                                                var intervalID=0;
+                                               jQuery("#facebox input[type=text]").focusin('change',function (e) { 
+                                                    var $e=jQuery(e.target);
+                                                    intervalID=setInterval(function(){
+                                                            var price=parseFloat($e.attr('price'))*parseInt($e.val());
+                                                            if(isNaN(price)) price=0;
+                                                            $e.closest('.prod-item').find('.PricesalesPrice').html(
+                                                            price+' грн.'
+                                                        )},500);
+                                                    
+                                                    
+                                                    return false;
+                                                });
+                                                jQuery("#facebox input[type=text]").focusout(function (e) { 
+                                                    clearInterval(intervalID);
+                                                    Virtuemart.updatecart(cart,e.target);
+                                                    return false;
+                                                });
+                                                jQuery("#facebox .buy-it").click(function(e){
+                                                        var href=jQuery("#facebox .buy-it a").attr('href');
+                                                        window.setTimeout(function(){
+                                                            window.location=href; },500);
+                                                        return false;
+                                                });
+                                                minicart.productsRefresh();
+                                                jQuery('form.product .addtocart-button-inactive').hide();
+                                                jQuery('form.product .addtocart-button').show();
+                                                jQuery('.popup form input[name=cart_virtuemart_product_id]').each(function(ind, el){
+                                                    $e=jQuery(el);
+                                                    jQuery('form.product-'+$e.val()+' .addtocart-button-inactive').show();
+                                                    jQuery('form.product-'+$e.val()+' .addtocart-button').hide();
+                                                })
                                             
 					});
 					$.ajaxSetup({ cache: true });
@@ -131,7 +157,7 @@ if(typeof Virtuemart === "undefined")
                                         var targetForm=form;
 					$.getJSON(vmSiteurl+'index.php?option=com_virtuemart&nosef=1&view=cart&task=updateJS&format=json'+vmLang,encodeURIComponent(datas),
 					function(datas, textStatus) {
-						if(datas.stat ==1){
+						/*if(datas.stat ==1){
 							//var value = form.find('.quantity-input').val() ;
 							var txt = form.find(".pname").val()+' '+vmCartText;
 													$.facebox.settings.closeImage = closeImage;
@@ -158,7 +184,7 @@ if(typeof Virtuemart === "undefined")
                                                 addForm.show();
                                                 targetForm.find('.addtocart-button').hide(); 
                                                 var cart = jQuery(this);
-                                                jQuery("#facebox .update-product").click(function (e) { 
+                                                jQuery("#facebox input[type=text]").click(function (e) { 
                                                     Virtuemart.updatecart(cart,e.target);
                                                     /*if ($minicart.data('timeout')){
                                                             clearTimeout($minicart.data('timeout'));
@@ -166,11 +192,10 @@ if(typeof Virtuemart === "undefined")
                                                     var timeout = setTimeout(function(){
                                                         
                                                     },1000);
-                                                    $minicart.data('timeout',timeout);*/
+                                                    $minicart.data('timeout',timeout);
                                                     return false;
-                                                });
+                                                });*/
                                                 minicart.productsRefresh();
-                                                //productsRefresh();
 					});
 					$.ajaxSetup({ cache: true });
 			},
@@ -209,7 +234,21 @@ if(typeof Virtuemart === "undefined")
                                                 addForm.show();
                                                 targetForm.find('.addtocart-button').hide();   
                                                 var cart = jQuery(this);
-                                                jQuery("#facebox .update-product").click(function (e) { 
+                                                var intervalID=0;
+                                                jQuery("#facebox input[type=text]").focusin('change',function (e) { 
+                                                    var $e=jQuery(e.target);
+                                                    intervalID=setInterval(function(){
+                                                            var price=parseFloat($e.attr('price'))*parseInt($e.val());
+                                                            if(isNaN(price)) price=0;
+                                                            $e.closest('.prod-item').find('.PricesalesPrice').html(
+                                                            price+' грн.'
+                                                        )},500);
+                                                    
+                                                    
+                                                    return false;
+                                                });
+                                                jQuery("#facebox input[type=text]").focusout(function (e) { 
+                                                    clearInterval(intervalID);
                                                     Virtuemart.updatecart(cart,e.target);
                                                     /*if ($minicart.data('timeout')){
                                                             clearTimeout($minicart.data('timeout'));
@@ -219,6 +258,18 @@ if(typeof Virtuemart === "undefined")
                                                     },1000);
                                                     $minicart.data('timeout',timeout);*/
                                                     return false;
+                                                });
+
+                                                jQuery("#facebox .update-product").click(function (e) { 
+                                                    Virtuemart.delfromcart(jQuery(e.target).closest('form'),e.target);
+
+                                                    return false;
+                                                });
+                                                jQuery("#facebox .buy-it").click(function(e){
+                                                        var href=jQuery("#facebox .buy-it a").attr('href');
+                                                        window.setTimeout(function(){
+                                                            window.location=href; },500);
+                                                        return false;
                                                 });
                                             
                                                 //productsRefresh();

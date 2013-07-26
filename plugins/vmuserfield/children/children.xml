@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="plugin" group="vmuserfield" >
+    <name>VMCustom - Video show</name>
+    <creationDate>June 16 2013</creationDate>
+    <author>Akchurin V.A.</author>
+    <authorUrl>n/a</authorUrl>
+    <copyright>Copyright (C) 2013-2020 Akchurin V.A. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <version>1.0b</version>
+    <description>Show video in virtuemart</description>
+    <files>
+        <filename plugin="children">children.php</filename>
+    </files>
+    <params></params>
+</install>

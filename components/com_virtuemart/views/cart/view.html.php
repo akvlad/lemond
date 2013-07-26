@@ -45,7 +45,7 @@ class VirtueMartViewCart extends VmView {
 
 		if (!class_exists('VirtueMartCart'))
 		require(JPATH_VM_SITE . DS . 'helpers' . DS . 'cart.php');
-		$cart = VirtueMartCart::getCart();
+		$cart = VirtueMartCart::getCart($setCart=true, $options = array(),$pictures=true);
 		//$cart->getCartPrices();
 		$this->assignRef('cart', $cart);
 
@@ -66,7 +66,6 @@ class VirtueMartViewCart extends VmView {
 		$document->setTitle(JText::_('COM_VIRTUEMART_CART_SELECTCOUPON'));
 
 		} else */
-		if ($layoutName == 'select_shipment') {
 			$cart->prepareCartViewData();
 			if (!class_exists('vmPSPlugin')) require(JPATH_VM_PLUGINS . DS . 'vmpsplugin.php');
 			JPluginHelper::importPlugin('vmshipment');
@@ -75,7 +74,6 @@ class VirtueMartViewCart extends VmView {
 			$pathway->addItem(JText::_('COM_VIRTUEMART_CART_OVERVIEW'), JRoute::_('index.php?option=com_virtuemart&view=cart'));
 			$pathway->addItem(JText::_('COM_VIRTUEMART_CART_SELECTSHIPMENT'));
 			$document->setTitle(JText::_('COM_VIRTUEMART_CART_SELECTSHIPMENT'));
-		} else if ($layoutName == 'select_payment') {
 
 			/* Load the cart helper */
 			//			$cartModel = VmModel::getModel('cart');
@@ -85,7 +83,7 @@ class VirtueMartViewCart extends VmView {
 			$pathway->addItem(JText::_('COM_VIRTUEMART_CART_OVERVIEW'), JRoute::_('index.php?option=com_virtuemart&view=cart'));
 			$pathway->addItem(JText::_('COM_VIRTUEMART_CART_SELECTPAYMENT'));
 			$document->setTitle(JText::_('COM_VIRTUEMART_CART_SELECTPAYMENT'));
-		} else if ($layoutName == 'order_done') {
+		if ($layoutName == 'order_done') {
 
 			$this->lOrderDone();
 
@@ -156,10 +154,27 @@ class VirtueMartViewCart extends VmView {
 		// @max: quicknirty
 		$cart->setCartIntoSession();
 		shopFunctionsF::setVmTemplate($this, 0, 0, $layoutName);
+                
+                $this->assign('userFields',$this->getUserFields());
 
 // 		vmdebug('my cart ',$cart);
 		parent::display($tpl);
 	}
+        
+        private function getUserFields(){
+            $userModel=  VmModel::getModel('user');
+            $user= $userModel->getCurrentUser();
+            //$user=  &JFactory::getUser();
+            return $userModel->getUserInfoInUserFields('', 'BT');
+        }
+        
+        public function setErrorMessages($msg){
+            if(isset($this->msg)){
+                array_merge($this->msg, $msg);
+            }
+            else
+                $this->assign('msg', $msg);
+        }
 
 
 
@@ -209,6 +224,7 @@ class VirtueMartViewCart extends VmView {
 		JPluginHelper::importPlugin('vmshipment');
 		$dispatcher = JDispatcher::getInstance();
 		$returnValues = $dispatcher->trigger('plgVmDisplayListFEShipment', array( $this->cart, $selectedShipment, &$shipments_shipment_rates));
+                ksort($shipments_shipment_rates);
 		// if no shipment rate defined
 		$found_shipment_method =count($shipments_shipment_rates);
 		$shipment_not_found_text = JText::_('COM_VIRTUEMART_CART_NO_SHIPPING_METHOD_PUBLIC');

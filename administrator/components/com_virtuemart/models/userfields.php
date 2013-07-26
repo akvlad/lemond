@@ -179,7 +179,7 @@ class VirtueMartModelUserfields extends VmModel {
 
 			$this->_data->load((int)$this->_id);
 		}
-
+                
 		if(strpos($this->_data->type,'plugin')!==false){
   			JPluginHelper::importPlugin('vmuserfield');
   			$dispatcher = JDispatcher::getInstance();
@@ -468,13 +468,19 @@ class VirtueMartModelUserfields extends VmModel {
 		$skips = array('address_type');
 
 		if((!$register or $type =='ST') and $layoutName !='edit'){
-			$skips[] = 'name';
-			$skips[] = 'username';
-			$skips[] = 'password';
-			$skips[] = 'password2';
+			//$skips[] = 'name';
+			//$skips[] = 'username';
+			//$skips[] = 'password';
+			//$skips[] = 'password2';
 			$skips[] = 'user_is_vendor';
 			$skips[] = 'agreed';
 		}
+        $jUser = &JFactory::getUser();
+        if($jUser->id > 0){
+            $skips[]='password';
+            $skips[]='password2';
+            
+        }
 
 		//Here we get the fields
 		if ($type == 'BT') {
@@ -529,7 +535,7 @@ class VirtueMartModelUserfields extends VmModel {
 	{
 	    // stAn, we can't really create cache per sql as we want to create named array as well
 		$cache_hash = md5($_sec.serialize($_switches).serialize($_skip).$this->_selectedOrdering.$this->_selectedOrderingDir); 
-		if (isset(self::$_cache_ordered[$cache_hash])) return self::$_cache_ordered[$cache_hash]; 
+		//if (isset(self::$_cache_ordered[$cache_hash])) return self::$_cache_ordered[$cache_hash]; 
 	
 		$_q = 'SELECT * FROM `#__virtuemart_userfields` WHERE 1 = 1 ';
 
@@ -862,7 +868,7 @@ class VirtueMartModelUserfields extends VmModel {
 
 							JPluginHelper::importPlugin('vmuserfield');
 							$dispatcher = JDispatcher::getInstance();
-							$dispatcher->trigger('plgVmOnUserfieldDisplay',array($_prefix, $_fld,isset($_userData['virtuemart_user_id'])?$_userData['virtuemart_user_id']:0,  &$_return) );
+							$dispatcher->trigger('plgVmOnUserfieldDisplay',array($_prefix, $_fld,isset($_userData['virtuemart_user_id'])?$_userData:0,  &$_return) );
 							break;
 						}
 					switch( $_fld->type ) {
@@ -1139,6 +1145,7 @@ class VirtueMartModelUserfields extends VmModel {
 		foreach($fieldIds as $fieldId) {
 			$_fieldName = $this->getNameByID($fieldId);
 			$field->load($fieldId);
+                        
 
 			if ($field->type != 'delimiter') {
 				// Alter the user_info table

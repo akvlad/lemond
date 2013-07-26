@@ -56,6 +56,11 @@
 					label="MOD_BREADCRUMBS_FIELD_HOMETEXT_LABEL"
 					description="MOD_BREADCRUMBS_FIELD_HOMETEXT_DESC" />
 				<field
+					name="crumbsFilter"
+					type="text"
+					label="Не показывать:"
+					description="Введите номера (по счету от главной, через запятую) крошек, которые не показывать" />
+				<field
 					name="showLast"
 					type="radio"
 					default="1"

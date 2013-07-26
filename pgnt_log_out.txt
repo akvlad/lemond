@@ -1,153 +1,23 @@
-index.php?Itemid=169&option=com_virtuemart&start=0&limit=1000\r\nAHAHAHA=Array
+index.php?start=0&limit=1000\r\nAHAHAHA=Array
 (
     [path] => index.php
-    [query] => Itemid=169&option=com_virtuemart&start=0&limit=1000
+    [query] => start=0&limit=1000
 )
 JURI Object
 (
-    [_uri:protected] => index.php?Itemid=169&option=com_virtuemart&start=0&limit=1000
+    [_uri:protected] => index.php?start=0&limit=1000
     [_scheme:protected] => 
     [_host:protected] => 
     [_port:protected] => 
     [_user:protected] => 
     [_pass:protected] => 
-    [_path:protected] => /kolyaski/progulochnije.html
-    [_query:protected] => 
+    [_path:protected] => /
+    [_query:protected] => start=0&limit=1000
     [_fragment:protected] => 
     [_vars:protected] => Array
         (
             [start] => 0
             [limit] => 1000
-        )
-
-    [_errors:protected] => Array
-        (
-        )
-
-)
-index.php?Itemid=169&option=com_virtuemart&limitstart=9\r\nAHAHAHA=Array
-(
-    [path] => index.php
-    [query] => Itemid=169&option=com_virtuemart&limitstart=9
-)
-JURI Object
-(
-    [_uri:protected] => index.php?Itemid=169&option=com_virtuemart&limitstart=9
-    [_scheme:protected] => 
-    [_host:protected] => 
-    [_port:protected] => 
-    [_user:protected] => 
-    [_pass:protected] => 
-    [_path:protected] => /kolyaski/progulochnije.html
-    [_query:protected] => 
-    [_fragment:protected] => 
-    [_vars:protected] => Array
-        (
-            [start] => 9
-        )
-
-    [_errors:protected] => Array
-        (
-        )
-
-)
-index.php?Itemid=169&option=com_virtuemart&limitstart=27\r\nAHAHAHA=Array
-(
-    [path] => index.php
-    [query] => Itemid=169&option=com_virtuemart&limitstart=27
-)
-JURI Object
-(
-    [_uri:protected] => index.php?Itemid=169&option=com_virtuemart&limitstart=27
-    [_scheme:protected] => 
-    [_host:protected] => 
-    [_port:protected] => 
-    [_user:protected] => 
-    [_pass:protected] => 
-    [_path:protected] => /kolyaski/progulochnije.html
-    [_query:protected] => 
-    [_fragment:protected] => 
-    [_vars:protected] => Array
-        (
-            [start] => 27
-        )
-
-    [_errors:protected] => Array
-        (
-        )
-
-)
-index.php?Itemid=169&option=com_virtuemart&limitstart=9\r\nAHAHAHA=Array
-(
-    [path] => index.php
-    [query] => Itemid=169&option=com_virtuemart&limitstart=9
-)
-JURI Object
-(
-    [_uri:protected] => index.php?Itemid=169&option=com_virtuemart&limitstart=9
-    [_scheme:protected] => 
-    [_host:protected] => 
-    [_port:protected] => 
-    [_user:protected] => 
-    [_pass:protected] => 
-    [_path:protected] => /kolyaski/progulochnije.html
-    [_query:protected] => 
-    [_fragment:protected] => 
-    [_vars:protected] => Array
-        (
-            [start] => 9
-        )
-
-    [_errors:protected] => Array
-        (
-        )
-
-)
-index.php?Itemid=169&option=com_virtuemart&limitstart=18\r\nAHAHAHA=Array
-(
-    [path] => index.php
-    [query] => Itemid=169&option=com_virtuemart&limitstart=18
-)
-JURI Object
-(
-    [_uri:protected] => index.php?Itemid=169&option=com_virtuemart&limitstart=18
-    [_scheme:protected] => 
-    [_host:protected] => 
-    [_port:protected] => 
-    [_user:protected] => 
-    [_pass:protected] => 
-    [_path:protected] => /kolyaski/progulochnije.html
-    [_query:protected] => 
-    [_fragment:protected] => 
-    [_vars:protected] => Array
-        (
-            [start] => 18
-        )
-
-    [_errors:protected] => Array
-        (
-        )
-
-)
-index.php?Itemid=169&option=com_virtuemart&limitstart=27\r\nAHAHAHA=Array
-(
-    [path] => index.php
-    [query] => Itemid=169&option=com_virtuemart&limitstart=27
-)
-JURI Object
-(
-    [_uri:protected] => index.php?Itemid=169&option=com_virtuemart&limitstart=27
-    [_scheme:protected] => 
-    [_host:protected] => 
-    [_port:protected] => 
-    [_user:protected] => 
-    [_pass:protected] => 
-    [_path:protected] => /kolyaski/progulochnije.html
-    [_query:protected] => 
-    [_fragment:protected] => 
-    [_vars:protected] => Array
-        (
-            [start] => 27
         )
 
     [_errors:protected] => Array

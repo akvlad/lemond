@@ -60,9 +60,10 @@
 		<div id="wrapper">
 				<div id="content">
 					<jdoc:include type="component" style="XHTML" />
-                                        <div class="cl">
-				</div>
-                                        <jdoc:include type="modules" name="some-catalogue" style="XHTML" />
+                    <div class="cl"></div>
+                    <jdoc:include type="modules" name="some-catalogue" style="XHTML" />
+					<jdoc:include type="modules" name="up" style="XHTML" />
+
 				</div>
 				<div class="cl">
 				</div>

@@ -32,6 +32,7 @@
 {
 	width:  935px;
     height: 205px;
+	padding: 5px!important;
 }
 .jcarousel-skin-lemond-access-slide .jcarousel-clip-vertical {
     width:  75px;
@@ -51,9 +52,16 @@
 .jcarousel-skin-lemond-access-slide .jcarousel-item-horizontal {
 	margin-left: 0;
     margin-right: 30px;
-	
+	height: 185px;
+	padding: 5px;
+	width: 140px;
 }
-
+.jcarousel-skin-lemond-access-slide .jcarousel-item-horizontal:hover
+{
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+}
 .jcarousel-skin-lemond-access-slide .jcarousel-direction-rtl .jcarousel-item-horizontal {
 	margin-left: 10px;
     margin-right: 0;

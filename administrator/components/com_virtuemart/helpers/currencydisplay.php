@@ -302,7 +302,7 @@ class CurrencyDisplay {
 	/*	if($this->_vendorCurrency_numeric===756){ // and $this->_numeric_code!==$this->_vendorCurrency_numeric){
 			$price = round((float)$price * 2,1) * 0.5 * (float)$quantity;
 		} else {*/
-			$price = round((float)$price,$nb) * (float)$quantity;
+			$price = round((float)$price,(int)$nb) * (float)$quantity;
 		//}
 		$price = $this->convertCurrencyTo($currencyId,$price,$inToShopCurrency);
 
@@ -364,6 +364,8 @@ class CurrencyDisplay {
 		} else {
 			$price = $product_price;
 		}
+                
+                //if($name=='discountAmount') {var_dump($this->_priceConfig[$name]); die();}
 
 		//This could be easily extended by product specific settings
 		if(!empty($this->_priceConfig[$name][0])){
@@ -380,6 +382,7 @@ class CurrencyDisplay {
 			if($forceNoLabel) {
 				return '<div class="Price'.($class=='' ? $name : $class).'" style="display : '.$vis.';" ><span class="Price'.($class=='' ? $name : $class).'" >'.$priceFormatted.'</span></div>';
 			}
+                        
 			$descr = '';
 			if($this->_priceConfig[$name][2]) $descr = JText::_($description);
 			// 			vmdebug('createPriceDiv $name '.$name.' '.$product_price[$name]);

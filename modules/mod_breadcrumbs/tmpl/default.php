@@ -31,8 +31,17 @@ defined('_JEXEC') or die;
 	prev($list);
 	$penult_item_key = key($list);
         $prev_item='';
+        $i=0;
+        $filtered=$params->get('crumbsFilter');
+        $filtered=  explode(',', $filtered);
 	// Generate the trail
 	foreach ($list as $key=>$item) :
+            if(in_array($i, $filtered)){
+                ++$i; continue;
+            }
+            else {
+                ++$i;
+            }
         $isSearchInVirtuemart=  JRequest::getVar('option',null,'get','string')=='com_virtuemart' && 
                 JRequest::getVar('keyword',null,'get','string')!=null;
 
@@ -45,17 +54,17 @@ defined('_JEXEC') or die;
 		// Render all but last item - along with separator
 		if (!empty($item->link))
 		{
-			echo '<a href="' . $item->link . '" class="pathway">' . $item->name . '</a>';
+			echo '<a href="' . $item->link . '" class="pathway">' . $item->name . '</a>'.''.$separator.' ';
 		}
 		else
 		{
 			echo '<span>' . $item->name . '</span>';
 		}
 
-		if (($key != $penult_item_key) || $show_last)
+		/*if (($key != $penult_item_key) || $show_last)
 		{
 			echo ''.$separator.' ';
-		}
+		}*/
 
 	}
 	elseif ($show_last)

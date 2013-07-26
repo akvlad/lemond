@@ -44,7 +44,7 @@ defined('_JEXEC') or die; ?>
 			/*
 			 *  Ajax url
 			 */
-			minicart.ajax_url = '<?php echo (string)JURI::getInstance(); ?>';
+			minicart.ajax_url = '<?php echo (string)JRoute::_('/');?>';
 		
 			/*
 			 * Refresh

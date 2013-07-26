@@ -450,7 +450,37 @@ class VirtueMartModelCustomfields extends VmModel {
 	@int     $id		: The concerned id (eg. product_id)
 	*/
 	public function storeProductCustomfields($table,$datas, $id) {
-
+            
+            
+            
+                if(isset($datas['importAccessories']) && $datas['importAccessories']==1){
+                    $manModel=  VmModel::getModel('manufacturer');
+                    $manModel->_id=$datas['virtuemart_manufacturer_id'];
+                    $manufacturer=$manModel->getManufacturer();
+                    $accessories=  unserialize($manufacturer->accessories);
+                    foreach($accessories as $v)
+                        $datas['field'][]=$v;
+                $isGiftApplied=false;
+                foreach($datas["plugin_param"] as &$v){
+                    if(!isset($v['gift']))                        
+                        continue;
+                    $v['gift']['gift_id']=$manufacturer->gift;
+                    $isGiftApplied=true;
+                } 
+                if(!$isGiftApplied){
+                    $datas['field'][]=array("custom_value"=>"gift",
+                        "field_type" => "E",
+                        "virtuemart_custom_id"=> "9",
+                        "virtuemart_customfield_id"=> "0",
+                        "admin_only"=> "0",
+                        "ordering"=>"1");
+                     $datas['plugin_param'][]=array("gift"=> array (
+                        "gift_id"=>$manufacturer->gift,
+                         "virtuemart_custom_id"=>"9"
+                            )
+                         );
+                }
+                }
 		//vmdebug('storeProductCustomfields',$datas);
 		JRequest::checkToken() or jexit( 'Invalid Token, in store customfields');
 		//Sanitize id
@@ -686,6 +716,26 @@ class VirtueMartModelCustomfields extends VmModel {
 					$title= $related->product_s_desc?  $related->product_s_desc :'';
 					return $display . JHTML::link (JRoute::_ ('index.php?option=com_virtuemart&view=product&task=edit&virtuemart_product_id=' . $field->custom_value), $thumb . '<br /> ' . $related->product_name, array('title' => $title));
 					break;
+				/* gift product*/
+				case 'gft':
+					if (!$field->custom_value) {
+						return '';
+					}
+					$q = 'SELECT `product_name`,`product_sku`,`product_s_desc` FROM `#__virtuemart_products_' . VMLANG . '` as l JOIN `#__virtuemart_products` AS p using (`virtuemart_product_id`) WHERE `virtuemart_product_id`=' . (int)$field->custom_value;
+					$this->_db->setQuery ($q);
+					$related = $this->_db->loadObject ();
+					$display = $related->product_name . '(' . $related->product_sku . ')';
+					$display = '<input type="hidden" value="' . $field->custom_value . '" name="gift[]" />';
+
+					$q = 'SELECT `virtuemart_media_id` FROM `#__virtuemart_product_medias`WHERE `virtuemart_product_id`= "' . (int)$field->custom_value . '" AND (`ordering` = 0 OR `ordering` = 1)';
+					$this->_db->setQuery ($q);
+					$thumb = '';
+					if ($media_id = $this->_db->loadResult ()) {
+						$thumb = $this->displayCustomMedia ($media_id);
+					}
+					$title= $related->product_s_desc?  $related->product_s_desc :'';
+					return $display . JHTML::link (JRoute::_ ('index.php?option=com_virtuemart&view=product&task=edit&virtuemart_product_id=' . $field->custom_value), $thumb . '<br /> ' . $related->product_name, array('title' => $title));
+					break;
 				/* image */
 				case 'M':
 					if (empty($product)) {
@@ -735,7 +785,7 @@ class VirtueMartModelCustomfields extends VmModel {
 			FROM `#__virtuemart_customs` AS C
 			LEFT JOIN `#__virtuemart_product_customfields` AS field ON C.`virtuemart_custom_id` = field.`virtuemart_custom_id`
 			Where `virtuemart_product_id` =' . (int)$product->virtuemart_product_id . ' and `field_type` != "G" and `field_type` != "R" and `field_type` != "Z"';
-		$query .= ' and is_cart_attribute = 0 order by field.`ordering`,virtuemart_custom_id';
+		$query .= ' order by field.`ordering`,virtuemart_custom_id';
 		$this->_db->setQuery ($query);
 		if ($productCustoms = $this->_db->loadObjectList ()) {
 

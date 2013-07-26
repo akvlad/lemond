@@ -1443,7 +1443,7 @@ class calculationHelper {
 		if(!$this->_roundindig and $name!==0){
 			if(isset($this->_currencyDisplay->_priceConfig[$name][1])){
 				//vmdebug('roundInternal rounding use '.$this->_currencyDisplay->_priceConfig[$name][1].' digits');
-				return round($value,$this->_currencyDisplay->_priceConfig[$name][1]);
+				return round($value,(int)$this->_currencyDisplay->_priceConfig[$name][1]);
 			} else {
 				vmdebug('roundInternal rounding not found for '.$name,$this->_currencyDisplay->_priceConfig[$name]);
 				return round($value, $this->_internalDigits);

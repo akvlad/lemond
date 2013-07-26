@@ -82,6 +82,7 @@ class plgVmCustomVmVideo extends vmCustomPlugin {
                     $link = $this->params->link;
                     
                 }
+                if(empty($this->params->icon)) $this->params->icon='';
                 $videoName='plugin_param['.$row.']['.$this->_name.'][mediaFile]';
                 $iconName='plugin_param['.$row.']['.$this->_name.'][icon]';
 		$html ='<div>';
@@ -91,7 +92,6 @@ class plgVmCustomVmVideo extends vmCustomPlugin {
 		$formXML='<form>
     <fields name="vmVideoPluginFields">
         <fieldset name="myFieldSet">
-            <field type="textarea" name="embed" default="'.$link.'" label="Код для встаки в страницу" />
             <field
                     type="filelist"
                     name="mediaFile"
@@ -108,9 +108,11 @@ class plgVmCustomVmVideo extends vmCustomPlugin {
                     default="'.$this->params->icon.'" />
         </fieldset>
     </fields>
-</form>';
+</form>';       
 		$videoInp=JForm::getInstance('videoform', $formXML);
                 $videoInp=$videoInp->getFieldSet('myFieldSet');
+                $html.='<p>Код для встаки в страницу<p><textarea name="vmVideoPluginFields[embed]">'.$link.'</textarea>';
+                $html.='<div style="clear: both"></div>';
                 foreach ($videoInp as $field){
                     $html.='<p>'.$field->label.'</p><p>'.$field->input.'</p>';
                     $html.='<div style="clear: both"></div>';
@@ -127,7 +129,9 @@ class plgVmCustomVmVideo extends vmCustomPlugin {
 
 		$this->_tableChecked = true;
 		$this->getCustomParams($group);
+                
 		$this->getPluginCustomData($group, $product->virtuemart_product_id);
+                //var_dump($this->params); die();
                 $video_tag=($this->params->is_local==1) ? '<object id="videoplayer3875" type="application/x-shockwave-flash"'.
                         ' data="/plugins/vmcustom/vmvideo/uppod-video.swf"'.
                         ' width="500" height="280"><param name="bgcolor" value="#ffffff" /><param name="allowFullScreen"'.
@@ -136,7 +140,7 @@ class plgVmCustomVmVideo extends vmCustomPlugin {
                         '<param name="flashvars" value="uid=videoplayer3875&amp;comment=&amp;'.
                         'st=/plugins/vmcustom/vmvideo/video86-1873.txt&amp;file='.$this->params->link.'" />'.
                         '</object>' : $this->params->link ;
-                $html='<div class=\"video-icon-wrapper\" ><img src="'.$this->params->icon.'" /> <a class="play-link" rel="facebox" href="#images'.
+                $html='<div class=\"video-icon-wrapper\" ><img src="'.$this->params->icon.'" /> <a class="play-link" link="video" rel="facebox" href="#images'.
                         $product->virtuemart_product_id.'">PLAY</a></div> ';
                 $group->display['thumb']=$html;
                 //$html.="<div class=\"video-wrapper\"><div id=\"video$product->virtuemart_product_id\">$video_tag</div></div></div>";
@@ -174,7 +178,7 @@ class plgVmCustomVmVideo extends vmCustomPlugin {
                         '<param name="flashvars" value="uid=videoplayer3875&amp;comment=&amp;'.
                         'st=/plugins/vmcustom/vmvideo/video86-1873.txt&amp;file='.$this->params->link.'" />'.
                         '</object>' : $this->params->link ;
-                $html='<div class="video-icon-wrapper"><img src="'.$this->params->icon.'" /> <a rel="facebox" href="#images'.
+                $html='<div class="video-icon-wrapper"><img src="'.$this->params->icon.'" /> <a rel="facebox" link="video" href="#images'.
                         $product->virtuemart_product_id.'"><span>Play</span></a> ';
                 //$html.="<div class=\"video-wrapper\" style=\"display:none;\"><div id=\"video$product->virtuemart_product_id\">$video_tag</div></div></div>";
                 

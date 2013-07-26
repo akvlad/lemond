@@ -427,11 +427,11 @@ abstract class modJUNewsUltraHelper
                     case '1':
         			default:
 
-                        $thumb_img          = modJUNewsUltraHelper::RenderImage( $junuimgsource, &$params, '', '', '', '' );
+                        $thumb_img          = modJUNewsUltraHelper::RenderImage( $junuimgsource, $params, '', '', '', '' );
                         list($width, $height, $type, $attr) = getimagesize( $thumb_img );
                         $contentimage       = $imlink .'<img src="'. $thumb_img .'" '. $attr .' alt="'. strip_tags( $item->title ) .'" />'. $imlink2;
 
-                        $blank_thumb_img    = modJUNewsUltraHelper::RenderImage( 'media/mod_junewsultra/'. $noimage, &$params, '', '', '', '');
+                        $blank_thumb_img    = modJUNewsUltraHelper::RenderImage( 'media/mod_junewsultra/'. $noimage, $params, '', '', '', '');
                         list($width, $height, $type, $attr) = getimagesize( $blank_thumb_img );
                         $blankimage         = $imlink .'<img src="'. $blank_thumb_img .'" '. $attr .' alt="'. strip_tags( $item->title ) .'" />'. $imlink2;
 
@@ -443,7 +443,7 @@ abstract class modJUNewsUltraHelper
                             if (preg_match($regex1, $junuimgresmatche, $match)) {
 
                                 $yimg           = modJUNewsUltraHelper::video('http://youtu.be/'. $match[1],'hqthumb');
-                                $video_img      = modJUNewsUltraHelper::RenderImage($yimg, &$params, '', '', '', '');
+                                $video_img      = modJUNewsUltraHelper::RenderImage($yimg, $params, '', '', '', '');
                                 list($width, $height, $type, $attr) = getimagesize( $video_img);
 
                                 $item->image    = $imlink .'<img src="'. $video_img .'" '. $attr .' alt="'. strip_tags( $item->title ) .'" />'. $imlink2;
@@ -451,7 +451,7 @@ abstract class modJUNewsUltraHelper
                             } elseif (preg_match($regex2, $junuimgresmatche, $match)) {
 
                                 $yimg = modJUNewsUltraHelper::video('http://vimeo.com/'. $match[2],'hqthumb');
-                                $video_img      = modJUNewsUltraHelper::RenderImage($yimg, &$params, '', '', '', '');
+                                $video_img      = modJUNewsUltraHelper::RenderImage($yimg, $params, '', '', '', '');
                                 list($width, $height, $type, $attr) = getimagesize( $video_img);
 
                                 $item->image = $imlink .'<img src="'. $video_img .'" '. $attr .' alt="'. strip_tags( $item->title ) .'" />'. $imlink2;

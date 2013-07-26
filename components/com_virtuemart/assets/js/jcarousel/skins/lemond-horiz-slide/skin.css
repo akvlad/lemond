@@ -83,18 +83,7 @@
 	padding: 5px;
 	margin-top: 5px;
 }
-.jcarousel-skin-lemond-horiz-slide .jcarousel-item-horizontal:hover
-{
-  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */   
-}
-.div-ul .jcarousel-skin-lemond-horiz-slide .jcarousel-item-horizontal:hover
-{
-  -moz-box-shadow: 0 0 0px rgba(0,0,0,0.5); /* Для Firefox */
-    -webkit-box-shadow: 0 0 0px rgba(0,0,0,0.5); /* Для Safari и Chrome */
-    box-shadow: 0 0 0px rgba(0,0,0,0.5); /* Параметры тени */   
-}
+
 .jcarousel-skin-lemond-horiz-slide .jcarousel-direction-rtl .jcarousel-item-horizontal {
 	margin-left: 10px;
     margin-right: 0;
@@ -114,7 +103,7 @@
  */
 .jcarousel-skin-lemond-horiz-slide .jcarousel-next-horizontal {
     position: absolute;
-    top: 60px;
+    top: 95px;
     right: 5px;
     width: 32px;
     height: 32px;
@@ -155,7 +144,7 @@
 
 .jcarousel-skin-lemond-horiz-slide .jcarousel-prev-horizontal {
     position: absolute;
-    top: 60px;
+    top: 95px;
     left: 5px;
     width: 32px;
     height: 32px;
@@ -302,8 +291,5 @@ top: 152px;
     height: 110px;
     display: block;
     text-align: center;
-}
-.div-ul .jcarousel-skin-lemond-horiz-slide .jcarousel-clip-horizontal
-{
-
+	cursor:pointer;
 }

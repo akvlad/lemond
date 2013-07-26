@@ -17,7 +17,7 @@
 	<link href="index.php?format=feed&amp;type=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" />
 	<link href="index.php?format=feed&amp;type=atom" rel="alternate" type="application/atom+xml" title="Atom 1.0" />
 	<link rel="stylesheet" href="media/system/css/modal.css" type="text/css" />
-	<link rel="stylesheet" type="text/css" href="templates/lemond/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="templates/lemond/css/<?= $this->params->get('mainCss') ?>" />
 </head>
 
 <body>
@@ -55,7 +55,7 @@
 		</div>	
 	</div>
 	
-	<div id="middle">
+	
 
 		
 
@@ -88,7 +88,7 @@
 			</div>
 		</div>
 	
-	</div>
+	
 	<div id="some-text">
 			<jdoc:include type="modules" name="some-text" style="XHTML"/>
 			<div class="cl">
@@ -117,6 +117,9 @@
 		</div>
 
 	</div>
+    <div id="formlogin">
+        <jdoc:include type="modules" name="login-form" style="XHTML"/>
+    </div>
 </body>
 </html>
 

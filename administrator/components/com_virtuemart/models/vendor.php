@@ -155,8 +155,7 @@ class VirtueMartModelVendor extends VmModel {
 	 * @author Max Milbers
 	 * @return boolean True is the save was successful, false otherwise.
 	 */
-	function store (&$data) {
-
+	function store (&$data) { 
 		JPluginHelper::importPlugin ('vmvendor');
 		$dispatcher = JDispatcher::getInstance ();
 		$plg_datas = $dispatcher->trigger ('plgVmOnVendorStore', $data);

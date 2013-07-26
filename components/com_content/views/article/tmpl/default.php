@@ -110,9 +110,14 @@ endif; ?>
 	</dd>
 <?php endif; ?>
 <?php if ($params->get('show_create_date')) : ?>
+	<div class="dd-left">
+	</div>
 	<dd class="create">
 	<?php echo JText::sprintf('COM_CONTENT_CREATED_DATE_ON', JHtml::_('date', $this->item->created, JText::_('DATE_FORMAT_LC2'))); ?>
 	</dd>
+	<div class="dd-right">
+	</div>
+	<div class="cl"></div>
 <?php endif; ?>
 <?php if ($params->get('show_modify_date')) : ?>
 	<dd class="modified">

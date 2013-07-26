@@ -109,7 +109,7 @@ class VirtueMartControllerUser extends JController
 		$msg = $this->saveData(true);
 
 		//We may add here the option for silent registration.
-		$this->setRedirect( JRoute::_('index.php?option=com_virtuemart&view=cart&task=checkout',$this->useXHTML,$this->useSSL), $msg );
+		//$this->setRedirect( JRoute::_('index.php?option=com_virtuemart&view=cart&task=checkout',$this->useXHTML,$this->useSSL), $msg );
 	}
 
 	function registerCheckoutUser(){
@@ -131,7 +131,7 @@ class VirtueMartControllerUser extends JController
 
 	function registerCartuser(){
 		$msg = $this->saveData(true, true);
-		$this->setRedirect(JRoute::_('index.php?option=com_virtuemart&view=cart') , $msg);
+		//$this->setRedirect(JRoute::_('index.php?option=com_virtuemart&view=cart') , $msg);
 	}
 
 
@@ -178,6 +178,7 @@ class VirtueMartControllerUser extends JController
 		if($currentUser->guest!=1 || $register){
 			$this->addModelPath( JPATH_VM_ADMINISTRATOR.DS.'models' );
 			$userModel = VmModel::getModel('user');
+                        
 
 			if(!$cart){
 				// Store multiple selectlist entries as a ; separated string
@@ -189,20 +190,22 @@ class VirtueMartControllerUser extends JController
 				$data['vendor_store_desc'] = JRequest::getVar('vendor_store_desc','','post','STRING',JREQUEST_ALLOWHTML);
 				$data['vendor_terms_of_service'] = JRequest::getVar('vendor_terms_of_service','','post','STRING',JREQUEST_ALLOWHTML);
 			}
-
+                        
+                        $data['username']=$data['email'];
 			//It should always be stored
 			if($onlyAddress){
 				$ret = $userModel->storeAddress($data);
 			} else {
 				$ret = $userModel->store($data);
 			}
+                        
 			if($currentUser->guest==1){
 				$msg = (is_array($ret)) ? $ret['message'] : $ret;
 				$usersConfig = JComponentHelper::getParams( 'com_users' );
 				$useractivation = $usersConfig->get( 'useractivation' );
 				if (is_array($ret) and $ret['success'] and !$useractivation) {
 					// Username and password must be passed in an array
-					$credentials = array('username' => $ret['user']->username,
+					$credentials = array('username' => $ret['user']->email,
 			  					'password' => $ret['user']->password_clear
 					);
 					$return = $mainframe->login($credentials);

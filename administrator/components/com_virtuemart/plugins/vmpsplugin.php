@@ -137,7 +137,7 @@ abstract class vmPSPlugin extends vmPlugin {
 	 * @author Valerie Isaksen
 	 * @author Max Milbers
 	 */
-	public function displayListFE (VirtueMartCart $cart, $selected = 0, &$htmlIn) {
+	public function displayListFE (VirtueMartCart $cart, $selected = 0, &$htmlIn,$index=null) {
 
 		if ($this->getPluginMethods ($cart->vendorId) === 0) {
 			if (empty($this->_name)) {
@@ -162,7 +162,9 @@ abstract class vmPSPlugin extends vmPlugin {
 			}
 		}
 		if (!empty($html)) {
-			$htmlIn[] = $html;
+                        if($index && !isset($htmlIn[$index]))
+                            $htmlIn[$index] = $html;
+                        else $htmlIn[] = $html;
 			return TRUE;
 		}
 
@@ -783,12 +785,15 @@ abstract class vmPSPlugin extends vmPlugin {
 	 *
 	 */
 
-	protected function getHtmlHeaderBE () {
+	protected function getHtmlHeaderBE ($head=NULL) {
+        if($head == null){
+            $head=JText::_ ('COM_VIRTUEMART_ORDER_PRINT_' . $this->_psType . '_LBL');
+        }
 
 		$class = "class='key'";
 		$html = ' 	<thead>' . "\n"
 			. '		<tr>' . "\n"
-			. '			<th ' . $class . ' style="text-align: center;" colspan="2">' . JText::_ ('COM_VIRTUEMART_ORDER_PRINT_' . $this->_psType . '_LBL') . '</th>' . "\n"
+			. '			<th ' . $class . ' style="text-align: center;" colspan="2">' . $head . '</th>' . "\n"
 			. '		</tr>' . "\n"
 			. '	</thead>' . "\n";
 

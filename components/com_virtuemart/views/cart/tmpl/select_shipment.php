@@ -34,8 +34,8 @@ if (VmConfig::get('oncheckout_show_steps', 1)) {
 		$buttonclass = 'button vm-button-correct';
 	} else {
 		$buttonclass = 'default';
-	}
-	?>
+	} ?>
+	
 	<div class="buttonBar-right">
 
 	        <button class="<?php echo $buttonclass ?>" type="submit" ><?php echo JText::_('COM_VIRTUEMART_SAVE'); ?></button>  &nbsp;

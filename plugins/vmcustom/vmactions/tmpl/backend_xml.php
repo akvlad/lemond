@@ -8,13 +8,8 @@
                                                     print '<option value="'.$product->product_id.'">'.$product->product_name.'</option>';
                                             } ?>
 					</field>
-					<field name="place1" type="list" default="<?= $this->params->places[1]->product_id ?>" label="Товар на 1 месте" >;	
-                                        <?php foreach($this->params->products as $product){
-						echo '<option value="'.$product->product_id.'">'.$product->product_name.'</option>';
-					} ?>
-                                        </field>
                                         <?php $place3Default='';
-                                        foreach($this->params->places[2]->products as $k=>$v)
+                                        foreach($this->params->places[2] as $k=>$v)
                                             $place3Default.=$k.','; ?>
 					<field name="default_product_id" type="list" default="<?= $this->params->default_product_id ?>" label="Товар на 2 месте по умолчанию">
                                         <?php foreach($this->params->products as $product){
@@ -27,9 +22,7 @@
 					} ?>
                                         </field>
                                         
-                                        <field name="action_id" type="hidden" default="<?= $this->params->action_id ?>" />
-                                        <field name="virtuemart_custom_id" type="hidden" default="<?= $this->virtuemart_custom_id ?>" />
-				</fieldset>
+                    		</fieldset>
 			</fields>
         </fields>
     </fields>

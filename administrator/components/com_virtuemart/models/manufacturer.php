@@ -72,12 +72,13 @@ class VirtueMartModelManufacturer extends VmModel {
      * @author Max Milbers
      * @return boolean True is the save was successful, false otherwise.
 	 */
-	public function store(&$data) {
-
+	public function store(&$data) { 
 		// Setup some place holders
 		$table = $this->getTable('manufacturers');
 
-		$table->bindChecknStore($data);
+		$data['gift']=$data['gift'][0];
+                $data['accessories']=serialize($data['field']);
+                $table->bindChecknStore($data);
 		$errors = $table->getErrors();
 		foreach($errors as $error){
 			vmError($error);
