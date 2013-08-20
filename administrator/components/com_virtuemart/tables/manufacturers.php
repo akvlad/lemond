@@ -46,6 +46,9 @@ class TableManufacturers extends VmTable {
 
 	/** @var int published or unpublished */
 	var $published = 1;
+        
+        var $gift=0;
+        var $accessories='';
 
 	/**
 	 * @author Max Milbers

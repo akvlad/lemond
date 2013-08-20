@@ -50,8 +50,7 @@ function myValidator(f, t)
 	return false;
 }
 </script>
-<h1><?php echo $this->page_title ?></h1>
-<?php echo shopFunctionsF::getLoginForm(false); ?>
+<h1><?php echo $this->page_title ?>asdasd</h1>
 
 <h2><?php if($this->userDetails->virtuemart_user_id==0) {
 	echo JText::_('COM_VIRTUEMART_YOUR_ACCOUNT_REG');
@@ -74,14 +73,9 @@ if($this->userDetails->virtuemart_user_id!=0) {
     }
     $tabarray['shopper'] = 'COM_VIRTUEMART_SHOPPER_FORM_LBL';
     //$tabarray['user'] = 'COM_VIRTUEMART_USER_FORM_TAB_GENERALINFO';
-    if (!empty($this->shipto)) {
-	    $tabarray['shipto'] = 'COM_VIRTUEMART_USER_FORM_ADD_SHIPTO_LBL';
-    }
-    if (($_ordcnt = count($this->orderlist)) > 0) {
-	    $tabarray['orderlist'] = 'COM_VIRTUEMART_YOUR_ORDERS';
-    }
 
-    shopFunctionsF::buildTabs ( $this, $tabarray);
+    //shopFunctionsF::buildTabs ( $this, $tabarray);
+    echo $this->loadTemplate('shopper');
 
  } else {
     echo $this->loadTemplate ( 'shopper' );

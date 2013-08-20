@@ -99,6 +99,18 @@ defined('_JEXEC') or die('Restricted access'); ?>
 			echo vmJsApi::jDate($this->product->product_available_date, 'product_available_date'); ?>
 		</td>
 	</tr>
+	<tr class="row1">
+		<td >
+			<div style="text-align:right;font-weight:bold;">
+				<?php echo JText::_('COM_VIRTUEMART_PRODUCT_TO_AVAILABLE_DATE') ?>
+			</div>
+		</td>
+		<td colspan="3">
+			<?php
+
+			echo vmJsApi::jDate($this->product->product_expire_date, 'product_expire_date'); ?>
+		</td>
+	</tr>
 	<tr class="row0">
 		<td valign="top" >
 			<div style="text-align:right;font-weight:bold;">

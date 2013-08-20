@@ -44,7 +44,7 @@ defined('_JEXEC') or die; ?>
 			/*
 			 *  Ajax url
 			 */
-			minicart.ajax_url = '<?php echo (string)JURI::getInstance(); ?>';
+			minicart.ajax_url = '<?php echo (string)JRoute::_('/');?>';
 		
 			/*
 			 * Refresh
@@ -158,7 +158,7 @@ defined('_JEXEC') or die; ?>
 			 * Event Addtocart Button - no load page
 			 */ console.log('YOYOYO!!!');
                         var ddd=jQuery('input[name="addtocart"], span.addtocart-button-inactive');
-			jQuery('input[name="addtocart"], span.addtocart-button-inactive').bind('click',function(){
+			/*jQuery('input[name="addtocart"], span.addtocart-button-inactive').bind('click',function(){
                                         
 					if ($this.$minicart.data('timeout')){
 							clearTimeout($this.$minicart.data('timeout'));
@@ -167,7 +167,7 @@ defined('_JEXEC') or die; ?>
 						$this.productsRefresh();
 					},1000);
 					$this.$minicart.data('timeout',timeout);
-			});
+			});*/
 		
 			/*
 			 *  Set coupon

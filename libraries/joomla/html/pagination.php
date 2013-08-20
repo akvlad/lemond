@@ -269,7 +269,7 @@ class JPagination extends JObject
         public function getShowAllUrl(){
             $data = $this->_buildDataObject();
             
- 		if (($data->all->base !== null) && count($data->pages)>0)
+ 		if (($data->all->base !== null) && count($data->pages)>1)
 		{
                     return $data->all->link;
 		}
@@ -288,12 +288,12 @@ class JPagination extends JObject
 	 */
 	public function getPagesLinks()
 	{
-                        unlink('pgnt_log.txt');
+                        //unlink('pgnt_log.txt');
 		$app = JFactory::getApplication();
 
 		// Build the page navigation list.
 		$data = $this->_buildDataObject();
-                    copy('pgnt_log.txt', 'pgnt_log_out.txt');
+                    //copy('pgnt_log.txt', 'pgnt_log_out.txt');
 
 		$list = array();
 		$list['prefix'] = $this->prefix;

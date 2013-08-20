@@ -67,6 +67,8 @@ class TableProducts extends VmTable {
 	var $low_stock_notification	= 0;
 	/** @var int File thumbnail image width */
 	var $product_available_date	= null;
+        /** @var int File thumbnail image width */
+	var $product_expire_date	= null;
 	/** @var int File thumbnail image width */
 	var $product_availability	= null;
 	/** @var int File thumbnail image width */

@@ -146,6 +146,15 @@ $i=0;
 						<?php echo JHTML::_('Select.genericlist', $this->productLayouts, 'layout', 'size=1', 'value', 'text', $this->product->layout); ?>
 					</td>
 				</tr>
+                                <?php $i = 1 - $i; ?>
+                                <tr class="row<?php echo $i?>">
+					<td><div style="text-align:right;font-weight:bold;">
+						Импоритровать аксессуары и подарки</div>
+					</td>
+					<td colspan="3">
+                                            <input type="checkbox" value="1" name="importAccessories"/> 
+					</td>
+				</tr>
             </table>
 		</td>
         </tr>

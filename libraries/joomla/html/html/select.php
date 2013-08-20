@@ -85,7 +85,7 @@ abstract class JHtmlSelect
                     !is_array($selected)) {
                         $selected = explode(',',$selected);
                     }
-		$options = array_merge(JHtml::$formatOptions, array('format.depth' => 0, 'id' => false));
+		$options = array_merge(JHtml::$formatOptions, array('format.depth' => 0, 'id' => false,'option.attr'=>true));
 		if (is_array($attribs) && func_num_args() == 3)
 		{
 			// Assume we have an options array
@@ -424,7 +424,7 @@ abstract class JHtmlSelect
 		}
 
 		// Set attributes only if there is a property and a value
-		if ($options['attr'] !== null)
+        if ($options['attr'] !== null)
 		{
 			$obj->$options['option.attr'] = $options['attr'];
 		}

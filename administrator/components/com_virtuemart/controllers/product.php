@@ -376,7 +376,6 @@ class VirtuemartControllerProduct extends VmController {
 				$calculator = calculationHelper::getInstance ();
 				$tempProduct =(object)array_merge ((array)$product, $pricesToStore);
 				$calculatedPrices = $calculator->getProductPrices ($tempProduct);
-				var_dump($calculatedPrices);
 				$pricesToStore['final_price'] = $calculatedPrices['salesPrice'];
 				$model->updateXrefAndChildTables ($pricesToStore, 'product_prices',$product->product_parent_id!=0);
 			}

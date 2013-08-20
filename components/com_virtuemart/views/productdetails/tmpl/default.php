@@ -32,14 +32,24 @@ $document->addStyleSheet('/components/com_virtuemart/assets/js/jcarousel/skins/m
 
 $document->addScriptDeclaration("
     jQuery(document).ready(
-        function() {jQuery('#prod-imgs').jcarousel({vertical: true });}
-    );");
+        function() {jQuery('#prod-imgs').jcarousel({vertical: true });
+                    jQuery('#prod-desc-all').click(function(e){
+                var _e=jQuery(e.target);
+                var desc_div=_e.closest('.prod-desc-div');
+                if(desc_div.hasClass('product-description')){
+                    desc_div.removeClass('product-description');desc_div.addClass('product-description-closed');
+                } else{
+                    desc_div.removeClass('product-description-closed').addClass('product-description');
+                }
+            });
+    });");
 $document->addScriptDeclaration("
 //<![CDATA[
 function imageClick(e,i){
     var carousel=jQuery(e.target).closest('.popup-imgs').find('.product-carousel').data('jcarousel');
     carousel.scroll(i);
 }
+var initialCarouselPosition=1;
 	jQuery(document).ready(function($) {
 		$('a.ask-a-question').click( function(){
 			$.facebox({
@@ -48,15 +58,36 @@ function imageClick(e,i){
 			});
 			return false ;
 		});
-            jQuery(\"a[rel=facebox]\").facebox(function() {jQuery(\".product-carousel\").jcarousel();});
+            jQuery(\".jcarousel-skin-lemond-vert-slide a[rel=facebox],.main-image a[rel=facebox]\").click(function(e){
+                var \$e=jQuery(e.target).closest('a');
+                jQuery.facebox({ div: '#images".$this->product->virtuemart_product_id."' },function() {
+                    var link='img[src$=\''+\$e.attr('link')+'\']';
+                    var number_in_link=(\$e.attr('link')=='video');
+                    var imgs=jQuery('#images".$this->product->virtuemart_product_id."');
+                    if(number_in_link){
+                         initialCarouselPosition=imgs.find('ul').children().length;
+                    }
+                    else {
+                        var li=imgs.find(link).closest('li');
+                        var li_n=imgs.find('li').index(li);
+                        initialCarouselPosition=li_n+1;
+                    }
+                });
+                return false;
+            });    
+            /*jQuery(\"a[rel=facebox]\").facebox(function() {
+                
+                jQuery(\".product-carousel\").jcarousel();
+            });*/
         jQuery(document).bind('reveal.facebox', function() {
-            jQuery(\"#facebox .product-carousel\").jcarousel({visible: 1, scroll: 1,
+            jQuery(\"#facebox .product-carousel\").jcarousel({visible: 1, scroll: 1,start: initialCarouselPosition,
                 itemFirstInCallback: function(c,li,i,s) {
                     jQuery('.popup .popup-thumbs img').removeClass('popup-active-thumb');
                     jQuery('.popup .popup-thumbs img:nth-child('+i+')').addClass('popup-active-thumb');
                 } 
             });
-        });                
+            initialCarouselPosition=1;
+        });              
 
 	/*	$('.additional-images a').mouseover(function() {
 			var himg = this.href ;
@@ -96,7 +127,7 @@ if (empty($this->product)) {
 		
     <?php foreach($this->product->images as $img) { ?>
 		
-			<li><div class="div-li"><a href="#images<?= $this->product->virtuemart_product_id ?>" rel="facebox"> <?= $img->displayMediaThumb("",false); ?> 
+			<li><div class="div-li"><a href="#images<?= $this->product->virtuemart_product_id ?>" rel="facebox" link="<?= $img->getUrl() ?>"> <?= $img->displayMediaThumb("",false); ?> 
 			</a></div></li>
 		
     <?php } ?>
@@ -140,7 +171,7 @@ if (empty($this->product)) {
 	</div>
 
     <?php // Product Title */  ?>
-    <h1><?php echo $this->product->product_name ?></h1>
+    <!--<h1><?php //echo $this->product->product_name ?></h1>-->
     <?php // Product Title END   ?>
 
     <?php // afterDisplayTitle Event
@@ -194,11 +225,27 @@ if (empty($this->product)) {
     ?>
 
 <div class="proddet-all">
+	<div class="div-name">
+		<?php // Product Title */  ?>
+		<h1><?php echo $this->product->product_name ?></h1>
+        <div class="code">Код товара: <?php echo $this->product->product_sku ?></div>
+		<?php // Product Title END   ?>
+
 		<div class="pic width60 floatleft">
 			<div class="lemenii">
-				<span class="text-lem">+<?= round($this->product->prices['salesPrice']/5,0); ?> </span> 
+                            <?php $lem_str=(string)round($this->product->prices['salesPrice']/5,0); ?>
+                                  
+				<span class="text-lem"><img src="<?= JURI::base(true).'components/com_virtuemart/assets/images/numbers/plus.png' ?>" /> <?php
+                                        for($i=0; $i<strlen($lem_str);++$i) { $c=$lem_str[$i]; ?>
+                                    <img src="<?= JURI::base(true)."components/com_virtuemart/assets/images/numbers/$c.png" ?>" />
+                                        <?php } ?> </span> 
 				<span class="text-all">	леманий</span>
 			</div>
+                    <?php if (!empty($this->product->customfieldsSorted['gift'])) 
+			{ ?><div class="gift"><div class="birka"> </div><div id='gift-in' class="gift-in"><?php
+				$this->position = 'gift'; 
+			echo $this->loadTemplate('customfields'); ?> 
+			</div></div><?php } ?>
 			<?php
 			echo $this->loadTemplate('images');
 			?>
@@ -298,7 +345,7 @@ if (empty($this->product)) {
 			</div>
 		
 		</div>
-
+	</div>
 	<div class="charact floatleft">
 
                     <?php if (!empty($this->product->customfieldsSorted['carriagechars'])) 
@@ -316,12 +363,14 @@ if (empty($this->product)) {
 	$position   = 'mod-payment';
 	echo $renderer->render($position, $options, null);?>
 
-    <div class="product-description">
-	<?php /** @todo Test if content plugins modify the product description */ ?>
-    	<span class="title"><?php echo JText::_('COM_VIRTUEMART_PRODUCT_DESC_TITLE') ?></span>
-	<div class="desc-cont"><?php echo $this->product->product_desc; ?></div>
-    </div>
-	
+    <div id="prod-desc-all">
+		<div class="product-description prod-desc-div">
+		<?php /** @todo Test if content plugins modify the product description */ ?>
+			<span class="title"><?php echo JText::_('COM_VIRTUEMART_PRODUCT_DESC_TITLE') ?><span class="pointer"></span></span>
+                        <div class="desc-cont-short"><?php echo shopFunctionsF::limitStringByWord($this->product->product_desc, 530, '...'); ?></div>
+                <div class="desc-cont-full"><?php echo $this->product->product_desc; ?></div>
+		</div>
+	</div>
 	
 	<div class="cl"></div>
     </div>
@@ -423,7 +472,7 @@ $needVideo=isset($this->product->displayPlugins['vmvideo']);
 	echo $this->loadTemplate('relatedproducts');
     } // Product customfieldsRelatedProducts END 
 ?>
-<?php
+<?php   
     if (!empty($this->product->customfieldsSorted['complects'])) {
     	$this->position='complects';
     	echo $this->loadTemplate('customfields');

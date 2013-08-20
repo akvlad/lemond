@@ -9,6 +9,7 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="<?php echo '/templates/lemond/images/fav.png' ?>" />
 	<script src='media/jui/js/jquery.js'></script>
 	<script src='media/jui/js/bootstrap.min.js'></script>
 	<script src='media/jui/js/chosen.jquery.min.js'></script>
@@ -17,7 +18,8 @@
 	<link href="index.php?format=feed&amp;type=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" />
 	<link href="index.php?format=feed&amp;type=atom" rel="alternate" type="application/atom+xml" title="Atom 1.0" />
 	<link rel="stylesheet" href="media/system/css/modal.css" type="text/css" />
-	<link rel="stylesheet" type="text/css" href="templates/lemond/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="templates/lemond/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="templates/lemond/css/<?= $this->params->get('mainCss') ?>" />
 </head>
 
 <body>
@@ -26,12 +28,13 @@
 			<div id="top-menu">
 				<jdoc:include type="modules" name="top-line" style="XHTML"/>
 			</div>
+            <div id="top-pos2">
+                <jdoc:include type="modules" name="top-pos2" style="XHTML"/>
+            </div>
 			<div id="top-pos1">
 				<jdoc:include type="modules" name="top-pos1" style="XHTML"/>
 			</div>
-			<div id="top-pos2">
-				<jdoc:include type="modules" name="top-pos2" style="XHTML"/>
-			</div>
+
             <div id="cart-pos">
                 <jdoc:include type="modules" name="cart-pos" style="XHTML"/>
             </div>
@@ -55,7 +58,7 @@
 		</div>	
 	</div>
 	
-	<div id="middle">
+	
 
 		
 
@@ -88,7 +91,7 @@
 			</div>
 		</div>
 	
-	</div>
+	
 	<div id="some-text">
 			<jdoc:include type="modules" name="some-text" style="XHTML"/>
 			<div class="cl">
@@ -117,6 +120,9 @@
 		</div>
 
 	</div>
+    <div id="formlogin">
+        <jdoc:include type="modules" name="login-form" style="XHTML"/>
+    </div>
 </body>
 </html>
 

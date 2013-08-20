@@ -69,6 +69,14 @@
 			<option value="2">COM_OPENGLOBAL_VIRTUEMART_CATEGORIES_SHOW_IMAGES_FULLSIZE</option>
 		</field>
                 <field name="item_id" type="text" label="ItemID для ссылок" />
+		<field name="subcategories" type="list"
+					default="1"
+					label="Выводить подкатегории"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+				>
+		    <option value="0">JNo</option>
+		    <option value="1">JYes</option>
+		</field>
 	    </fieldset>
 	</fields>
     </config>

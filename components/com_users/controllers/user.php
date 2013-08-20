@@ -57,13 +57,16 @@ class UsersControllerUser extends UsersController
 		// Perform the log in.
 		if (true === $app->login($credentials, $options)) {
 			// Success
-			$app->setUserState('users.login.form.data', array());
-			$app->redirect(JRoute::_($app->getUserState('users.login.form.return'), false));
+            $response = array('status'=>1);
+			echo(json_encode($response)); die();
 		} else {
+            $response = array('status' => 0, 'message' => "Потльзователя с таким e-mail (номером телефона) ".
+                "и паролем не существует");
+            echo(json_encode($response)); die();
 			// Login failed !
-			$data['remember'] = (int)$options['remember'];
+			/*$data['remember'] = (int)$options['remember'];
 			$app->setUserState('users.login.form.data', $data);
-			$app->redirect(JRoute::_('index.php?option=com_users&view=login', false));
+			$app->redirect(JRoute::_('index.php?option=com_users&view=login', false));*/
 		}
 	}
 

@@ -73,6 +73,8 @@ class TableCategories extends VmTable {
 	var $metaauthor	= '';
         /** @var integer Category publish or not */
 	var $published			= 1;
+        /** @var integer category publich in main menu or not */
+        var $in_menu = 1;
 
 	/**
 	 * Class contructor

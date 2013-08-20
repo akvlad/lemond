@@ -460,7 +460,7 @@ class JRouter extends JObject
 
 			$url = 'index.php?' . JURI::buildQuery($vars);
                         
-                        file_put_contents('pgnt_log.txt', $url, FILE_APPEND);
+            //file_put_contents('pgnt_log.txt', $url, FILE_APPEND);
 		}
 
 		// Decompose link into url component parts

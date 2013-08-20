@@ -50,7 +50,7 @@ class JRoute
 
 		// Build route.
 		$uri = $router->build($url);
-                file_put_contents('pgnt_log.txt',print_r($uri,true),FILE_APPEND);                    
+        //file_put_contents('pgnt_log.txt',print_r($uri,true),FILE_APPEND);
 		$url = $uri->toString(array('path', 'query', 'fragment'));
 		// Replace spaces.
 		$url = preg_replace('/\s/u', '%20', $url);

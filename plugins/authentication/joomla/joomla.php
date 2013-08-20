@@ -42,15 +42,23 @@ class plgAuthenticationJoomla extends JPlugin
 		// Get a database object
 		$db		= JFactory::getDbo();
 		$query	= $db->getQuery(true);
+                
+                $email=$credentials['username'];
+                $phone=  str_replace(array('-','(',')','+',' '), '',
+                        $credentials['username']);
 
 		$query->select('id, password');
 		$query->from('#__users');
-		$query->where('username=' . $db->Quote($credentials['username']));
-
-		$db->setQuery($query);
+                $where='email=' . $db->Quote($email).' OR phone='.$db->quote($phone);
+		
+                if (JFactory::getApplication()->isAdmin()) {
+                   $where.=' OR username='.$db->quote($email); 
+                }
+		$query->where($where);
+                $db->setQuery($query);
 		$result = $db->loadObject();
 
-		if ($result) {
+		if ($result) { 
 			$parts	= explode(':', $result->password);
 			$crypt	= $parts[0];
 			$salt	= @$parts[1];
@@ -58,7 +66,8 @@ class plgAuthenticationJoomla extends JPlugin
 
 			if ($crypt == $testcrypt) {
 				$user = JUser::getInstance($result->id); // Bring this in line with the rest of the system
-				$response->email = $user->email;
+				$response->username=$user->username;
+                                $response->email = $user->email;
 				$response->fullname = $user->name;
 				if (JFactory::getApplication()->isAdmin()) {
 					$response->language = $user->getParam('admin_language');

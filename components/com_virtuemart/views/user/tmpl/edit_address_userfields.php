@@ -27,6 +27,7 @@ $hiddenFields = '';
 // Output: Userfields
 foreach($this->userFields['fields'] as $field) {
 
+
 	if($field['type'] == 'delimiter') {
 
 		// For Every New Delimiter
@@ -76,7 +77,14 @@ foreach($this->userFields['fields'] as $field) {
 						<?php echo $field['formcode'] ?>
 					</td>
 				</tr>
+<?php           if(isset($this->msg[$field['name']])){ ?>
+                <tr>
+                    <td colspan="2"><?= $this->msg[$field['name']]; ?></td>
+                </tr>
+                <?php }  ?>
 	<?php
+
+
 	}
 
 }

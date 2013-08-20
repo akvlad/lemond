@@ -41,6 +41,8 @@ class ContentViewCategory extends JViewLegacy
 		$children	= $this->get('Children');
 		$parent		= $this->get('Parent');
 		$pagination = $this->get('Pagination');
+                
+                
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) {

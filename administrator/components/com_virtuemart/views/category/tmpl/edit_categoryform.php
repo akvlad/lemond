@@ -45,6 +45,7 @@ $mainframe = JFactory::getApplication();
 				-->
 				<?php echo VmHTML::row('input','COM_VIRTUEMART_CATEGORY_NAME','category_name',$this->category->category_name); ?>
 				<?php echo VmHTML::row('booleanlist','COM_VIRTUEMART_PUBLISH','published',$this->category->published); ?>
+                                <?php echo VmHTML::row('booleanlist','Показывать в меню','in_menu',$this->category->in_menu); ?>
 				<?php echo VmHTML::row('input','COM_VIRTUEMART_SLUG','slug',$this->category->slug); ?>
 				<?php echo VmHTML::row('editor','COM_VIRTUEMART_DESCRIPTION','category_description',$this->category->category_description); ?>
 			</table>

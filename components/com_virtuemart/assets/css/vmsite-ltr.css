@@ -43,7 +43,7 @@ span.quantity-controls input.quantity-controls{height:14px;border:none;width:15p
 span.quantity-controls input.quantity-plus{background:url(../images/vmgeneral/quantity-controls.png) repeat-x;margin-bottom:2px;}
 span.quantity-controls input.quantity-minus{background:url(../images/vmgeneral/quantity-controls.png) repeat-x;background-position:15px 0;}
 .addtocart-bar{margin:0;padding:0;}
-span.addtocart-button{width:152px;float:left;margin:0 0 0 10px;}
+span.addtocart-button{width:75px;float:left;margin:0 0 0 10px;}
 span.cart-images img {
     float: left;
     margin: 0;

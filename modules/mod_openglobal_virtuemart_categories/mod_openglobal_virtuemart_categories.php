@@ -23,6 +23,7 @@ $class_sfx = $params->get('class_sfx', '');
 $moduleclass_sfx = $params->get('moduleclass_sfx','');
 $layout = $params->get('layout','default');
 $active_category_id = JRequest::getInt('virtuemart_category_id', '0');
+$subcats=(int)$params->get('subcategories',1);
 $vendorId = '1';
 $cache = JFactory::getCache('com_virtuemart','callback');
 $categories = $cache->call('getRecursiveCategories', $vendorId, $category_id);

@@ -17,7 +17,7 @@
 
 .jcarousel-skin-lemond-vert-slide .jcarousel-container-vertical {
     width: 135px;
-    height: 430px;
+    height: 480px;
     padding: 30px 20px 30px 20px;
 }
 
@@ -31,8 +31,8 @@
 }
 
 .jcarousel-skin-lemond-vert-slide .jcarousel-clip-vertical {
-    width:  135px;
-    height: 430px;
+    width:  155px;
+    height: 470px;
 }
 
 .jcarousel-skin-lemond-vert-slide .jcarousel-item {
@@ -54,14 +54,14 @@
 {
     margin-bottom: 10px;
 	background: url(left-vert-slide-item-fon.png) center center no-repeat transparent;
-	width:136px;
-	height:134px;
+	width:152px;
+	height:150px;
 	vertical-align:middle;
 }
 .jcarousel-skin-lemond-vert-slide .jcarousel-item-vertical .div-li
 {
-	width: 136px;
-	height: 134px;
+	width: 150px;
+	height: 148px;
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
@@ -91,7 +91,7 @@
 	position:absolute;
 	top:40px;
 	left:2px;
-	width:132px;	
+	width:130px;
 	height:35px;
 	background-color:#ffffff;
 	color:#1A556E;
@@ -203,9 +203,9 @@
  */
 .jcarousel-skin-lemond-vert-slide .jcarousel-next-vertical {
     position: absolute;
-    bottom: -2px;
-    left: 75px;
-    width: 32px;
+    bottom: 0px;
+    left: 78px;
+    width: 39px;
     height: 32px;
     cursor: pointer;
     /*background: transparent url(next-vertical.png) no-repeat 0 0;*/
@@ -233,9 +233,9 @@
 
 .jcarousel-skin-lemond-vert-slide .jcarousel-prev-vertical {
     position: absolute;
-    top: 5px;
+    top: -2px;
     left: 75px;
-    width: 32px;
+    width: 40px;
     height: 32px;
     cursor: pointer;
 	background: transparent url(slide-up-active.png) no-repeat 0 0;

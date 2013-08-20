@@ -346,7 +346,7 @@ class JURI extends JObject
 		{
 			$retval = true;
 		}
-                file_put_contents('pgnt_log.txt', '\r\nAHAHAHA='.print_r($_parts,1),FILE_APPEND);
+        //file_put_contents('pgnt_log.txt', '\r\nAHAHAHA='.print_r($_parts,1),FILE_APPEND);
 
 		// We need to replace &amp; with & for parse_str to work right...
 		if (isset($_parts['query']) && strpos($_parts['query'], '&amp;'))

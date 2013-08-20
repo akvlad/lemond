@@ -280,6 +280,7 @@ class VirtueMartModelProduct extends VmModel {
 
 			if ($onlyPublished) {
 				$where[] = ' p.`published`="1" ';
+                                $where[] = ' ((NOW() between p.product_available_date AND p.product_expire_date) OR p.product_expire_date="0000-00-00 00:00:00") ';
 			}
 
 			if($isSite and !VmConfig::get('use_as_catalog',0)) {
@@ -606,7 +607,7 @@ class VirtueMartModelProduct extends VmModel {
 	 * @param boolean $front for frontend use
 	 * @param boolean $withCalc calculate prices?
 	 */
-	public function getProduct ($virtuemart_product_id = NULL, $front = TRUE, $withCalc = TRUE, $onlyPublished = TRUE, $quantity = 1) {
+	public function getProduct ($virtuemart_product_id = NULL, $front = TRUE, $withCalc = TRUE, $onlyPublished = TRUE, $quantity = 1,$renderPlugins=true) {
 
 		if (isset($virtuemart_product_id)) {
 			$virtuemart_product_id = $this->setId ($virtuemart_product_id);
@@ -624,7 +625,7 @@ class VirtueMartModelProduct extends VmModel {
 		static $_products = array();
 		if (!array_key_exists ($productKey, $_products)) {
 
-			$child = $this->getProductSingle ($virtuemart_product_id, $front,$quantity);
+			$child = $this->getProductSingle ($virtuemart_product_id, $front,$quantity,$renderPlugins);
 			if (!$child->published && $onlyPublished) {
 				vmdebug('getProduct child is not published, returning zero');
 				return FALSE;
@@ -831,7 +832,7 @@ class VirtueMartModelProduct extends VmModel {
 		}
 	}
 
-	public function getProductSingle ($virtuemart_product_id = NULL, $front = TRUE, $quantity = 1) {
+	public function getProductSingle ($virtuemart_product_id = NULL, $front = TRUE, $quantity = 1,$renderPlugins=true) {
 
 		//$this->fillVoidProduct($front);
 		if (!empty($virtuemart_product_id)) {
@@ -1023,7 +1024,7 @@ class VirtueMartModelProduct extends VmModel {
 
 				// set the custom variants
 				//vmdebug('getProductSingle id '.$product->virtuemart_product_id.' $product->virtuemart_customfield_id '.$product->virtuemart_customfield_id);
-				if (!empty($product->virtuemart_customfield_id)) {
+				if (!empty($product->virtuemart_customfield_id) && $renderPlugins) {
 
 					$customfields = VmModel::getModel ('Customfields');
 					// Load the custom product fields
@@ -1121,7 +1122,7 @@ class VirtueMartModelProduct extends VmModel {
 			$q .= ' WHERE pc.`virtuemart_product_id` = ' . (int)$virtuemart_product_id;
 			if ($front) {
 				$q .= ' AND `published`=1';
-			}
+                        }
 			$this->_db->setQuery ($q);
 			$categories = $this->_db->loadResultArray ();
 		}
@@ -1328,6 +1329,7 @@ class VirtueMartModelProduct extends VmModel {
 
 			if ($onlyPublished) {
 				$q .= ' AND p.`published`= 1';
+                                $q .= ' AND ((NOW() between p.product_available_date AND p.product_expire_date) OR p.product_expire_date="0000-00-00 00:00:00")';
 			}
 
 			if(!empty($this->orderByString)){
@@ -1935,6 +1937,7 @@ class VirtueMartModelProduct extends VmModel {
 			$query .= ' LEFT JOIN `#__virtuemart_products` as p ON p.`virtuemart_product_id` = pm.`virtuemart_product_id` ';
 			$query .= ' LEFT JOIN `#__virtuemart_product_categories` as c ON c.`virtuemart_product_id` = pm.`virtuemart_product_id` ';
 			$query .= ' WHERE p.`published` =1';
+                        $query .= ' AND ((NOW() between p.product_available_date AND p.product_expire_date) OR p.product_expire_date="0000-00-00 00:00:00")';
 			if ($virtuemart_category_id) {
 				$query .= ' AND c.`virtuemart_category_id` =' . (int)$virtuemart_category_id;
 			}
@@ -2201,6 +2204,7 @@ function lowStockWarningEmail($virtuemart_product_id) {
 			if ($app->isSite ()) {
 
 				$q .= ' AND p.`published`="1"';
+                                $q .= ' AND ((NOW() between p.product_available_date AND p.product_expire_date) OR p.product_expire_date="0000-00-00 00:00:00")';
 			}
 
 			$q .= ' GROUP BY `virtuemart_product_id` ORDER BY p.pordering ASC';
@@ -2372,8 +2376,13 @@ function lowStockWarningEmail($virtuemart_product_id) {
 	}
         
         public function getBuyForm($products){
+            $app = JFactory::getApplication();
+            if($app->isAdmin()) return '';
             ob_start();
-            foreach($products as $product){    
+            foreach($products as $product){   
+                if(class_exists(VirtueMartCart)){
+                $cart = VirtueMartCart::getCart();
+                $product->isInCart=isset($cart->products[$product->virtuemart_product_id]);}
                 include(JPATH_VM_SITE.'/helpers/buyForm.php');                
             }
             return ob_get_clean();

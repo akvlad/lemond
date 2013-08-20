@@ -13,7 +13,12 @@
 	padding: 10px 38px 0 38px;
 	margin:0 auto;
 }
-
+.div-ul .jcarousel-skin-lemond-horiz-slide .jcarousel-container-horizontal {
+	width:670px; /*903+80=983*/
+	height:205px; /*175+40=215*/
+	padding: 10px 38px 0 38px;
+	margin:0 auto;
+}
 .jcarousel-skin-lemond-horiz-slide .jcarousel-container-vertical {
     width: 75px;
     height: 245px;
@@ -28,9 +33,19 @@
     width: 901px;
     height: 205px;
 }
+.div-ul .jcarousel-skin-lemond-horiz-slide .jcarousel-clip-horizontal {
+    width: 670px;
+    height: 205px;
+}
 .jcarousel-skin-lemond-horiz-slide .jcarousel-clip-horizontal .jcarousel-list-horizontal
 {
 	width:  935px;
+    height: 205px;
+	padding-left: 5px!important;
+}
+.div-ul .jcarousel-skin-lemond-horiz-slide .jcarousel-clip-horizontal .jcarousel-list-horizontal
+{
+	width:  695px;
     height: 205px;
 	padding-left: 5px!important;
 }
@@ -42,6 +57,11 @@
 .jcarousel-skin-lemond-horiz-slide .jcarousel-item {
 	width: 125px;
 	height: 205px;
+}
+.div-ul .jcarousel-skin-lemond-horiz-slide .jcarousel-item {
+	width: 125px;
+	height: 205px;
+	
 }
 .jcarousel-skin-lemond-horiz-slide .jcarousel-item a
 {
@@ -56,12 +76,14 @@
 	padding: 5px;
 	margin-top: 5px;
 }
-.jcarousel-skin-lemond-horiz-slide .jcarousel-item-horizontal:hover
-{
-  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */   
+.div-ul .jcarousel-skin-lemond-horiz-slide .jcarousel-item-horizontal {
+	margin-left: 0;
+    margin-right: 10px;
+	height: 185px;
+	padding: 5px;
+	margin-top: 5px;
 }
+
 .jcarousel-skin-lemond-horiz-slide .jcarousel-direction-rtl .jcarousel-item-horizontal {
 	margin-left: 10px;
     margin-right: 0;
@@ -81,14 +103,22 @@
  */
 .jcarousel-skin-lemond-horiz-slide .jcarousel-next-horizontal {
     position: absolute;
-    top: 60px;
+    top: 95px;
     right: 5px;
     width: 32px;
     height: 32px;
     cursor: pointer;
     background: url(slide-right-active.png) top left  no-repeat transparent;
 }
-
+.div-ul .jcarousel-skin-lemond-horiz-slide .jcarousel-next-horizontal {
+    position: absolute;
+    top: 90px;
+    right: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+   
+}
 .jcarousel-skin-lemond-horiz-slide .jcarousel-direction-rtl .jcarousel-next-horizontal {
     left: 5px;
     right: auto;
@@ -114,14 +144,21 @@
 
 .jcarousel-skin-lemond-horiz-slide .jcarousel-prev-horizontal {
     position: absolute;
-    top: 60px;
+    top: 95px;
     left: 5px;
     width: 32px;
     height: 32px;
     cursor: pointer;
     background: url(slide-left-active.png) top left  no-repeat transparent;
 }
-
+.div-ul .jcarousel-skin-lemond-horiz-slide .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 90px;
+    left: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
 .jcarousel-skin-lemond-horiz-slide .jcarousel-direction-rtl .jcarousel-prev-horizontal {
     left: auto;
     right: 5px;
@@ -249,4 +286,10 @@ top: 152px;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+}
+.div-ul .jcarousel-skin-lemond-horiz-slide .img-wrapper{
+    height: 110px;
+    display: block;
+    text-align: center;
+	cursor:pointer;
 }

@@ -47,6 +47,7 @@ class VirtuemartViewUser extends VmView {
     private $_list = 0;
     private $_orderList = 0;
     private $_openTab = 0;
+    public $msg = array();
 
     /**
      * Displays the view, collects needed data for the different layouts
@@ -462,6 +463,9 @@ class VirtuemartViewUser extends VmView {
 	$this->layoutName = $tpl;
 	$this->setLayout($tpl);
 	parent::display();
+    }
+    function setMessage($k,$v){
+        $this->msg[$k]=$v;
     }
 
 }

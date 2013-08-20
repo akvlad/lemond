@@ -4,6 +4,7 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="<?php echo '/templates/lemond/images/fav.png' ?>" />
 	<script src='media/jui/js/jquery.js'></script>
 	<script src='media/jui/js/bootstrap.min.js'></script>
 	<script src='media/jui/js/chosen.jquery.min.js'></script>
@@ -60,9 +61,10 @@
 		<div id="wrapper">
 				<div id="content">
 					<jdoc:include type="component" style="XHTML" />
-                                        <div class="cl">
-				</div>
-                                        <jdoc:include type="modules" name="some-catalogue" style="XHTML" />
+                    <div class="cl"></div>
+                    <jdoc:include type="modules" name="some-catalogue" style="XHTML" />
+					<jdoc:include type="modules" name="up" style="XHTML" />
+
 				</div>
 				<div class="cl">
 				</div>
@@ -101,6 +103,9 @@
 	</div>
 	
 	</div>
+    <div id="formlogin">
+        <jdoc:include type="modules" name="login-form" style="XHTML"/>
+    </div>
 </body>
 </html>
 

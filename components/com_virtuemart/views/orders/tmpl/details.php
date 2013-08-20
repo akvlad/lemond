@@ -44,7 +44,8 @@ if($this->print){
 } else {
 
 	?>
-	<h1><?php echo JText::_('COM_VIRTUEMART_ACC_ORDER_INFO'); ?>
+	<h1><?php echo "Заказ ".$this->orderdetails['details']['BT']->order_number.' - '.
+            $this->orderstatuses[$this->orderdetails['details']['BT']->order_status]; //JText::_('COM_VIRTUEMART_ACC_ORDER_INFO'); ?>
 
 	<?php
 
@@ -58,12 +59,13 @@ if($this->print){
 	echo $details_link; ?>
 </h1>
 <?php if($this->order_list_link){ ?>
+        <!--
 	<div class='spaceStyle'>
 	    <div class="floatright">
-		<a href="<?php echo $this->order_list_link ?>"><?php echo JText::_('COM_VIRTUEMART_ORDERS_VIEW_DEFAULT_TITLE'); ?></a>
+		<a href="<?php /* echo $this->order_list_link ?>"><?php echo JText::_('COM_VIRTUEMART_ORDERS_VIEW_DEFAULT_TITLE'); */?></a>
 	    </div>
 	    <div class="clear"></div>
-	</div>
+	</div>-->
 <?php }?>
 <div class='spaceStyle'>
 	<?php
@@ -76,10 +78,12 @@ if($this->print){
 
 	$tabarray = array();
 
-	$tabarray['items'] = 'COM_VIRTUEMART_ORDER_ITEM';
-	$tabarray['history'] = 'COM_VIRTUEMART_ORDER_HISTORY';
+	//$tabarray['items'] = 'COM_VIRTUEMART_ORDER_ITEM';
+	//$tabarray['history'] = 'COM_VIRTUEMART_ORDER_HISTORY';
 
-	shopFunctionsF::buildTabs ( $this, $tabarray); ?>
+    echo $this->loadTemplate('items');
+
+	//shopFunctionsF::buildTabs ( $this, $tabarray); ?>
 	 </div>
 	    <br clear="all"/><br/>
 	<?php

@@ -32,14 +32,24 @@ $document->addStyleSheet('/components/com_virtuemart/assets/js/jcarousel/skins/m
 
 $document->addScriptDeclaration("
     jQuery(document).ready(
-        function() {jQuery('#prod-imgs').jcarousel({vertical: true });}
-    );");
+        function() {jQuery('#prod-imgs').jcarousel({vertical: true });
+                    jQuery('#prod-desc-all .title').click(function(e){
+                var _e=jQuery(e.target);
+                var desc_div=_e.closest('.prod-desc-div');
+                if(desc_div.hasClass('product-description')){
+                    desc_div.removeClass('product-description');desc_div.addClass('product-description-closed');
+                } else{
+                    desc_div.removeClass('product-description-closed').addClass('product-description');
+                }
+            });
+    });");
 $document->addScriptDeclaration("
 //<![CDATA[
 function imageClick(e,i){
     var carousel=jQuery(e.target).closest('.popup-imgs').find('.product-carousel').data('jcarousel');
     carousel.scroll(i);
 }
+var initialCarouselPosition=1;
 	jQuery(document).ready(function($) {
 		$('a.ask-a-question').click( function(){
 			$.facebox({
@@ -50,13 +60,14 @@ function imageClick(e,i){
 		});
             jQuery(\"a[rel=facebox]\").facebox(function() {jQuery(\".product-carousel\").jcarousel();});
         jQuery(document).bind('reveal.facebox', function() {
-            jQuery(\"#facebox .product-carousel\").jcarousel({visible: 1, scroll: 1,
+            jQuery(\"#facebox .product-carousel\").jcarousel({visible: 1, scroll: 1,start: initialCarouselPosition,
                 itemFirstInCallback: function(c,li,i,s) {
                     jQuery('.popup .popup-thumbs img').removeClass('popup-active-thumb');
                     jQuery('.popup .popup-thumbs img:nth-child('+i+')').addClass('popup-active-thumb');
                 } 
             });
-        });                
+            initialCarouselPosition=1;
+        });              
 
 	/*	$('.additional-images a').mouseover(function() {
 			var himg = this.href ;
@@ -140,7 +151,7 @@ if (empty($this->product)) {
 	</div>
 
     <?php // Product Title */  ?>
-    <h1><?php echo $this->product->product_name ?></h1>
+    <!--<h1><?php //echo $this->product->product_name ?></h1>-->
     <?php // Product Title END   ?>
 
     <?php // afterDisplayTitle Event
@@ -194,7 +205,22 @@ if (empty($this->product)) {
     ?>
 
 <div class="proddet-all">
+	<div class="div-name">
+		<?php // Product Title */  ?>
+		<h1><?php echo $this->product->product_name ?></h1>
+                <p class="code">Код товара: <?php echo $this->product->product_sku ?></p>
+		<?php // Product Title END   ?>
+
 		<div class="pic width60 floatleft">
+			<div class="lemenii">
+				<span class="text-lem">+<?= round($this->product->prices['salesPrice']/5,0); ?> </span> 
+				<span class="text-all">	леманий</span>
+			</div>
+                    <?php if (!empty($this->product->customfieldsSorted['gift'])) 
+			{ ?><div class="gift"><div class="birka"> </div><div id='gift-in' class="gift-in"><?php
+				$this->position = 'gift'; 
+			echo $this->loadTemplate('customfields'); ?> 
+			</div></div><?php } ?>
 			<?php
 			echo $this->loadTemplate('images');
 			?>
@@ -294,7 +320,7 @@ if (empty($this->product)) {
 			</div>
 		
 		</div>
-
+	</div>
 	<div class="charact floatleft">
 
                     <?php if (!empty($this->product->customfieldsSorted['carriagechars'])) 
@@ -312,12 +338,13 @@ if (empty($this->product)) {
 	$position   = 'mod-payment';
 	echo $renderer->render($position, $options, null);?>
 
-    <div class="product-description">
-	<?php /** @todo Test if content plugins modify the product description */ ?>
-    	<span class="title"><?php echo JText::_('COM_VIRTUEMART_PRODUCT_DESC_TITLE') ?></span>
-	<div class="desc-cont"><?php echo $this->product->product_desc; ?></div>
-    </div>
-	
+    <div id="prod-desc-all">
+		<div class="product-description prod-desc-div">
+		<?php /** @todo Test if content plugins modify the product description */ ?>
+			<span class="title"><?php echo JText::_('COM_VIRTUEMART_PRODUCT_DESC_TITLE') ?></span>
+		<div class="desc-cont"><?php echo $this->product->product_desc; ?></div>
+		</div>
+	</div>
 	
 	<div class="cl"></div>
     </div>

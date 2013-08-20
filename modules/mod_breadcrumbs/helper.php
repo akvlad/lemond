@@ -18,7 +18,21 @@ class modBreadCrumbsHelper
 		$pathway	= $app->getPathway();
 		$items		= $pathway->getPathWay();
 
-		$count = count($items);
+        $count = count($items);
+        if($count > 3){
+
+        foreach($items as $item){
+            if(strpos($item->link,'index.php')===false)
+            {
+                $_items[] = $item;
+            }
+        }
+            $items = $_items;
+            $count = count($items);
+        }
+
+        //var_dump($items); die();
+
 		// don't use $items here as it references JPathway properties directly
 		$crumbs	= array();
 		for ($i = 0; $i < $count; $i ++)

@@ -8,15 +8,17 @@
 }
 
 .jcarousel-skin-lemond-access-slide .jcarousel-container-horizontal {
-	width:901px; /*903+80=983*/
-	height:205px; /*175+40=215*/
+	width:1150px; /*903+80=983*/
+	height:265px; /*175+40=215*/
 	padding: 10px 38px 0 38px;
 	margin:0 auto;
+    position: relative;
+    top: 15px;
 }
 
 .jcarousel-skin-lemond-access-slide .jcarousel-container-vertical {
     width: 75px;
-    height: 245px;
+    height: 255px;
     padding: 40px 20px;
 }
 
@@ -25,13 +27,13 @@
 }
 
 .jcarousel-skin-lemond-access-slide .jcarousel-clip-horizontal {
-    width: 901px;
-    height: 205px;
+    width: 1150px;
+    height: 265px;
 }
 .jcarousel-skin-lemond-access-slide .jcarousel-clip-horizontal .jcarousel-list-horizontal
 {
-	width:  935px;
-    height: 205px;
+	width:  1140px;
+    height: 265px;
 	padding: 5px!important;
 }
 .jcarousel-skin-lemond-access-slide .jcarousel-clip-vertical {
@@ -46,22 +48,17 @@
 .jcarousel-skin-lemond-access-slide .jcarousel-item a
 {
 	color: #999999;
-	font-size: 11px;
-	line-height: 14px;	
+	font-size: 14px;
+	line-height: 15px;
 }
 .jcarousel-skin-lemond-access-slide .jcarousel-item-horizontal {
 	margin-left: 0;
-    margin-right: 30px;
-	height: 185px;
+    margin-right: 45px;
+	height: 235px;
 	padding: 5px;
-	width: 140px;
+	width: 150px;
 }
-.jcarousel-skin-lemond-access-slide .jcarousel-item-horizontal:hover
-{
-	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
-}
+
 .jcarousel-skin-lemond-access-slide .jcarousel-direction-rtl .jcarousel-item-horizontal {
 	margin-left: 10px;
     margin-right: 0;
@@ -203,13 +200,18 @@
 }
 
 .jcarousel-skin-lemond-access-slide .jcarousel-item a.calalogue-ref {
-height: 33px;
-overflow: hidden;
-display: inline-block;
+    height: 33px;
+    overflow: hidden;
+    display: inline-block;
+    margin-top: -15px;
+    margin-left: 0px;
+    vertical-align: top;
 }
 
 .jcarousel-skin-lemond-access-slide .relative-wrapper{
     position: relative;
+	width:161px;
+	height:159px;
 }
 
 .jcarousel-skin-lemond-access-slide span.addtocart-button input.addtocart-button{
@@ -220,11 +222,12 @@ display: inline-block;
     background-repeat: no-repeat;
     display: block;
     background-position: left top;
-    width: 34px;
-    height: 34px;
+	background-size: 41px 41px;
+    width: 41px;
+    height: 41px;
     color: transparent;
-    left: 100px;
-top: 156px;
+	left: 120px;
+	top: 211px;
 }
 
 .jcarousel-skin-lemond-access-slide .slider-catalogue-imgs{
@@ -245,8 +248,15 @@ top: 156px;
 }
 
 .jcarousel-skin-lemond-access-slide .img-wrapper{
-    height: 110px;
+    width:161px;
+	height:159px;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+}
+.jcarousel-skin-lemond-access-slide .img-wrapper:hover 
+{
+	background: url('/templates/lemond/images/acs-fon-active.png') top left no-repeat transparent;
+	width:161px;
+	height:159px;
 }

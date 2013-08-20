@@ -15,7 +15,9 @@ $doc->addScriptDeclaration('
 
 //print('<xmp>');var_dump($products[0]);print('</xmp>'); die();
 ?>
-<h3>Каталог <?= $category->category_name ?></h3>
+<h3><?= JHtml::link(JRoute::_(JURI::base()).$category->virtuemart_category_id, Каталог) ?> <img src="<?= JURI::base(true) ?>/templates/lemond/images/prod-point-left.png" />  
+    <?= JHtml::link(JRoute::_('index.php?option=com_virtuemart&view=category&virtuemart_category_id='.$category->virtuemart_category_id), $category->category_name) ?> 
+                 <img src="<?= JURI::base(true) ?>/templates/lemond/images/prod-point-down.png" /> </h3>
 <ul class="cat-product-carousel  jcarousel-skin-lemond-horiz-slide">
     <?php foreach($products as $product){ ?>
     <li> 

@@ -36,7 +36,7 @@ defined('_JEXEC') or die('Restricted access');?>
 				<div style="text-align:right;font-weight:bold;"><?php echo JText::_('COM_VIRTUEMART_CUSTOM_PAGE_TITLE'); ?> </div>
 			</td>
 			<td valign="top">
-				<input type="text" class="inputbox" size="70" name="customtitle" value="<?php echo $this->product->customtitle ?>" />
+				<input type="text" class="inputbox" size="70" id="customtitle-inp" name="customtitle" value="<?php echo $this->product->customtitle ?>" />
 			</td>
 		</tr>
 		<tr>
@@ -69,6 +69,21 @@ defined('_JEXEC') or die('Restricted access');?>
 				<input type="text" class="inputbox" size="60" name="metaauthor" value="<?php echo $this->product->metaauthor ?>" />
 			</td>
 		</tr>
+        <tr>
+            <td></td>
+            <td>
+                <script type="text/javascript">
+                    function onMetaimport(){
+                        var name = jQuery("#product_name").attr('value');
+                        jQuery("#customtitle-inp").attr('value',name+'. Купить Коляска прогулочная '+name+
+                            '  в Украине, Донецке, Харьков, Киев');
+                        jQuery("#metadesc").html(name+
+                            ' в интернет магазине Лемонд. Детская коляска по низкой цене в Украине: Донецк, Харьков, Киев, Днепропетровск, Запорожье.');
+                    }
+                </script>
+                <input type="button" id="metaimport-button" onclick="onMetaimport()" value = "Импорт метаданных" />
+            </td>
+        </tr>
 	</table>
 </fieldset>
 

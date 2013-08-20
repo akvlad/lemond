@@ -3255,3 +3255,8 @@ span.update-badge {
 	margin-right: 15px;
 }
 
+.colors-closed {
+height: 23px;
+overflow: hidden;
+}
+

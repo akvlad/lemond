@@ -179,7 +179,7 @@ class VirtueMartModelUserfields extends VmModel {
 
 			$this->_data->load((int)$this->_id);
 		}
-
+                
 		if(strpos($this->_data->type,'plugin')!==false){
   			JPluginHelper::importPlugin('vmuserfield');
   			$dispatcher = JDispatcher::getInstance();
@@ -445,7 +445,7 @@ class VirtueMartModelUserfields extends VmModel {
 	 *
 	 * @author Max Milbers
 	 */
-	public function getUserFieldsFor($layoutName, $type,$userId = -1){
+	public function getUserFieldsFor($layoutName, $type,$userId = -1,$skips=array()){
 
  		//vmdebug('getUserFieldsFor '.$layoutName.' '. $type .' ' . $userId);
 		$register = false;
@@ -463,18 +463,24 @@ class VirtueMartModelUserfields extends VmModel {
 			$register = false;
 		}
 
-		$skips = array();
+		/*$skips = array();
 		//Maybe there is another method to define the skips
 		$skips = array('address_type');
 
 		if((!$register or $type =='ST') and $layoutName !='edit'){
-			$skips[] = 'name';
-			$skips[] = 'username';
-			$skips[] = 'password';
-			$skips[] = 'password2';
+			//$skips[] = 'name';
+			//$skips[] = 'username';
+			//$skips[] = 'password';
+			//$skips[] = 'password2';
 			$skips[] = 'user_is_vendor';
 			$skips[] = 'agreed';
 		}
+        $jUser = &JFactory::getUser();
+        if($jUser->id > 0){
+            $skips[]='password';
+            $skips[]='password2';
+            
+        }*/
 
 		//Here we get the fields
 		if ($type == 'BT') {
@@ -529,7 +535,7 @@ class VirtueMartModelUserfields extends VmModel {
 	{
 	    // stAn, we can't really create cache per sql as we want to create named array as well
 		$cache_hash = md5($_sec.serialize($_switches).serialize($_skip).$this->_selectedOrdering.$this->_selectedOrderingDir); 
-		if (isset(self::$_cache_ordered[$cache_hash])) return self::$_cache_ordered[$cache_hash]; 
+		//if (isset(self::$_cache_ordered[$cache_hash])) return self::$_cache_ordered[$cache_hash]; 
 	
 		$_q = 'SELECT * FROM `#__virtuemart_userfields` WHERE 1 = 1 ';
 
@@ -848,10 +854,14 @@ class VirtueMartModelUserfields extends VmModel {
 						//	break;
 					case 'password':
 					case 'password2':
+                    case 'current_password':
 						$_return['fields'][$_fld->name]['formcode'] = '<input type="password" id="' . $_prefix.$_fld->name . '_field" name="' . $_prefix.$_fld->name . '" size="30" class="inputbox" />'."\n";
 						break;
 
-					case 'agreed':
+                    case 'shange_pass':
+                        $_return['fields'][$_fld->name]['formcode'] = '<input type="checkbox" name="shange_pass[]" id="shange_pass_field0" value="1">';
+                        break;
+                    case 'agreed':
 						$_return['fields'][$_fld->name]['formcode'] = '<input type="checkbox" name="'
 						. $_prefix.$_fld->name . '" id="' . $_prefix.$_fld->name . '_field" value="1" '
 						. ($_return['fields'][$_fld->name]['value'] ? 'checked="checked"' : '') .'/>';
@@ -862,7 +872,7 @@ class VirtueMartModelUserfields extends VmModel {
 
 							JPluginHelper::importPlugin('vmuserfield');
 							$dispatcher = JDispatcher::getInstance();
-							$dispatcher->trigger('plgVmOnUserfieldDisplay',array($_prefix, $_fld,isset($_userData['virtuemart_user_id'])?$_userData['virtuemart_user_id']:0,  &$_return) );
+							$dispatcher->trigger('plgVmOnUserfieldDisplay',array($_prefix, $_fld,isset($_userData['virtuemart_user_id'])?$_userData:0,  &$_return) );
 							break;
 						}
 					switch( $_fld->type ) {
@@ -1139,6 +1149,7 @@ class VirtueMartModelUserfields extends VmModel {
 		foreach($fieldIds as $fieldId) {
 			$_fieldName = $this->getNameByID($fieldId);
 			$field->load($fieldId);
+                        
 
 			if ($field->type != 'delimiter') {
 				// Alter the user_info table

@@ -55,7 +55,7 @@ if (!empty($this->product->images)) {
 
 
 	<?php
-		echo $image->displayMediaFull("",true,"rel='vm-additional-images'",false);
+		echo $image->displayMediaFull("",true,"rel='facebox'",false);
 	?>
 
 	 <div class="clear"></div>

@@ -265,6 +265,19 @@ class plgVmCustomCarriageChars extends vmCustomPlugin {
 			}
 		}
 	}
+        
+        private function getAllOptions()
+        {
+            $vols=array('country','age','type','brend');
+            $db=&JFactory::getDBO();
+            foreach($vols as $vol){
+                $query='SELECT DISTINCT content as id, content as val FROM #__virtuemart_product_custom_plg_carriagechars as cpc
+                    LEFT JOIN #__virtuemart_product_custom_plg_carriage_content as cpcc
+                    ON cpc.'.$vol.'=cpcc.id';
+                $db->setQuery($query);
+                $this->params->options[$vol]=$db->loadAssocList();
+            }
+        }
 
 	/*
 	 * Renders html while editing probuct in backend
@@ -278,17 +291,36 @@ class plgVmCustomCarriageChars extends vmCustomPlugin {
 
 		$this->getCustomParams($field);
 		$this->my_getPluginCustomData($field, $product_id);
+                $this->getAllOptions();
+                $doc=  &JFactory::getDocument();
+                $doc->addScript(JURI::base(true).'/../plugins/vmcustom/carriagechars/tmpl/charsback.js');
 
 		$html ='<div>';
-		$html .='Страна ';
-		$html .='<input type="text" value="'.$this->params->country.'" size="10" name="plugin_param['.$row.']['.$this->_name.'][country]">';
-		$html .='<br>Возраст ';
-		$html .='<input type="text" value="'.$this->params->age.'" size="10" name="plugin_param['.$row.']['.$this->_name.'][age]">';
-		$html .='<br>Тип ';
-		$html .='<input type="text" value="'.$this->params->type.'" size="10" name="plugin_param['.$row.']['.$this->_name.'][type]">';
-		$html .='<br>Пол ребенка ';
-		$options[]=JHTML::_('select.option','m','Мальчик');
-		$options[]=JHTML::_('select.option','f','Девочка');
+                $vols=array('country'=>'Страна','age'=>"Возраст",'type'=>"Тип",'brend'=>'Бренд');
+                foreach ( $vols as $vol=>$key ){
+                    $html .='<br>'.$key.'<br>';
+                    $html.='<input type="checkbox" id="'.$vol.'checker" name="'.$vol.'manualVal" value="1">Другой вариант';
+                    $html.='<div id="'.$vol.'list">'.JHTML::_('select.genericlist',
+                                                            $this->params->options[$vol],
+                                                            'plugin_param['.$row.']['.$this->_name.']['.$vol.']',
+                                                            null,
+                                                            'id','val',
+                                                            $this->params->$vol,
+                                                            null,
+                                                            false);
+                    $html .='</div><br><input type="text" value="" id="'.$vol.'manual" size="10" name="asd" style="display:none">';
+                    $doc->addScriptDeclaration('
+                        jQuery(document).ready(function(){
+                            jQuery("#'.$vol.'checker").manualChoose({"manual-selector":"#'.$vol.'manual",
+                                "list-selector":"#'.$vol.'list",
+                                "name":"plugin_param['.$row.']['.$this->_name.']['.$vol.']"});
+                        });
+                    ');
+                }
+		$options[]=JHTML::_('select.option','Мальчик','Мальчик');
+		$options[]=JHTML::_('select.option','Девочка','Девочка');
+                $options[]=JHTML::_('select.option','Любой','Любой');
+                $html .='<br>Пол ребенка ';
 		$html.=JHTML::_('select.genericlist',
 							$options,
 							'plugin_param['.$row.']['.$this->_name.'][gender]',
@@ -370,12 +402,12 @@ class plgVmCustomCarriageChars extends vmCustomPlugin {
                 
 		//var_dump($data);die();
 		$db=&JFactory::getDBO();
-		if($data['virtuemart_manufacturer_id']!=0)
+		/*if($data['virtuemart_manufacturer_id']!=0)
 		{
 			$db->setQuery('SELECT mf_name FROM #__virtuemart_manufacturers_ru_ru ' .
 						  'WHERE virtuemart_manufacturer_id='.$data['virtuemart_manufacturer_id']);
 			$plugin_param[$this->_name]['brend']=$db->loadResult();
-		}
+		}*/
 		foreach($this->_varsToPushParam as $k=>$v)
 		{
 			$contID=$this->isFieldContentExists($k,$plugin_param[$this->_name][$k]);

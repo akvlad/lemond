@@ -41,12 +41,16 @@ if (count($this->orderlist) == 0) {
 		<!--th>
 			<?php //echo JText::_('COM_VIRTUEMART_ORDER_LIST_MDATE'); ?>
 		</th -->
+        <th>
+            <?php echo JText::_('COM_VIRTUEMART_ORDER_LIST_TOTAL'); ?>
+        </th>
 		<th>
 			<?php echo JText::_('COM_VIRTUEMART_ORDER_LIST_STATUS'); ?>
 		</th>
-		<th>
-			<?php echo JText::_('COM_VIRTUEMART_ORDER_LIST_TOTAL'); ?>
-		</th>
+        <th>
+            <?php echo JText::_('COM_VIRTUEMART_ORDER_LIST_LOOK'); ?>
+        </th>
+
 	</thead>
 	<?php
 		$k = 0;
@@ -55,20 +59,25 @@ if (count($this->orderlist) == 0) {
 			?>
 			<tr class="<?php echo "row$k"; ?>">
 				<td align="left">
-					<a href="<?php echo $editlink; ?>"><?php echo $row->order_number; ?></a>
+					<?php echo $row->order_number; ?></a>
 				</td>
 				<td align="left">
 					<?php echo vmJsApi::date($row->created_on,'LC4',true); ?>
 				</td>
+                <td align="left">
+                    <?php echo  $this->currency->priceDisplay($row->order_total, $row->currency,
+                        $quantity = 1.0,$inToShopCurrency = false,$nb= 0); ?>
+                </td>
 				<!--td align="left">
 					<?php //echo vmJsApi::date($row->modified_on,'LC3',true); ?>
 				</td -->
 				<td align="left">
 					<?php echo ShopFunctions::getOrderStatusName($row->order_status); ?>
 				</td>
-				<td align="left">
-					<?php echo $this->currency->priceDisplay($row->order_total, $row->currency); ?>
-				</td>
+                <td>
+                    <a href="<?php echo $editlink; ?>"><?php echo JText::_('COM_VIRTUEMART_ORDER_LIST_LOOK'); ?></a>
+                </td>
+
 			</tr>
 	<?php
 			$k = 1 - $k;

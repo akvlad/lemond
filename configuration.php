@@ -5,7 +5,7 @@ class JConfig {
 	public $display_offline_message = '1';
 	public $offline_image = '';
 	public $sitename = 'Лемонинди';
-	public $editor = 'jce';
+	public $editor = 'tinymce';
 	public $captcha = '0';
 	public $list_limit = '50';
 	public $access = '1';
@@ -24,9 +24,9 @@ class JConfig {
 	public $helpurl = 'http://help.joomla.org/proxy/index.php?option=com_help&keyref=Help{major}{minor}:{keyref}';
 	public $ftp_host = '127.0.0.1';
 	public $ftp_port = '21';
-	public $ftp_user = 'admin';
-	public $ftp_pass = 'lemonadm';
-	public $ftp_root = '';
+	public $ftp_user = 'evgenia';
+	public $ftp_pass = 'VN8Gasq';
+	public $ftp_root = '/';
 	public $ftp_enable = '0';
 	public $offset = 'UTC';
 	public $offset_user = 'UTC';
@@ -53,8 +53,8 @@ class JConfig {
 	public $sef_suffix = '1';
 	public $unicodeslugs = '0';
 	public $feed_limit = '10';
-	public $log_path = '/var/www/lemond/lemond.com.ua/logs';
-	public $tmp_path = '/var/www/lemond/lemond.com.ua/tmp';
+	public $log_path = '/home/fay/PhpstormProjects/lemond/logs';
+	public $tmp_path = '/home/fay/PhpstormProjects/lemond/tmp';
 	public $lifetime = '150';
 	public $session_handler = 'database';
 	public $MetaRights = '';

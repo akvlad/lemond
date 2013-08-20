@@ -65,6 +65,7 @@ class VmModel extends JModel {
 	 *
 	 * @author Patrick Kohl
 	 * @author Max Milbers
+     * @return VirtueMartModelUser
 	 */
 	static function getModel($name=false){
 

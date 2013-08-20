@@ -10,7 +10,7 @@ function processPiptik(cat,subcat){
     if(sub_left+sub_width - 15 < li_left + li_width * 0.5 )
         {
             sub_left= li_left + li_width * 0.5 - sub_width + 15;
-            sub.css('margin-left',sub_left+'px');
+            //sub.css('margin-left',sub_left+'px');
         }
     var piptik=subcat.find('.piptik');
     piptik.css('left',

@@ -120,7 +120,7 @@ class VirtueMartModelCategory extends VmModel {
 		static $_childCateogryList = array ();
       if (! array_key_exists ($key,$_childCateogryList)){
 
-			$query = 'SELECT L.* FROM `#__virtuemart_categories_'.VMLANG.'` as L
+			$query = 'SELECT L.*,C.* FROM `#__virtuemart_categories_'.VMLANG.'` as L
 						JOIN `#__virtuemart_categories` as C using (`virtuemart_category_id`)';
 			$query .= ' LEFT JOIN `#__virtuemart_category_categories` as CC on C.`virtuemart_category_id` = CC.`category_child_id`';
 			$query .= 'WHERE CC.`category_parent_id` = ' . (int)$virtuemart_category_id . ' ';

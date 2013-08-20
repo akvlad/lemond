@@ -109,7 +109,7 @@ class VirtueMartModelShipmentmethod extends VmModel {
 		$whereString = '';
 		$select = ' * FROM `#__virtuemart_shipmentmethods_'.VMLANG.'` as l ';
 		$joinedTables = ' JOIN `#__virtuemart_shipmentmethods`   USING (`virtuemart_shipmentmethod_id`) ';
-		$this->_data =$this->exeSortSearchListQuery(0,$select,$joinedTables,$whereString,' ',$this->_getOrdering() );
+		$this->_data =$this->exeSortSearchListQuery(0,$select,$joinedTables,$whereString,' ','ORDER BY #__virtuemart_shipmentmethods.ordering ASC' );
 		//$this->_data = $this->exeSortSearchListQuery(0,'',$query,$whereString,'',$this->_getOrdering('ordering'));
 
 		if(isset($this->_data)){

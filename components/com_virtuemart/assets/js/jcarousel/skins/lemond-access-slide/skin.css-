@@ -32,6 +32,7 @@
 {
 	width:  935px;
     height: 205px;
+	padding: 5px!important;
 }
 .jcarousel-skin-lemond-access-slide .jcarousel-clip-vertical {
     width:  75px;
@@ -51,7 +52,9 @@
 .jcarousel-skin-lemond-access-slide .jcarousel-item-horizontal {
 	margin-left: 0;
     margin-right: 30px;
-	
+	height: 185px;
+	padding: 5px;
+	width: 140px;
 }
 
 .jcarousel-skin-lemond-access-slide .jcarousel-direction-rtl .jcarousel-item-horizontal {
@@ -237,8 +240,15 @@ top: 156px;
 }
 
 .jcarousel-skin-lemond-access-slide .img-wrapper{
-    height: 110px;
+    width:129px;
+	height:127px;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+}
+.jcarousel-skin-lemond-access-slide .img-wrapper:hover 
+{
+	background: url('/templates/lemond/images/acs-fon-active.png') top left no-repeat transparent;
+	width:129px;
+	height:127px;
 }

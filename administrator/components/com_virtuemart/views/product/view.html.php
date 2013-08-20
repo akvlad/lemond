@@ -58,6 +58,8 @@ class VirtuemartViewProduct extends VmView {
 				} else {
 					$virtuemart_product_id = (int)$virtuemart_product_id;
 				}
+                                
+                                
 
 				$product = $model->getProductSingle($virtuemart_product_id,false);
 				$product_parent= $model->getProductParent($product->product_parent_id);

@@ -22,6 +22,16 @@
 		<position>content</position>
 		<position>menu</position>
 	</positions>
-
+        
+        <params>
+            <param name="mainCss" type="text" default="style.css" />
+        </params>
+        <config>
+            <fields name="params">
+                <fieldset name="basic">
+                    <field name="mainCss" type="text" default="style.css" />
+                </fieldset>
+            </fields>
+        </config>
 
 </extension>

@@ -24,6 +24,7 @@ defined('_JEXEC') or die; ?>
 			<div class="mc-yourcart">
 				
 				<span class="mc-totalproduct"><?php echo $summ; ?></span>
+				<a class="mc-totalproduct-link" href="#"></a>
 				   
 			</div>
 			<?/*<div class="mc-totalprice" <?php echo (!empty($cart->products))?'style="display:block;"':'style="display:none;"'; ?> >		

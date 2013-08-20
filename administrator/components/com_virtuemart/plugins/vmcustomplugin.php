@@ -184,16 +184,16 @@ abstract class vmCustomPlugin extends vmPlugin {
 	protected function getPluginCustomData (&$field, $product_id) {
 
 		$id = $this->getIdForCustomIdProduct ($product_id, $field->virtuemart_custom_id);
-
+                
 		$datas = $this->getPluginInternalData ($id);
 		if ($datas) {
 			foreach ($this->_varsToPushParam as $k => $v) {
 				if (!isset($datas->$k)) {
 					continue;
 				}
-				if (isset($this->params->$k) && empty($datas->$k)) {
+				/*if (isset($this->params->$k) && empty($datas->$k)) {
 					continue;
-				}
+				}*/
 				$this->params->$k = $datas->$k;
 			}
 		}

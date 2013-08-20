@@ -138,16 +138,17 @@ class JDispatcher extends JObject
 		$args = (array) $args;
 
 		$event = strtolower($event);
-
 		// Check if any plugins are attached to the event.
 		if (!isset($this->_methods[$event]) || empty($this->_methods[$event]))
 		{
 			// No Plugins Associated To Event!
 			return $result;
 		}
+                
 		// Loop through all plugins having a method matching our event
 		foreach ($this->_methods[$event] as $key)
 		{
+                    
 			// Check if the plugin is present.
 			if (!isset($this->_observers[$key]))
 			{
@@ -170,6 +171,7 @@ class JDispatcher extends JObject
 				$result[] = $value;
 			}
 		}
+               
 
 		return $result;
 	}
