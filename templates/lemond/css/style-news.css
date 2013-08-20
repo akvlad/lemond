@@ -1,0 +1,25 @@
+#head #header #header-menu ul.menu .active a.header-8 span, #head #header #header-menu ul.menu .active a.header-8:link span, #head #header #header-menu ul.menu .active a.header-8:visited span, #head #header #header-menu ul.menu .active a.header-8:active span, #head #header #header-menu ul.menu .active a.header-8:hover span {
+	text-decoration:none;
+	border:none;
+}
+
+#top #top-line #top-pos1 a:hover, #top #top-line #top-pos2 a:hover {
+	text-decoration:none;
+}
+
+#wrapper #two-colomns #content{
+    padding-left: 52px;
+    width: auto;
+}
+#wrapper #two-colomns #left .moduletabledmdm {
+    margin-top: 28px;
+}
+
+#wrapper #two-colomns #content .pagination
+{
+    bottom: 0px;
+    margin: 0 auto 0 300px;
+    position: absolute;
+    text-align: center;
+    width: 398px;
+}

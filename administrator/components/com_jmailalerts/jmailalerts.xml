@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/component-install.dtd">
+<install type="component" version="1.5.0" method="upgrade">
+	<name>J!MailAlerts</name>
+	<author>Techjoomla</author>
+	<creationDate>18th May 2012</creationDate>
+	<copyright>(c)Techjoomla</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>extensions@techjoomla.com</authorEmail>
+	<authorUrl>http://www.techjoomla.com</authorUrl>	
+	<version>2.4.4</version>
+	<description>This component is used to send email notifications to subscribed users with selected plugin content.</description>
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>controller.php</filename>
+		<filename>jmailalerts.php</filename>
+		<folder>emails</folder>
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<folder>helpers</folder>
+	</files>
+	<languages folder="site/language/en-GB">
+        	<language tag="en-GB">en-GB.com_jmailalerts.ini</language>
+	</languages>
+	
+	<administration>
+		<menu img="../components/com_jmailalerts/images/icons/mail_alert.png">COM_JMAILALERTS</menu>
+		<submenu>
+			<menu link="option=com_jmailalerts&amp;view=config" img="components/com_jmailalerts/images/icons/mail_alert_configure_small.png">COM_CONFIG</menu>
+			<menu link="option=com_jmailalerts&amp;view=alertypes"    img="components/com_jmailalerts/images/icons/mail_alert_mail_type_small.png">COM_ALERTYPE</menu>
+			<menu link="option=com_jmailalerts&amp;view=sync"    img="components/com_jmailalerts/images/icons/mail_alert_synchronize_small.png">COM_SYNC</menu>
+			<menu link="option=com_jmailalerts&amp;view=mailsimulate"    img="components/com_jmailalerts/images/icons/mail_alert_mail_find_small.png">COM_MAILSIMULATION</menu>
+			<menu link="option=com_jmailalerts&amp;view=manageuser"    img="components/com_jmailalerts/images/icons/manageuser_small.png">COM_MANAGEUSER</menu>
+			<menu link="option=com_jmailalerts&amp;view=healthcheck"    img="components/com_jmailalerts/images/icons/healthcheck_small.png">COM_HEALTHCHECK</menu>
+		</submenu>
+
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>log.txt</filename>
+			<filename>controller.php</filename>
+			<filename>admin.jmailalerts.php</filename>
+			<filename>install.sql</filename>			
+			<folder>css</folder>			
+			<folder>plugins</folder>
+			<folder>controllers</folder>
+			<folder>models</folder>
+			<folder>views</folder>
+			<folder>images</folder>
+			<folder>tables</folder>
+		</files>
+
+		<languages folder="admin/language/en-GB">
+          		<language tag="en-GB">en-GB.com_jmailalerts.ini</language>
+		        <language tag="en-GB">en-GB.com_jmailalerts.sys.ini</language>
+		        <language tag="en-GB">en-GB.com_jmailalerts.menu.ini</language>
+        	</languages>
+	</administration>
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">install.sql</file>
+		</sql>
+	</install>
+	<installfile>install.jmailalerts.php</installfile>
+</install>

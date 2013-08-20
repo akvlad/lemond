@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="plugin" group="vmshipment" >
+    <name>city choose shipment plugin</name>
+    <creationDate>July 17 2013</creationDate>
+    <author>Akchurin V.A.</author>
+    <authorUrl>n/a</authorUrl>
+    <copyright>n/a</copyright>
+    <license>n/a</license>
+    <version>1.0b</version>
+    <description>choose city</description>
+    <files>
+		<filename>index.html</filename>
+	<filename plugin="city_choose">city_choose.php</filename>
+	<folder>tmpl</folder>
+    </files>
+    <params>
+	<param name="data" type="textarea"    label="Города" description="" />
+    </params>
+    <fields>
+        <field name="data" type="textarea"    label="Города" description="" />
+    </fields>
+
+</install>

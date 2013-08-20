@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="plugin" group="vmshipment" >
+    <name>doors shipment plugin</name>
+    <creationDate>July 18 2013</creationDate>
+    <author>Akchurin V.A.</author>
+    <authorUrl>n/a</authorUrl>
+    <copyright>n/a</copyright>
+    <license>n/a</license>
+    <version>1.0b</version>
+    <description>shipment to door</description>
+    <files>
+		<filename>index.html</filename>
+	<filename plugin="door">door.php</filename>
+	<folder>tmpl</folder>
+    </files>
+
+</install>

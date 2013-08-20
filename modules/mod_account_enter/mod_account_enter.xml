@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="site" method="upgrade">
+    <name>Acciunt link</name>
+    <author>Akchurin V.A.</author>
+    <version>1.0b</version>
+    <description>Модуль вывода ссылки в кабинет пользователя</description>
+    <files>
+        <filename>mod_account_enter.xml</filename>
+        <filename module="mod_account_enter">mod_account_enter.php</filename>
+        <folder>tmpl</folder>
+        <filename>index.html</filename>
+    </files>
+</extension> 

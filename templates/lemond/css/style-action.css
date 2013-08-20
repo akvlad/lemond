@@ -1,0 +1,192 @@
+#head #header #header-menu ul.menu .active a.header-8 span, #head #header #header-menu ul.menu .active a.header-8:link span, #head #header #header-menu ul.menu .active a.header-8:visited span, #head #header #header-menu ul.menu .active a.header-8:active span, #head #header #header-menu ul.menu .active a.header-8:hover span {
+	text-decoration:none;
+	border:none;
+}
+
+
+#top #top-line #top-pos1 a:hover, #top #top-line #top-pos2 a:hover {
+	text-decoration:none;
+}
+
+#wrapper #breadcrambs {
+	padding:0px 10px 0px 10px!important;
+}
+
+#wrapper #breadcrambs,  #wrapper #breadcrambs-action {
+	height:30px;
+	padding:0px 10px 10px 10px;
+	text-align:left;
+	vertical-align:middle;
+	display:table-cell;
+	font-size:11px;
+	color:#712636;
+	margin:0 0 0 5px;
+	padding-left:56px;
+}
+
+#wrapper #breadcrambs a,  #wrapper #breadcrambs a:link,  #wrapper #breadcrambs a:active,  #wrapper #breadcrambs a:visited,  #wrapper #breadcrambs-action a,  #wrapper #breadcrambs-action a:link,  #wrapper #breadcrambs-action a:active,  #wrapper #breadcrambs-action a:visited {
+	color:#1A556E;
+	text-decoration:underline;
+    font-size: 13px;
+}
+
+#wrapper #breadcrambs a:hover,  #wrapper #breadcrambs-action a:hover {
+	text-decoration:none;
+}
+
+#wrapper #two-colomns #left .moduletable .search_vol .vol_header#vol_header0,  #wrapper #two-colomns #left .moduletable .search_vol .vol_header#vol_header1,  #wrapper #two-colomns #left .moduletable .search_vol .vol_header#vol_header2,  #wrapper #two-colomns #left .moduletable .search_vol .vol_header#vol_header3,  #wrapper #two-colomns #left .moduletable .search_vol .vol_header#vol_header4 {
+	border-radius:20px;
+}
+
+#wrapper #two-colomns #content .orderby-displaynumber,  #wrapper #two-colomns #content .horizontal-separator {
+	display:none;
+}
+
+#wrapper #two-colomns #content .spacer .prod-name .prod-name-span a {
+	position:relative;
+	display:inline;
+}
+
+#wrapper #two-colomns #content .spacer .product-price .PricenoRed,  #wrapper #two-colomns #content .spacer .product-price .PricepriceWithoutTax {
+	position:absolute;
+	top:9px;
+	left:15px;
+	width:100%;
+}
+
+#wrapper #two-colomns #content .spacer .product-price .PricepriceWithoutTax.action {
+	left:33px;
+	top:19px;
+}
+
+#wrapper #two-colomns #content .browse-view .cat-name1,  #wrapper #two-colomns #content .browse-view .cat-name2,  #wrapper #two-colomns #content .browse-view .cat-name3,  #wrapper #two-colomns #content .browse-view .cat-name4,  #wrapper #two-colomns #content .browse-view .cat-name5,  #wrapper #two-colomns #content .browse-view .cat-name6,  #wrapper #two-colomns #content .browse-view .cat-name7,  #wrapper #two-colomns #content .browse-view .cat-name8 {
+	margin:0 20px 0 -20px;
+	display:inline;
+	font-size:22px;
+	padding:0 35px 0 0;
+	color:#712636;
+	font-weight:normal;
+	border-bottom:1px solid #712636;
+	background:url(../images/h1-carriage.png) bottom right no-repeat transparent;
+}
+
+#wrapper #two-colomns #content .browse-view .sort {
+	display:none;
+}
+
+#wrapper #two-colomns #content .pagination .p-first .span-prev .first span.pagenav,  #wrapper #two-colomns #content .pagination .p-first .span-nex .last span.pagenav {
+	margin-top:3px;
+}
+
+#wrapper #two-colomns #content .pagination .p-first .span-prev span.pagenav,  #wrapper #two-colomns #content .pagination .p-first .span-next span.pagenav {
+	background-color:transparent!important;
+}
+
+#wrapper #two-colomns #content #action-blue-fon {
+	position:absolute;
+	top:-14px;
+	z-index:-1;
+    margin-left: 35px;
+}
+
+#wrapper #two-colomns #content .browse-view {
+	margin-top:0px;
+	margin-left:60px;
+	margin-bottom:80px;
+	z-index:111;
+}
+
+#wrapper #two-colomns #content .browse-view .flip-clock {
+	height:67px;
+	margin:0px 0 45px 4px;
+	padding-top:10px;
+	z-index:115;
+}
+
+#wrapper #two-colomns #content .browse-view .flip-clock .flip-clock-wrapper {
+	height:90px;
+	width:276px;
+	margin:0 auto;
+	padding:0 0 0 35px;
+	background:url(../images/timer-fon.png) top center no-repeat transparent;
+}
+
+#wrapper #content .blog,  #wrapper #content .item-page {
+	margin:0px 0 0 30px;
+	color:#428eae;
+	font-size:13px;
+	padding:0 0 60px 0;
+}
+
+#wrapper #content .blog h2.h2-cat-name {
+	color:#712636;
+	font-size:22px;
+	font-weight:normal;
+	margin:0px;
+}
+
+#wrapper #content .blog .dd-left,  #wrapper #content .item-page .dd-left {
+	background:url(../images/dd-fon-left.png) top left no-repeat transparent;
+	width:9px;
+	height:18px;
+	float:left;
+}
+
+#wrapper #content .blog .dd-right,  #wrapper #content .item-page .dd-right {
+	background:url(../images/dd-fon-right.png) top right no-repeat transparent;
+	width:9px;
+	height:18px;
+	float:left;
+}
+
+#wrapper #content .blog dd.create,  #wrapper #content .item-page dd.create {
+	background:url(../images/dd-fon.png) top right repeat-x transparent;
+	height:18px;
+	float:left;
+	margin:0;
+	line-height:18px;
+	color:#ffffff;
+	font-size:11px;
+}
+
+#wrapper #content .blog h2,  #wrapper #content .item-page h2 {
+	margin:5px 0 5px 0;
+	color:#1a556e;
+	font-size:20px;
+	font-weight:normal;
+}
+
+#wrapper #content .blog h2 a,  #wrapper #content .item-page h2 a {
+	color:#1a556e;
+	font-size:20px;
+	text-decoration:none;
+	font-weight:normal;
+}
+
+#wrapper #content .blog h4,  #wrapper #content .item-page h4 {
+	margin:10px 0 10px 0;
+	color:#428eae;
+}
+
+#wrapper #content .blog ul,  #wrapper #content .item-page ul {
+	padding:0 0 0 100px;
+	margin:0;
+}
+
+#wrapper #two-colomns #left .moduletable{
+    margin-top: -8px;
+    padding-bottom: 60px;
+    margin-left: -40px;
+    padding-left: 40px;
+    background:url(../images/2bubles.png) bottom left no-repeat transparent;
+}
+
+.browse-view .row .product .spacer img,
+.related-products-view .row .product .spacer img{
+    margin-top: 10px;
+}
+
+
+#wrapper #two-colomns #left .moduletable .search_vol .vol_header{
+    background-color: #fff;
+}

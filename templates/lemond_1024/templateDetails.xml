@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="template" client="site">
+	<name>lemond</name>
+	<creationDate>30/04/13</creationDate>
+	<author>Evgeniya Burlaka</author>
+	<authorEmail>evgeniyabv@gmail.com</authorEmail>
+	<authorUrl>http://imagination.dn.ua/</authorUrl>
+	<copyright>Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>2.5.0</version>
+	<description>Template for joomla! 2.5</description>
+	<files>
+		<folder>css</folder>
+		<folder>images</folder>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+	</files>
+
+	<positions>
+		<position>left</position>
+		<position>right</position>
+		<position>content</position>
+		<position>menu</position>
+	</positions>
+        
+        <params>
+            <param name="mainCss" type="text" default="style.css" />
+        </params>
+        <config>
+            <fields name="params">
+                <fieldset name="basic">
+                    <field name="mainCss" type="text" default="style.css" />
+                </fieldset>
+            </fields>
+        </config>
+
+</extension>

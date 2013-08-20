@@ -1,0 +1,259 @@
+#wrapper #left .moduletable{
+    margin-top: -34px;
+    margin-left: 10px;
+}
+#wrapper #left .moduletable h3, #wrapper #content h1{
+    font-size: 20px;
+    color: #712636;
+    font-family: "Microsoft YaHei";
+    font-weight: 100;
+}
+#wrapper #left .moduletable .menu{
+    list-style-type: none;
+    margin-left: -40px;
+    margin-top: -10px;
+}
+#wrapper #left .moduletable .menu li a{
+    font-size: 18px;
+    font-family: "Microsoft YaHei";
+    color: #1A556E;
+    text-decoration: none;
+    border-bottom: 1px dashed #1A556E;
+}
+
+#wrapper #left .moduletable .menu li{
+    color: #1A556E;
+    margin-bottom: 2px;
+}
+
+#wrapper #left .moduletable .menu .active{
+    margin-bottom: 1px;
+}
+
+#wrapper #left .moduletable .menu .active a{
+    color: #712636;
+    text-decoration: none;
+    border-bottom: 0;
+}
+
+#top #top-line #top-pos1 {
+    bottom: 1px;
+    position: absolute;
+    right: 252px;
+}
+
+
+#wrapper #two-colomns #content {
+    padding-top: 21px;
+    padding-left: 90px;
+}
+
+#editcell .adminlist td, #editcell .adminlist th{
+    border-right: 1px solid #76C2E8;
+    margin: 0;
+    padding: 0;
+}
+
+#editcell{
+    padding-top: 13px;
+}
+#editcell .adminlist{
+     border-collapse: separate;
+      border-spacing: 0;
+      border-collapse: collapse;
+      width: 920px;
+      border: 1px solid #76C2E8;
+}
+#editcell .adminlist thead{
+    border-bottom: 1px solid #76C2E8;
+    background: -moz-linear-gradient(top, #E0F5FF, #ffffff);
+    background: linear-gradient(top, #E0F5FF, #ffffff); /* CSS3 */
+    background: -webkit-linear-gradient(top, #E0F5FF, #ffffff);
+    background: -o-linear-gradient(top, #E0F5FF, #ffffff);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E0F5FF), color-stop(100%,#ffffff));
+}
+#editcell .adminlist th{
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    font-weight: 100;
+    color: #1A556E;
+    padding-top: 8px;
+    padding-bottom: 7px;
+}
+
+#editcell .adminlist td{
+    font-family: "Microsoft YaHei";
+    color: #1A556E;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#editcell .adminlist .td_status{
+    color: #428EAE;
+}
+
+
+#editcell .adminlist .td_look_order a{
+    color: #09AAF5;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+#editcell .adminlist .th_orders{
+    width: 22.5%;
+}
+
+#editcell .adminlist .th_date{
+    width: 10.5%;
+}
+#editcell .adminlist .th_order_amount{
+    width: 16.5%;
+}
+#editcell .adminlist .th_status{
+    width: 18.3%;
+}
+/*------------------------------account-------------------------------------*/
+
+#content #adminForm .adminForm{
+    width: auto;
+}
+
+#content #adminForm .adminForm .key{
+    width: 315px;
+    color: #1A556E;
+}
+
+#content #adminForm .adminForm  input, #content #adminForm .adminForm  select{
+    background: transparent;
+    border: 1px solid #76C2E8;
+    border-radius: 0;
+    padding-top: 8px;
+    font-size: 14px;
+    width: 270px;
+}
+
+#content #adminForm .adminForm  select{
+    padding-top: 0;
+    height: 30px;
+    width: 280px;
+    font-size: 19px;
+    color: #777777
+}
+
+#content #adminForm .adminForm  input[type="checkbox"]
+{
+    width: auto;
+}
+
+/*----------------------order------------------------------*/
+#content .see_order_table {
+    border: 1px solid #76C2E8;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 920px;
+    font-family: "Microsoft YaHei";
+    margin-top: 13px;
+    table-layout: fixed;
+}
+.see_order_table td{
+    border: 1px solid #76C2E8;
+    font-size: 14px;
+    color: #1A556E;
+}
+.see_order_table th{
+    font-weight: 100;
+    color: #1A556E;
+    border: 1px solid #76C2E8;
+}
+.see_order_table .total_order_amount_text{
+    text-align: right;
+    padding-right: 45px;
+    font-weight: bold;
+}
+
+.see_order_table #total_order_amount{
+    font-weight: bold;
+}
+.see_order_table td, .see_order_table th{
+    text-align: center;
+     padding-bottom: 7px;
+     padding-top: 8px;
+}
+.see_order_table .sectiontableheader{
+    font-size: 16px;
+    font-weight: 100;
+    border-bottom: 1px solid #76C2E8;
+    background: -moz-linear-gradient(top, #E0F5FF, #ffffff);
+    background: linear-gradient(top, #E0F5FF, #ffffff); /* CSS3 */
+    background: -webkit-linear-gradient(top, #E0F5FF, #ffffff);
+    background: -o-linear-gradient(top, #E0F5FF, #ffffff);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E0F5FF), color-stop(100%,#ffffff));
+}
+
+.see_order_table .td_name{
+    text-align: left;
+}
+
+.see_order_table .td_name a{
+    margin-left: 20px;
+    text-decoration: none;
+    color: #1A556E;
+    font-weight: bold;
+}
+
+
+.spaceStyle p{
+    color: #428EAE;
+    font-size: 18px;
+    font-family: "Microsoft YaHei";
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3px;
+}
+
+.see_order_table .th_number{
+    width: 7%;
+}
+
+.see_order_table .th_article{
+    width: 12.8%;
+}
+
+.see_order_table .th_name{
+    width: 32%;
+}
+
+.see_order_table .th_count{
+    width: 8.5%;
+}
+
+.see_order_table .th_price{
+    width: 10.5%;
+}
+
+.see_order_table .th_discount{
+    width: 13%;
+}
+
+#adminForm .buttonBar-right button{
+    background: url(../images/save_button.png) 0 0 no-repeat;
+    border: 0;
+    width: 131px;
+    text-align: center;
+    padding-bottom: 7px;
+    padding-top: 5px;
+    color: #1A556E;
+    font-size: 17px;
+    font-family: "Microsoft YaHei";
+    cursor: pointer;
+}
+
+#wrapper #breadcrambs, #wrapper #breadcrambs-action{
+    height: 29px;
+}
+
+#top #top-line #top-pos1 .custom{
+    position: relative;
+    left: 63px;
+}

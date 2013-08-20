@@ -1,0 +1,44 @@
+/*
+	* @package J!MailALerts
+	* @copyright Copyright (C) 2009 -2010 Techjoomla, Tekdi Web Solutions . All rights reserved.
+	* @license GNU GPLv2 <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>
+	* @link     http://www.techjoomla.com
+*/
+
+.icon-48-cp    { 
+        background-image: url(../../com_jmailalerts/images/icons/mail_alert48.png) !important; 
+}
+.icon-48-config    { 
+        background-image: url(../../com_jmailalerts/images/icons/mail_alert_configure.png) !important; 
+}
+
+.icon-48-mailqueue    { 
+        background-image: url(../../com_jmailalerts/images/icons/mail_alert_mailqueue.png) !important; 
+}
+
+.icon-48-sync    { 
+        background-image: url(../../com_jmailalerts/images/icons/mail_alert_synchronize.png) !important; 
+}
+
+.icon-48-mailsimulate    { 
+        background-image: url(../../com_jmailalerts/images/icons/mail_alert_mail_find.png) !important; 
+}
+
+.icon-48-alerttypes    { 
+        background-image: url(../../com_jmailalerts/images/icons/alerttypes.png) !important; 
+}
+.icon-48-healthcheck    { 
+        background-image: url(../../com_jmailalerts/images/icons/healthcheck.png) !important; 
+}
+.icon-48-manageuser    { 
+        background-image: url(../../com_jmailalerts/images/icons/manageuser.png) !important; 
+}
+.jma_div1{font-weight: bold; float: left;}
+
+span.latestbutton{
+border:1px solid;
+/*float:left;*/
+padding: 5px;
+cursor: pointer;
+}
+

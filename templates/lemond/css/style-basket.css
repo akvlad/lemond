@@ -1,0 +1,539 @@
+.cart-view h1, .breadcrumbs{
+    margin-left: 331px;
+}
+.breadcrumbs{
+    color: #712636;
+    font-size: 13px;
+    text-align: left;
+    font-family: "Microsoft yahei";
+}
+
+.breadcrumbs a{
+    color: #1A556E;
+    font-size: 13px;
+    text-decoration: underline;
+    font-family: "Microsoft yahei";
+}
+
+.cart-view h1{
+    color: #712636;
+    font-family: "Microsoft yahei";
+    font-weight: 100;
+    font-size: 24px;
+    padding-top: 5px;
+}
+
+.cart-view  fieldset{
+    border: 0;
+    width: 1237px;
+}
+
+.cart-summary{
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+table.cart-summary tr th{
+    border-bottom: 1px solid #76C2E8;
+    background: -moz-linear-gradient(top, #E0F5FF, #ffffff);
+    background: linear-gradient(top, #E0F5FF, #ffffff); /* CSS3 */
+    background: -webkit-linear-gradient(top, #E0F5FF, #ffffff);
+    background: -o-linear-gradient(top, #E0F5FF, #ffffff);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E0F5FF), color-stop(100%,#ffffff));
+    color: #1A556E;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    font-weight: 100;
+    padding-bottom: 7px;
+    padding-top: 8px;
+    text-align: center;
+}
+
+#wrapper #two-colomns #content{
+    display: block;
+}
+
+#wrapper #two-colomns{
+    margin: 0;
+}
+
+.cart-view .cart-summary, .cart-view .cart-summary td, .cart-view .cart-summary th{
+    border: 1px solid #76C2E8;
+    border: 1px solid #76C2E8;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 10px;
+    text-align: center;
+}
+.cart-view .cart-summary td{
+    vertical-align: middle;
+    height: 70px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    color: #1A556E;
+}
+.cart-view .td_number img{
+    width: 40px;
+}
+
+.cart-view .all_sum_count td{
+    height: 40px;
+    font-size: 14px;
+}
+
+.cart-view .td_name a{
+    text-decoration: underline;
+    font-family: Tahoma;
+    color: #712636;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.cart-view .th_number{
+    width: 90px;
+}
+.cart-view .th_article{
+    width: 100px;
+}
+.cart-view .th_name{
+    width: 333px;
+}
+.cart-view .th_count{
+    width: 95px;
+}
+.cart-view .th_count_leman{
+    width: 150px;
+}
+.cart-view .th_price{
+    width: 105px;
+}
+.cart-view .th_discount{
+    width: 110px;
+}
+.cart-view .priceColor2{
+    color: #1A556E;
+}
+
+.cart-view .all_sum_count .all_sum_count_text{
+    text-align: right;
+    padding-right: 10px;
+    font-size: 20px;
+    background: #F5FCFF;
+}
+
+.cart-view .all_sum_count .PricesalesPrice{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cart-view .all_sum_count{
+    background: #F5FCFF;
+}
+
+.all_sum_count_text a{
+    font-family: "Microsoft yahei";
+    font-size: 16px;
+    float: left;
+    text-decoration: none;
+    color: #1A556E;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+.all_sum_count_text a img{
+    position: relative;
+    top: 2px;
+}
+
+.all_sum_count_text a img{
+    margin-right: 5px;
+}
+.cart-view #checkoutForm{
+    font-family: "Microsoft YaHei";
+}
+.cart-view #checkoutForm table{
+    border-collapse: separate;
+    border-spacing: 0;
+    border-collapse: collapse;
+    color: #1A556E;
+    border: 1px solid #98D5F3;
+    width: 100%;
+}
+.cart-view #checkoutForm table input{
+    height: 26px;
+    font-size: 18px;
+    border: 1px solid #1A556E;
+    border-radius: 2px;
+    width: 280px;
+}
+.cart-view #checkoutForm table #etnries table{
+    border: 0;
+}
+.cart-view #checkoutForm  .blue_fon{
+    background: #F5FCFF;
+}
+
+.cart-view #checkoutForm table{
+    font-size: 21px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    display: block;
+}
+.cart-view #checkoutForm {
+    margin-left: 20px;
+    width: 1237px;
+}
+.cart-view #checkoutForm .inner{
+    width: 305px;
+    padding: 4px 0px 4px 35px ;
+}
+
+.cart-view #checkoutForm table tr{
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.cart-view #checkoutForm .white_fon{
+    border: 0;
+}
+
+.cart-view #checkoutForm .white_fon input{
+    background: #F5FCFF;
+}
+
+.cart-view #checkoutForm  #children-block h3{
+    font-size: 17px;
+    font-family: "Microsoft YaHei";
+    color: #09AAF5;
+    margin-left: 340px;
+    padding-top: 0;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: -5px;
+}
+.cart-view #checkoutForm #children-block input{
+    width: 280px;
+}
+.cart-view #checkoutForm  #children-block select{
+    height: 24px;
+    width: 140px;
+    height: 30px;
+    font-size: 18px;
+}
+
+.cart-view #checkoutForm  #children-block option{
+    font-size: 18px;
+}
+
+.cart-view #checkoutForm  #children-block .morechild{
+    width: 123px;
+    height: 28px;
+    background: url(../images/button_add_children.png);
+    border: 0;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    left: 12px;
+}
+.cart-view #checkoutForm  #children-block{
+    position: relative;
+    width: 1237px;
+}
+
+.cart-view #checkoutForm   .right-block{
+    border: 1px solid #98D5F3;
+    border-radius: 10px 10px 10px 10px;
+    color: #6699FF;
+    font-family: "Microsoft YaHei";
+    height: 76px;
+    position: absolute;
+    right: 24px;
+    top: 28px;
+    width: 296px;
+}
+
+.cart-view #checkoutForm .right-block .inner_text{
+    padding-left: 7px;
+    padding-top: 15px;
+    padding-right: 7px;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+.cart-view #checkoutForm .deliv_house .right-block .inner_text{
+    padding: 7px;
+}
+
+.cart-view #checkoutForm .deliv_cenntr .right-block .inner_text{
+    padding: 7px;
+}
+
+.cart-view #checkoutForm  #children-block .block_icon{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.cart-view #checkoutForm .adress_data{
+    border: 1px solid #98D5F3;
+}
+
+.cart-view #checkoutForm .adress_data select, .cart-view #checkoutForm .adress_data input{
+    width: 287px;
+    height: 30px;
+    font-size: 18px;
+    border: 1px solid #1A556E;
+}
+.cart-view #checkoutForm .adress_data input[type="radio"], .cart-view #checkoutForm .adress_data input[type="checkbox"]{
+    width: auto;
+    height: auto;
+}
+
+.cart-view #checkoutForm .adress_data option{
+    font-size: 18px;
+}
+.cart-view #checkoutForm .pay_type{
+    background: url("../images/payment_type_fon.png") no-repeat scroll 500px 94px transparent;
+    border-top: 1px solid #98D5F3;
+    min-height: 340px;
+    padding-bottom: 20px;
+}
+
+.cart-view #checkoutForm .pay_type fieldset{
+    width: 1184px;
+    padding-top: 40px;
+}
+.cart-view #checkoutForm .adress_data{
+    font-family: "Microsoft YaHei";
+    color:	#1A556E;
+    font-size: 21px;
+    padding-left: 35px;
+    width: 1185px;
+    margin-top: -4px;
+}
+
+.cart-view #checkoutForm .adress_data .block{
+    margin-top: 5px;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.cart-view #checkoutForm .adress_data .block ul{
+    margin-left: 200px;
+    margin-top: 0px;
+}
+
+.cart-view #checkoutForm .adress_data .choice_city{
+    margin-left: 35px;
+    margin-bottom: 10px;
+}
+
+.cart-view #checkoutForm .adress_data .choice_city select{
+    margin-left: 87px;
+}
+
+.cart-view #checkoutForm .adress_data .block ul li{
+    font-size: 14px;
+    color: #428EAE;
+    margin-left: 80px;
+}
+.cart-view #checkoutForm .adress_data .block ul li .label{
+    width: 279px;
+    display: block;
+    float: left;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+}
+
+.cart-view #checkoutForm .adress_data .block ul li .form{
+    float: left;
+    position: relative;
+    top: -5px;
+}
+
+.cart-view #checkoutForm .adress_data .block ul li{
+    clear: both;
+    margin-bottom: 15px;
+}
+
+.cart-view #checkoutForm .adress_data .time_interval input{
+    width: 73px !important;
+    height: 20px !important;
+    position: relative;
+    top: -1px;
+}
+
+.cart-view #checkoutForm .adress_data .right-block{
+    position: absolute;
+    right: 1px;
+    top:  1px;
+    border: 1px solid #98D5F3;
+    border-radius: 10px 10px 10px 10px;
+    color: #6699FF;
+    font-family: "Microsoft YaHei";
+    height: 76px;
+    width: 296px;;
+    font-size: 12px;
+}
+.cart-view #checkoutForm .adress_data .right-block .block_icon{
+    position: absolute;
+    right: -10px;
+    top: -10px;
+}
+
+
+.cart-view #checkoutForm .pay_type .customer-comment{
+    border: 0;
+}
+
+.cart-view #checkoutForm .pay_type li{
+    list-style-type: none;
+    color: #1A556E;
+    font-family: "Microsoft YaHei";
+    font-size: 21px;
+}
+
+.cart-view #checkoutForm .pay_type .block_link{
+    position: absolute;
+    bottom: 0px;
+    right: -395px;
+}
+
+.cart-view #checkoutForm .pay_type .pay_notes{
+    width: 550px;
+    margin-top: -35px;
+    margin-left: 65px;
+    position: relative;
+}
+
+.cart-view #checkoutForm .pay_type .pay_notes .checkout-button-top a{
+    background: url(../images/fiolet-gradient.png)  bottom  right  repeat-x;
+    border: 0;
+    font-size: 21px;
+    color: #fff;
+    font-family: "Microsoft YaHei";
+    font-weight: 100;
+    padding: 3px 12px;
+    position: relative;
+}
+
+.cart-view #checkoutForm .pay_type .pay_notes .checkout-button-top .left{
+    position: absolute;
+    left: -17px;
+    top: 1px;
+    width: 18px;
+    height: 33px;
+    background: url(../images/fiolet-left.png) left top no-repeat;
+}
+
+.cart-view #checkoutForm .pay_type .pay_notes .checkout-button-top .text{
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+.cart-view #checkoutForm .pay_type .pay_notes .checkout-button-top .right{
+    position: absolute;
+    right: -17px;
+    top: 1px;
+    background: url(../images/fiolet-right.png) left top no-repeat;
+    width: 18px;
+    height: 33px;
+}
+.cart-view #checkoutForm .pay_type .pay_notes .customer-comment{
+    text-align: left;
+    font-size: 21px;
+    color: #1A556E;
+}
+.cart-view #checkoutForm .pay_type .pay_notes textarea{
+    border: 1px solid #1A556E;
+    border-radius: 2px 2px 2px 2px;
+    margin-top: 5px;
+    min-height: 46px;
+    width: 490px;
+}
+
+.cart-view #checkoutForm .pay_type .pay_notes  .checkout-button-top{
+    border: 0 none;
+    margin-left: 20px;
+    padding: 3px 0;
+    text-align: left;
+}
+.clear{
+    clear: both;
+}
+.cart-view #checkoutForm .block .time_interval{
+    background: #fff;
+    border: 1px solid #1A556E;
+    width: 248px;
+    padding-left: 10px;
+    font-size: 18px;
+    padding-top: 6px;
+    height: 28px;
+
+}
+.cart-view #checkoutForm .block .time_interval input{
+    width: 73px;
+    height: 20px;
+    padding-bottom: 1px;
+    margin-right: 13px;
+    margin-left: 10px;
+    padding-top: 0 !important;
+}
+
+.cart-view #checkoutForm .adress_data .block ul li select{
+    width: 260px;
+}
+
+.cart-view #checkoutForm .adress_data .block ul li .form input{
+    width: 260px;
+    height: 20px;
+    margin-bottom: 8px;
+    padding-top: 6px;
+}
+
+.cart-view #checkoutForm .adress_data .block ul li .form .time_text_interval{
+    position: relative;
+    font-size: 18px;
+    top: 6px;
+    left: 5px;
+}
+
+
+.cart-view #checkoutForm  .deliv_cenntr .right-block{
+    top: 22px;
+    right: 10px
+}
+
+.cart-view #checkoutForm .adress_data .deliv_house .right-block{
+    bottom: -58px !important;
+    right: 10px !important;
+    top: auto !important;
+}
+
+.cart-view #checkoutForm  .deliv_house{
+    margin-bottom: 50px!important;
+}
+
+.cart-view #checkoutForm .pay_type h1{
+    text-align: center;
+    margin-left: 0;
+    margin-top: 8px;
+    font-family: "Microsoft YaHei";
+    border-bottom: 2px solid #98D5F3;
+    padding-bottom: 0;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    margin-top: -30px;
+}
+
+.cart-view #checkoutForm .pay_type ul{
+    margin-left: -20px;
+}
+
+.cart-view #checkoutForm .pay_type ul li{
+    margin-bottom: 10px;
+}
+#wrapper, #wrapper #two-colomns #content{
+    position: static;
+}
