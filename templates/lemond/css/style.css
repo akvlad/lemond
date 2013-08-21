@@ -1044,6 +1044,11 @@ a img
     position: absolute;
     top: 0;
 }
+#wrapper #two-colomns #left #breadcrambs .moduletable span{
+    display: block;
+    position: relative;
+    top: 2px;
+}
 /***********************FILTER****************************/
 #wrapper #two-colomns #left .moduletable .search_vol .vol_header
 {
@@ -1541,7 +1546,7 @@ a img
 #wrapper #two-colomns #content .spacer .prod-img img
 {
     margin-top:9px;
-    max-height: 175px;
+    max-height: 170px;
     width: 160px;
 }
 #wrapper #two-colomns #content .spacer .prod-name
@@ -1581,7 +1586,7 @@ a img
 {
     background: url(../images/prod-price-img.png) 0px 14px no-repeat transparent;
     height: 45px;
-    width:115px;
+    width:150px;
     position:absolute;
     bottom:40px;
     left:40px;
@@ -1620,6 +1625,7 @@ a img
     bottom: 20px;
     right: 25px;
 }
+#wrapper #two-colomns #content .browse-view h1,
 #wrapper #two-colomns #content .browse-view .cat-name1,
 #wrapper #two-colomns #content .browse-view .cat-name2,
 #wrapper #two-colomns #content .browse-view .cat-name3,
@@ -2355,8 +2361,17 @@ a img
     border-radius: 5px;
     border:1px solid #96d1ee;
     font-size: 28px;
-    color: #1A556E;
+    color: #666;
 }
+
+#facebox .content .moduletable_log  #errors{
+    color: #712636;
+    line-height: 22px;
+    margin-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 #facebox .content .moduletable_log #form-login-username #txt-fld
 {
     margin-bottom:25px;
@@ -2406,6 +2421,7 @@ a img
     padding:0;
     margin:0;
     background:url(../images/enter-button.png) bottom center no-repeat transparent;
+    cursor: pointer;
 }
 #formlogin
 {
@@ -2771,5 +2787,35 @@ a img
     float: right
 }
 
+/*------------------------------стилизация форм-------------------------*/
+.niceCheck {
+    width: 21px;
+    height: 21px;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+    background: url(../images/check-bg.png) left top no-repeat;
+}
+.niceChecked {
+    background-position: left bottom;
+}
+.niceCheck input {
+    margin-left: -30px;/* Смещаем чекбокс в лево, чтобы его не было видно */
+}
 
+
+.niceRadio {
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    cursor: pointer;
+    background: url(../images/check-bg.png) left top no-repeat;
+    overflow: hidden;
+}
+.radioChecked {
+    background-position: 0 -42px;
+}
+.niceRadio input {
+    margin-left: -17px;
+}
 

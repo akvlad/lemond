@@ -705,15 +705,15 @@
 }
 
 .three-places-action .place-4 .addtocart-button-inactive {
-	border:none;
-	border-radius:0;
-	background:url(../images/cart-ok.png) center center no-repeat transparent;
-	font-size:0;
-	position:absolute;
-	bottom:-2px;
-	right:26px;
-	width:33px;
-	height:34px;
+    background: url("../images/cart-ok.png") no-repeat scroll center center transparent;
+    border: medium none;
+    border-radius: 0 0 0 0;
+    bottom: -21px;
+    font-size: 0;
+    height: 41px;
+    position: absolute;
+    right: -9px;
+    width: 41px;
 }
 
 .three-places-action .place-5 {

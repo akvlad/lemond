@@ -23,11 +23,11 @@
 			<div id="top-menu">
 				<jdoc:include type="modules" name="top-line" style="XHTML"/>
 			</div>
+            <div id="top-pos2">
+                <jdoc:include type="modules" name="top-pos2" style="XHTML"/>
+            </div>
 			<div id="top-pos1">
 				<jdoc:include type="modules" name="top-pos1" style="XHTML"/>
-			</div>
-			<div id="top-pos2">
-				<jdoc:include type="modules" name="top-pos2" style="XHTML"/>
 			</div>
             <div id="cart-pos">
                 <jdoc:include type="modules" name="cart-pos" style="XHTML"/>
